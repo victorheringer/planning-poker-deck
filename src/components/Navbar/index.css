@@ -1,0 +1,95 @@
+.navbar {
+  padding: 5px;
+  background-color: #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 20px 0;
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+  grid-template-columns: 60% 20% 20%;
+}
+
+.navbar .logo {
+  padding-left: 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.nav > ul {
+    zoom:1;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.nav ul:before,.nav ul:after {
+  content:"";
+  display:table;
+}
+.nav ul:after {
+  clear:both;
+}
+.nav ul > li {
+  position:relative;
+}
+.nav a {
+  display:block;
+  padding: 0px 10px;
+  line-height:1.2em;
+  text-decoration: none;
+  color: #000;
+}
+.nav a:hover {
+  text-decoration:none;
+  color: #000;
+}
+
+.nav li ul {
+  background-color: #FFF;
+  width: 100vw;
+  margin-top: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.nav li ul li {
+  width: 100vw;
+}
+
+.nav li ul a {
+  border:none;
+}
+
+.nav li ul a:hover { }
+
+.nav li ul {
+  position:absolute;
+  right:0;
+  z-index:1;
+}
+.nav li ul li {
+  overflow:hidden;
+  height:0;
+  padding-left: 10px;
+  -webkit-transition:height 200ms ease-in;
+  -moz-transition:height 200ms ease-in;
+  -o-transition:height 200ms ease-in;
+  transition:height 200ms ease-in;
+}
+
+.nav li ul li a {
+  line-height: 45px;
+}
+
+.nav.active ul > li > ul li {
+  height: 45px;
+}
+
+.navIcon {
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+.nav .icon {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Planning Poker",
+  "name": "Planning Poker Deck",
   "icons": [
     {
       "src": "favicon.ico",

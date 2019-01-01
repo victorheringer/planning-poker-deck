@@ -1,0 +1,109 @@
+.cardWrapper {
+  padding: 10px 15px;
+}
+
+.animation {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.cardContainer {
+ 
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  
+  /*depth of the elements */
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+
+  /*border: 1px solid #ff0000;*/
+  padding-left: 1%;
+}
+
+.card {
+  width: 100%;
+  height: 110px;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.6s;
+  -moz-transition: -moz-transform 0.6s;
+  -o-transition: -o-transform 0.6s;
+  transition: transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.card .front,
+.card .back {
+  border-radius: 8px;
+  display: block;
+  height: calc(100% - 10px); /* Removing border height */
+  width: calc(100% - 10px); /* Removing border width */
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 5px solid #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.card .front {
+  background: #1565c0;
+}
+
+.card .back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: #1565c0;
+  color: #FFF;
+}
+
+.cardNumber {
+  font-size: 40px;
+  margin: 0px;
+  line-height: 100px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.cardWrapper .close {
+  width: 100%;
+  overflow: auto;
+}
+
+.cardWrapper .close button {
+  background-color: #EF5350;
+  border-radius: 50%;
+  color: #FFF;
+  width: 25px;
+  height: 25px;
+  border: 0px;
+  line-height: 25px;
+  margin-top: -30px;
+  position: absolute;
+  right: -10px;
+  z-index: 1;
+  top: 20px;
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}

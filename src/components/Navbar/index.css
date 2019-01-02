@@ -5,7 +5,7 @@
   padding: 20px 0;
   font-family: 'Open Sans', sans-serif;
   display: grid;
-  grid-template-columns: 60% 20% 20%;
+  grid-template-columns: 70% 15% 15%;
 }
 
 .navbar .logo {

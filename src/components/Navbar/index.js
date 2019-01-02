@@ -36,23 +36,8 @@ class Navbar extends Component {
         name: "Github",
         url: "https://github.com/VictorHeringer/planning-poker-deck",
         icon: githubIcon
-      },
-      {
-        name: "Github1",
-        url: "https://github.com/VictorHeringer/planning-poker-deck",
-        icon: githubIcon
-      },
-      {
-        name: "Github2",
-        url: "https://github.com/VictorHeringer/planning-poker-deck",
-        icon: githubIcon
-      },
-      {
-        name: "Github3",
-        url: "https://github.com/VictorHeringer/planning-poker-deck",
-        icon: githubIcon
       }
-    ]
+    ];
 
     return (
       <React.Fragment>

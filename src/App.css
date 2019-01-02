@@ -9,6 +9,7 @@ button,
 select,
 a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline: none;
 }
 
 div {
@@ -19,9 +20,4 @@ div {
   max-width: 575.98px;
   margin: 0 auto;
   min-height: calc( 100vh - 20px ); /* Removing padding */
-}
-
-.gridDeckContainer {
-  display: grid;
-  grid-template-columns: auto auto auto;
 }

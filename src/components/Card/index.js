@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CardFactory from './../../factories/CardFactory';
+import FrontFace from './FrontFace';
+import BackFace from './FrontFace';
 import './index.css';
 import './patterns.css';
 
@@ -54,13 +55,8 @@ class Card extends Component {
             {editing && <button onClick={this.handleClickRemove}>X</button>}
           </div>
           <div className={'card' + flipped} onClick={this.handleClick}>
-            <div className="front">
-            </div>
-            <div className="back tech-pattern">
-              <h3 className="cardTitle cardNumber">
-                {icon ? <FontAwesomeIcon icon={value} /> : value}
-              </h3>
-            </div>
+            <FrontFace />
+            <BackFace icon={icon} value={value} pattern={"tech-pattern"} />
           </div>
         </div>
       </div>

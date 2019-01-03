@@ -46,7 +46,7 @@ class CardsDeck extends Component {
 
   handleClickDiselectCard = event => {
     this.setState({
-      isSelected: !this.isSelected,
+      isSelected: false,
       cardSelected: null
     });
   }
@@ -91,7 +91,7 @@ class CardsDeck extends Component {
           }
           {this.state.isSelected &&
             <button onClick={this.handleClickDiselectCard}>
-              <FontAwesomeIcon icon="edit" /> &nbsp;
+              <FontAwesomeIcon icon="long-arrow-alt-left" /> &nbsp;
               Voltar
             </button>
           }

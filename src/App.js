@@ -5,6 +5,17 @@ import './App.css';
 import Home from './containers/Home';
 import Navbar from './components/Navbar';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faEdit,
+  faMugHot,
+  faLongArrowAltLeft
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(faEdit);
+library.add(faMugHot);
+library.add(faLongArrowAltLeft);
+
 class App extends Component {
   render() {
     return (

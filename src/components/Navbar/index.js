@@ -38,44 +38,48 @@ class Navbar extends Component {
         icon: githubIcon
       }
     ];
-
+    const deckIcon = <img className="navIcon" src={deckIcon} alt="menu" />;
     return (
       <React.Fragment>
         <div className="navbar">
-          <div className='logo'>Planning Poker Deck</div>
-          <div>
-            <a className="center">
-              <img className="navIcon" src={deckIcon} alt="menu" />
-            </a>
-          </div>
-          <div>
-            <nav className="nav" ref={this.nav}>
-              <ul>
-                <li>
-                  <a className="center" onClick={this.handleClick}>
-                    <img className="navIcon" src={navIcon} alt="menu" />
-                  </a>
-                  <ul>
-                    {
-                      links.map(link => {
-                        return (
-                          <li key={link.name}>
-                            <a href={link.url} target="_blank" rel="noopener noreferrer">
-                              <img 
-                                className="icon" 
-                                src={link.icon} 
-                                alt="icon" 
-                              />
-                              {link.name}
-                            </a>
-                          </li>
-                        );
-                      })
-                    }
-                  </ul>
-                </li>
-              </ul>
-            </nav>
+          <div className="container">
+            <div className='logo'>Planning Poker Deck</div>
+            <div>
+              <a className="center">
+                
+              </a>
+            </div>
+            <div>
+              <nav className="nav" ref={this.nav}>
+                <ul>
+                  <li>
+                    <a className="center" onClick={this.handleClick}>
+                      <img className="navIcon" src={navIcon} alt="menu" />
+                    </a>
+                    <ul>
+                      <div className="navContainer">
+                      {
+                        links.map(link => {
+                          return (
+                            <li key={link.name}>
+                              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                <img 
+                                  className="icon" 
+                                  src={link.icon} 
+                                  alt="icon" 
+                                />
+                                {link.name}
+                              </a>
+                            </li>
+                          );
+                        })
+                      }
+                      </div>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </React.Fragment>

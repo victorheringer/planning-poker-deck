@@ -65,7 +65,7 @@ class CardsDeck extends Component {
                 key={card.value}
                 up={true}
                 icon={card.icon}
-                static={true}
+                fixed={true}
                 editing={editing}
                 onClickRemove={this.handleClickRemoveCard}
                 onClick={this.handleClickShowCard}
@@ -80,7 +80,7 @@ class CardsDeck extends Component {
               key={this.state.cardSelected.value}
               up={false}
               icon={this.state.cardSelected.icon}
-              static={false}
+              fixed={false}
               editing={editing}
               onClickRemove={this.handleClickRemoveCard}
               onClick={this.handleClickShowCard}

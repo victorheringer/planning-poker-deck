@@ -12,3 +12,17 @@ cd planning-poker-deck
 ```sh
 npm install
 ```
+
+- **[MIT license]
+## Release History
+* 0.0.1
+  * Work in progress
+
+## MIT license
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- Copyright 2019 © Victor Heringer
+
+---
+Planning poker deck is develop with :heart: by [@victorheringer_](https://twitter.com/VictorHeringer_)

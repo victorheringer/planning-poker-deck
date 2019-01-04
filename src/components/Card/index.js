@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CardFactory from './../../factories/CardFactory';
 import FrontFace from './FrontFace';
-import BackFace from './FrontFace';
+import BackFace from './BackFace';
 import './index.css';
-import './patterns.css';
 
 /**
  * @author Victor Heringer
@@ -18,6 +18,7 @@ import './patterns.css';
  * @props {Bool} icon
  * @props {Function} onClickRemove
  * @props {Function} onClick
+ * @props {String} className
  */
 class Card extends Component {
 
@@ -45,16 +46,16 @@ class Card extends Component {
 
   render() {
 
-    const { value, up, editing, icon } = this.props;
+    const { value, up, editing, icon, className } = this.props;
     const flipped = up ? ' flipped' : '';
 
     return (
-      <div className="cardWrapper">
+      <div className={"cardWrapper " + className} >
         <div className="cardContainer">
           <div className="close">
             {editing && <button onClick={this.handleClickRemove}>X</button>}
           </div>
-          <div className={'card' + flipped} onClick={this.handleClick}>
+          <div className={"card" + flipped} onClick={this.handleClick}>
             <FrontFace />
             <BackFace icon={icon} value={value} pattern={"tech-pattern"} />
           </div>
@@ -63,5 +64,9 @@ class Card extends Component {
     );
   }
 }
+
+Card.defaultProps = {
+  className: ""
+};
 
 export default Card;

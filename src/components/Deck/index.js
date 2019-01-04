@@ -58,7 +58,23 @@ class CardsDeck extends Component {
     return (
       <React.Fragment>
         <div className='gridDeckContainer'>
-          {this.state.isSelected ? 
+          {!this.state.isSelected &&
+            cards.map(card =>
+              <Card
+                value={card.value}
+                key={card.value}
+                up={true}
+                icon={card.icon}
+                static={true}
+                editing={editing}
+                onClickRemove={this.handleClickRemoveCard}
+                onClick={this.handleClickShowCard}
+              />
+            )
+          }
+        </div>
+        <div>
+          {this.state.isSelected &&
             <Card
               value={this.state.cardSelected.value}
               key={this.state.cardSelected.value}
@@ -68,19 +84,9 @@ class CardsDeck extends Component {
               editing={editing}
               onClickRemove={this.handleClickRemoveCard}
               onClick={this.handleClickShowCard}
+              className={'big'}
             />
-          : cards.map(card =>
-            <Card
-              value={card.value}
-              key={card.value}
-              up={true}
-              icon={card.icon}
-              static={true}
-              editing={editing}
-              onClickRemove={this.handleClickRemoveCard}
-              onClick={this.handleClickShowCard}
-            />
-          )}
+          }
         </div>
         <div className="deckActions">
           {!this.state.isSelected && 

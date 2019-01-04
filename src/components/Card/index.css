@@ -24,7 +24,6 @@
   perspective: 800px;
 
   /*border: 1px solid #ff0000;*/
-  padding-left: 1%;
 }
 
 .card {
@@ -106,4 +105,23 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.big {
+  padding: 30px 40px;
+}
+
+.big .card {
+  height: 400px;
+}
+
+.big .cardNumber {
+  font-size: 125px;
+  line-height: 375px;
+}
+
+.big .card .front, .big .card .back {
+  height: calc(100% - 30px);
+  width: calc(100% - 30px);
+  border: 15px solid #FFF
 }

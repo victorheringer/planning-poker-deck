@@ -1,7 +1,7 @@
 # Planning Poker Deck
 > Simple pwa for planning poker thats allow you to create your own deck or use one of defaults including: standard, fibonacci, t-shirt and risky.
 
-[![](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=Play+Now)](https://planning-poker.victorheringer.com.br/)
+[![](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=play+now)](https://planning-poker.victorheringer.com.br/)
 [![](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/VictorHeringer/planning-poker-deck/blob/master/LICENSE)
 [![Issues](https://img.shields.io/github/issues/VictorHeringer/planning-poker-deck.svg)](https://github.com/VictorHeringer/planning-poker-deck/issues)
 [![LastComit](https://img.shields.io/github/last-commit/google/skia.svg)](https://github.com/VictorHeringer/planning-poker-deck)

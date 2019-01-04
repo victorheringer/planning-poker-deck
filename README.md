@@ -13,7 +13,6 @@ cd planning-poker-deck
 npm install
 ```
 
-- **[MIT license]
 ## Release History
 * 0.0.1
   * Work in progress

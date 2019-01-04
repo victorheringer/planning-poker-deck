@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './patterns.css';
 
@@ -16,5 +17,17 @@ const BackFace = ({ value, icon, pattern }) => {
     </div>
   );
 }
+
+BackFace.propTypes = {
+  value: PropTypes.string,
+  icon: PropTypes.bool,
+  pattern: PropTypes.string
+};
+
+BackFace.defaultProps = {
+  value: "",
+  icon: false,
+  pattern: "tech-pattern"
+};
 
 export default BackFace;

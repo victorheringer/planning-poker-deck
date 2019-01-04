@@ -24,4 +24,4 @@ npm install
 - Copyright 2019 © Victor Heringer
 
 ---
-Planning poker deck is develop with :heart: by [@victorheringer_](https://twitter.com/VictorHeringer_)
+Planning poker deck is develop with :hearts: by [@victorheringer_](https://twitter.com/VictorHeringer_)

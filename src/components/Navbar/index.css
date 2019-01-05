@@ -77,6 +77,8 @@
   -moz-transition:height 200ms ease-in;
   -o-transition:height 200ms ease-in;
   transition:height 200ms ease-in;
+  max-width: 575.98px;
+  margin: 0 auto;
 }
 
 .nav li ul .navContainer {

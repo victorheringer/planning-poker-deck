@@ -32,19 +32,6 @@ class Navbar extends Component {
 
   render( ) {
 
-    const links = [
-      {
-        name: "Como Jogar",
-        url: "https://github.com/VictorHeringer/planning-poker-deck",
-        icon: githubIcon
-      },
-      {
-        name: "Github",
-        url: "https://github.com/VictorHeringer/planning-poker-deck",
-        icon: githubIcon
-      }
-    ];
-    const d = <img className="navIcon" src={deckIcon} alt="menu" />;
     return (
       <React.Fragment>
         <div className="navbar">
@@ -63,38 +50,36 @@ class Navbar extends Component {
                       <FontAwesomeIcon icon={"ellipsis-v"} size="lg" />
                     </a>
                     <ul>
-                      <div className="navContainer">
-                        <li onClick={this.handleClick}>
-                          <Link to="/">
-                            <img
-                              className="icon"
-                              src={deckIcon}
-                              alt="icon"
-                            />
-                            Jogar
-                          </Link>
-                        </li>
-                        <li onClick={this.handleClick}>
-                          <Link to="/rules">
-                            <FontAwesomeIcon icon={"info-circle"} size="lg" />
-                            &nbsp; Como Jogar
-                          </Link>
-                        </li>
-                        <li>
-                          <a 
-                            href="https://github.com/VictorHeringer/planning-poker-deck" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                          >
-                            <img 
-                              className="icon" 
-                              src={githubIcon} 
-                              alt="icon" 
-                            />
-                            Github
-                          </a>
-                        </li>
-                      </div>
+                      <li onClick={this.handleClick}>
+                        <Link to="/">
+                          <img
+                            className="icon"
+                            src={deckIcon}
+                            alt="icon"
+                          />
+                          Jogar
+                        </Link>
+                      </li>
+                      <li onClick={this.handleClick}>
+                        <Link to="/rules">
+                          <FontAwesomeIcon icon={"info-circle"} size="lg" />
+                          &nbsp; Como Jogar
+                        </Link>
+                      </li>
+                      <li>
+                        <a 
+                          href="https://github.com/VictorHeringer/planning-poker-deck" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <img 
+                            className="icon" 
+                            src={githubIcon} 
+                            alt="icon" 
+                          />
+                          Github
+                        </a>
+                      </li>
                     </ul>
                   </li>
                 </ul>

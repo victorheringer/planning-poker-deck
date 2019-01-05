@@ -38,7 +38,7 @@
 }
 .nav a {
   display:block;
-  padding: 0px 10px;
+  padding: 0px 20px;
   line-height:1.2em;
   text-decoration: none;
   color: #000;
@@ -73,7 +73,6 @@
 .nav li ul li {
   overflow:hidden;
   height:0;
-  padding-left: 10px;
   -webkit-transition:height 200ms ease-in;
   -moz-transition:height 200ms ease-in;
   -o-transition:height 200ms ease-in;
@@ -91,12 +90,6 @@
 
 .nav.active ul > li > ul li {
   height: 45px;
-}
-
-.navIcon {
-  height: 20px;
-  display: block;
-  margin: 0 auto;
 }
 
 .nav .icon {

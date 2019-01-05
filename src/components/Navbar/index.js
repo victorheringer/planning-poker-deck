@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import navIcon from './../../assets/img/menu.svg';
 import githubIcon from './../../assets/img/github.svg';
 import deckIcon from './../../assets/img/deck.svg';
 import './index.css';
@@ -61,7 +60,7 @@ class Navbar extends Component {
                 <ul>
                   <li>
                     <a className="center" onClick={this.handleClick}>
-                      <img className="navIcon" src={navIcon} alt="menu" />
+                      <FontAwesomeIcon icon={"ellipsis-v"} size="lg" />
                     </a>
                     <ul>
                       <div className="navContainer">
@@ -77,7 +76,7 @@ class Navbar extends Component {
                         </li>
                         <li onClick={this.handleClick}>
                           <Link to="/rules">
-                            <FontAwesomeIcon icon={"info-circle"} />
+                            <FontAwesomeIcon icon={"info-circle"} size="lg" />
                             &nbsp; Como Jogar
                           </Link>
                         </li>

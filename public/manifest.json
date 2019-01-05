@@ -4,11 +4,16 @@
   "icons": [
     {
       "src": "icon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "192x192 64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://planning-poker.victorheringer.com.br",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

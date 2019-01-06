@@ -6,6 +6,8 @@
 [![Issues](https://img.shields.io/github/issues/VictorHeringer/planning-poker-deck.svg)](https://github.com/VictorHeringer/planning-poker-deck/issues)
 [![LastComit](https://img.shields.io/github/last-commit/google/skia.svg)](https://github.com/VictorHeringer/planning-poker-deck)
 
+![Example](example.gif)
+
 ## Setup
 This app uses create-react-app so all commands from it, is available here as well.
 ```

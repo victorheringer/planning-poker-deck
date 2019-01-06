@@ -3,9 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Database from './services/Database';
+import { decks } from './consts/decks.js';
+
+const DBKey = 'deck';
+
+if (!Database.find(DBKey) ) {
+  Database.put(DBKey, decks, true);
+}
 
 ReactDOM.render(
-  <App/>, 
+  <App />, 
   document.getElementById('root')
 );
 

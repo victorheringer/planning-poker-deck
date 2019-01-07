@@ -20,9 +20,11 @@ class Play extends Component {
 
   render() {
 
+    const deck = this.state.decks[0];
+
     return(
       <div className='app'>
-        <Deck cards={this.state.decks[0].cards} />
+        <Deck initialDeck={deck} cards={deck.cards} />
       </div>
     );
   }

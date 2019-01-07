@@ -19,10 +19,6 @@ class Database {
     localStorage.removeItem(key);
   }
 
-  static filterByKeys(keys) {
-
-  }
-
   static isJson(value) {
     if (typeof value === 'object') return true;
     try {
@@ -31,6 +27,10 @@ class Database {
       return false;
     }
     return true;
+  }
+
+  static generateId() {
+    return + new Date();
   }
 }
 

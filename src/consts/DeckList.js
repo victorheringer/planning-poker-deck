@@ -1,5 +1,8 @@
+import DeckCollection from './../services/Collection';
+
 export const decks = [
   { 
+    "id": DeckCollection.generateId(),
     "name": "fibonacci",
     "favorite": true,
     "pattern": "tech-pattern",
@@ -67,6 +70,7 @@ export const decks = [
     ]
   },
   {
+    "id": DeckCollection.generateId(),
     "name": "standard",
     "favorite": false,
     "pattern": "tech-pattern",
@@ -130,6 +134,7 @@ export const decks = [
     ]
   },
   {
+    "id": DeckCollection.generateId(),
     "name": "t-shirt",
     "favorite": false,
     "pattern": "tech-pattern",

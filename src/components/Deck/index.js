@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import DeckCollection from './../../services/DeckCollection';
+import update from 'immutability-helper';
 import Card from './../Card';
 import './index.css';
 
@@ -10,12 +12,13 @@ import './index.css';
  * 
  * @props String numbers
  */
-class CardsDeck extends Component {
+class Deck extends Component {
 
   constructor(props) {
     super(props);
     this.state = { 
-      cards: [], 
+      cards: [],
+      deck: {},
       editing: false, 
       isSelected: false,
       cardSelected: null
@@ -24,6 +27,7 @@ class CardsDeck extends Component {
 
   componentDidMount() {
     this.setState({ cards: this.props.cards });
+    this.setState({ deck: this.props.initialDeck });
   }
 
   handleClickEdit = event => {
@@ -32,7 +36,9 @@ class CardsDeck extends Component {
 
   handleClickRemoveCard = (event, card) => {
     const cards = this.state.cards.filter(cards => cards.value !== card);
-    this.setState({cards: cards});
+    this.setState(update(this.state, {
+      cards: { $set: cards }, deck: { cards: { $set: cards } } 
+    }), () => DeckCollection.deleteCard(this.state.deck));
   }
 
   handleClickShowCard = (event, card) => {
@@ -53,7 +59,7 @@ class CardsDeck extends Component {
 
   render() {
 
-    const { editing, cards } = this.state;
+    const { editing, cards, deck } = this.state;
 
     return (
       <React.Fragment>
@@ -107,4 +113,4 @@ class CardsDeck extends Component {
   }
 }
 
-export default CardsDeck;
+export default Deck;

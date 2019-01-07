@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import Deck from './../../components/Deck';
-import CardFactory from './../../factories/CardFactory';
-import Database from './../../services/Database';
+import DeckCollection from '../../services/DeckCollection';
 
 /**
  * @author Victor Heringer
  * 
- * Container for home
+ * Container for play
  */
-class Home extends Component {
+class Play extends Component {
 
   constructor(props) {
     super(props);
@@ -16,7 +15,7 @@ class Home extends Component {
   }
 
   componentWillMount( ) {
-    this.setState({ decks: Database.find('deck', true) });
+    this.setState({ decks: DeckCollection.all() });
   }
 
   render() {
@@ -29,4 +28,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Play;

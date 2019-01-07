@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Database from './services/Database';
+import DeckCollection from './services/DeckCollection';
 import { decks } from './consts/decks.js';
 
-const DBKey = 'deck';
-
-if (!Database.find(DBKey) ) {
-  Database.put(DBKey, decks, true);
+if (!DeckCollection.all() ) {
+  DeckCollection.put(decks);
 }
 
 ReactDOM.render(

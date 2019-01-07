@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 
 import Navbar from './components/Navbar';
-import Home from './containers/Home';
+import Play from './containers/Play';
 import Rules from './containers/Rules';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -28,7 +28,7 @@ class App extends Component {
         <Router>
           <div>
             <Navbar />
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={Play} />
             <Route path="/rules" exact component={Rules} />
           </div>
         </Router>

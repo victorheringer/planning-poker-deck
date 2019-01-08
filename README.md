@@ -10,13 +10,13 @@
 
 ## Why Planning Poker Deck
 
-- :mobile_phone_off: Offline first.
+- :mobile_phone_off: Offline first. You don't need to rely on your mobile connection to estimate things!
 
-- :floppy_disk: Small footprint.
+- :floppy_disk: Small footprint. Less than 150kb gzipped!
 
-- :memo: Create your own custom deck.
+- :memo: Create your own custom deck. Or use any of the given default decks that covers most common decks.
 
-- :octocat: Open Source. You know everything that is installed on your phone.
+- :octocat: Open Source. You know everything that is installed on your phone and always can send a pull resquest to fix or add a feature.
 
 ## Setup
 This app uses create-react-app so all commands from it, is available here as well.

@@ -1,8 +1,8 @@
-import DeckCollection from './../services/Collection';
+import Collection from './Collection';
 
 export const decks = [
   { 
-    "id": DeckCollection.generateId(),
+    "id": Collection.generateId(),
     "name": "fibonacci",
     "description": "Fibonacci",
     "favorite": true,
@@ -71,7 +71,7 @@ export const decks = [
     ]
   },
   {
-    "id": DeckCollection.generateId(),
+    "id": Collection.generateId(),
     "name": "standard",
     "description": "Standard",
     "favorite": false,
@@ -136,7 +136,7 @@ export const decks = [
     ]
   },
   {
-    "id": DeckCollection.generateId(),
+    "id": Collection.generateId(),
     "name": "t-shirt",
     "description": "T-Shirt",
     "favorite": false,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import DeckCollection from './../../services/DeckCollection';
+import DeckCollection from './../../helpers/DeckCollection';
 import update from 'immutability-helper';
 import Card from './../Card';
 import './index.css';

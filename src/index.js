@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import DeckCollection from './services/DeckCollection';
-import { decks } from './consts/DeckList.js';
+import DeckCollection from './helpers/DeckCollection';
+import { decks } from './helpers/DeckList.js';
 
 if (!DeckCollection.all() ) {
   DeckCollection.put(decks);

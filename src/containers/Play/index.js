@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Deck from './../../components/Deck';
-import DeckCollection from '../../services/DeckCollection';
+import DeckCollection from './../../helpers/DeckCollection';
 
 /**
  * @author Victor Heringer

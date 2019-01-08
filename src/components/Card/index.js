@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CardFactory from './../../factories/CardFactory';
+import CardFactory from './../../helpers/CardFactory';
 import FrontFace from './FrontFace';
 import BackFace from './BackFace';
 import './index.css';

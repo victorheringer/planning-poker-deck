@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Play from './containers/Play';
 import Rules from './containers/Rules';
+import Decks from './containers/Decks';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -30,6 +31,7 @@ class App extends Component {
             <Navbar />
             <Route path="/" exact component={Play} />
             <Route path="/rules" exact component={Rules} />
+            <Route path="/decks" exact component={Decks} />
           </div>
         </Router>
       </React.Fragment>

@@ -4,6 +4,7 @@ export const decks = [
   { 
     "id": DeckCollection.generateId(),
     "name": "fibonacci",
+    "description": "Fibonacci",
     "favorite": true,
     "pattern": "tech-pattern",
     "cards": [
@@ -72,6 +73,7 @@ export const decks = [
   {
     "id": DeckCollection.generateId(),
     "name": "standard",
+    "description": "Standard",
     "favorite": false,
     "pattern": "tech-pattern",
     "cards": [
@@ -136,6 +138,7 @@ export const decks = [
   {
     "id": DeckCollection.generateId(),
     "name": "t-shirt",
+    "description": "T-Shirt",
     "favorite": false,
     "pattern": "tech-pattern",
     "cards": [

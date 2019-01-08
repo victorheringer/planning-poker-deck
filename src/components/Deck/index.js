@@ -25,22 +25,50 @@ class Deck extends Component {
     };
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Lifecycle method to set some initial states
+   */
   componentDidMount() {
     this.setState({ cards: this.props.cards });
     this.setState({ deck: this.props.initialDeck });
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Toggle the deck edition
+   * 
+   * @param {Object} event
+   */
   handleClickEdit = event => {
     this.setState({editing: !this.state.editing});
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Removes a card from current deck and updates at localstorages
+   * 
+   * @param {Object} event
+   * @param {Object} card
+   */
   handleClickRemoveCard = (event, card) => {
     const cards = this.state.cards.filter(cards => cards.value !== card);
     this.setState(update(this.state, {
       cards: { $set: cards }, deck: { cards: { $set: cards } } 
-    }), () => DeckCollection.deleteCard(this.state.deck));
+    }), () => DeckCollection.update(this.state.deck));
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Removes a card from current deck and updates at localstorages
+   * 
+   * @param {Object} event
+   * @param {Object} card
+   */
   handleClickShowCard = (event, card) => {
     if(!this.state.editing){
       this.setState({ 
@@ -50,7 +78,15 @@ class Deck extends Component {
     }
   }
 
-  handleClickDiselectCard = event => {
+  /**
+   * @author Victor Heringer
+   * 
+   * Goes back to the cards list after deselect current selected card
+   * 
+   * @param {Object} event
+   * @param {Object} card
+   */
+  handleClickDeselectCard = event => {
     this.setState({
       isSelected: false,
       cardSelected: null
@@ -102,7 +138,7 @@ class Deck extends Component {
             </button>
           }
           {this.state.isSelected &&
-            <button onClick={this.handleClickDiselectCard}>
+            <button onClick={this.handleClickDeselectCard}>
               <FontAwesomeIcon icon="long-arrow-alt-left" /> &nbsp;
               Voltar
             </button>

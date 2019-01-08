@@ -14,6 +14,11 @@ class Play extends Component {
     this.state = { decks: [] };
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Lifecycle method to set some initial states
+   */
   componentWillMount( ) {
     this.setState({ decks: DeckCollection.all() });
   }

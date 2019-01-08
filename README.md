@@ -20,6 +20,13 @@ cd planning-poker-deck
 npm install
 ```
 
+## Why Planning Poker Deck
+
+* :mobile_phone_off: Offline first.
+* :floppy_disk: Small footprint.
+* :memo: Create your own custom deck.
+* :octocat: Open Source. You know everything that is installed on your phone.
+
 ## Release History
 * 0.0.1
   * Work in progress

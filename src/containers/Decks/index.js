@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import DeckCollection from '../../services/DeckCollection';
 
+/**
+ * @author Victor Heringer
+ * 
+ * Container component to manage decks
+ */
 class Decks extends Component {
 
   constructor(props) {

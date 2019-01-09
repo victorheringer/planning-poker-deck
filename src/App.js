@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Play from './containers/Play';
 import Rules from './containers/Rules';
 import Decks from './containers/Decks';
+import DeckCollection from './helpers/DeckCollection';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -13,7 +14,8 @@ import {
   faMugHot,
   faLongArrowAltLeft,
   faInfoCircle,
-  faEllipsisV
+  faEllipsisV,
+  faListUl
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEdit);
@@ -21,17 +23,62 @@ library.add(faMugHot);
 library.add(faLongArrowAltLeft);
 library.add(faInfoCircle);
 library.add(faEllipsisV);
+library.add(faListUl);
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { decks: [], current: {} };
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Lifecycle method to set some initial states
+   */
+  componentWillMount() {
+    const decks = DeckCollection.all();
+    this.setState({ decks: decks, current: decks[0] });
+  }
+
+  pushDeck(deck) {
+    this.changeState( )
+  }
+
+  putDeck(deck) {
+
+  }
+
+  deleteDeck(deck) {
+    
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Renders the play container
+   */
+  renderPlay = () => <Play {...this.state} {...this.props} />;
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Renders the decks container
+   */
+  renderDecks = () => <Decks {...this.state} {...this.props} />;
+
   render() {
     return (
       <React.Fragment>
         <Router>
           <div>
             <Navbar />
-            <Route path="/" exact component={Play} />
-            <Route path="/rules" exact component={Rules} />
-            <Route path="/decks" exact component={Decks} />
+            <div className='app'>
+              <Route path="/" exact render={this.renderPlay} />
+              <Route path="/rules" exact component={Rules} />
+              <Route path="/decks" exact render={this.renderDecks} />
+            </div>
           </div>
         </Router>
       </React.Fragment>

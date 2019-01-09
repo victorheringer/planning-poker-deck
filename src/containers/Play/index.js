@@ -1,38 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Deck from './../../components/Deck';
-import DeckCollection from './../../helpers/DeckCollection';
 
 /**
  * @author Victor Heringer
  * 
  * Container for play
  */
-class Play extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { decks: [] };
-  }
-
-  /**
-   * @author Victor Heringer
-   * 
-   * Lifecycle method to set some initial states
-   */
-  componentWillMount( ) {
-    this.setState({ decks: DeckCollection.all() });
-  }
-
-  render() {
-
-    const deck = this.state.decks[0];
-
-    return(
-      <div className='app'>
-        <Deck initialDeck={deck} cards={deck.cards} />
-      </div>
-    );
-  }
-}
+const Play = ({ current }) => (
+  <div className='app'>
+    <Deck initialDeck={current} cards={current.cards} />
+  </div>
+);
 
 export default Play;

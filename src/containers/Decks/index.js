@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import DeckCollection from './../../helpers/DeckCollection';
+import './index.css';
 
 /**
  * @author Victor Heringer
@@ -10,23 +11,21 @@ class Decks extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { decks: [] };
-  }
-
-  /**
-   * @author Victor Heringer
-   * 
-   * Lifecycle method to set some initial states
-   */
-  componentWillMount() {
-    this.setState({ decks: DeckCollection.all() });
   }
 
   render() {
     return (
-      <React.Fragment>
-        { this.state.decks.map(deck => <h2>{deck.description}</h2>)}
-      </React.Fragment>
+      <div className="decks">
+        <div className="addDeck">
+          <div>
+            <input type="text" />
+          </div>
+          <div>
+            <button>Adicionar</button>
+          </div>
+        </div>
+        { this.props.decks.map(deck => <h2>{deck.description}</h2>)}
+      </div>
     );
   }
 }

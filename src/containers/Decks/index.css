@@ -1,0 +1,27 @@
+.decks {
+
+}
+
+.addDeck {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 10px 0;
+}
+
+.addDeck input {
+  width: 100%;
+  box-sizing:border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.addDeck button {
+  padding: 11px;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  font-weight: 600;
+  font-size: 12px;
+  background-color: transparent;
+}

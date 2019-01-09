@@ -61,6 +61,12 @@ class Navbar extends Component {
                         </Link>
                       </li>
                       <li onClick={this.handleClick}>
+                        <Link to="/decks">
+                          <FontAwesomeIcon icon={"list-ul"} size="lg" />
+                          &nbsp; Decks
+                        </Link>
+                      </li>
+                      <li onClick={this.handleClick}>
                         <Link to="/rules">
                           <FontAwesomeIcon icon={"info-circle"} size="lg" />
                           &nbsp; Como Jogar

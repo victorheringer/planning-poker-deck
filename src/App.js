@@ -28,12 +28,31 @@ library.add(faEllipsisV);
 library.add(faListUl);
 library.add(faTrash);
 
+/**
+ * @author Victor Heringer
+ * 
+ * Hold all functions and a 'global state' since this is a tiny application
+ */
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { decks: [], current: {} };
-  }
+  /**
+   * App state
+   * 
+   * @param {Object}
+   */
+  state = { decks: [], current: {} };
+
+  /**
+   * Object to spread functions
+   * 
+   * @param {Object}
+   */
+  funcs = {
+    resetDecks: this.resetDecks,
+    pushDeck: this.pushDeck,
+    putDeck: this.putDeck,
+    deleteDeck: this.deleteDeck
+  };
 
   /**
    * @author Victor Heringer
@@ -45,18 +64,46 @@ class App extends Component {
     this.setState({ decks: decks, current: decks[0] });
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Add a deck to state and local storage
+   * 
+   * @param {Object} deck 
+   */
   pushDeck(deck) {
-    this.changeState( )
+
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Updates a deck at state and local storage
+   * 
+   * @param {Object} deck 
+   */
   putDeck(deck) {
 
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Removes a deck from state and local storage
+   * 
+   * @param {Object} deck 
+   */
   deleteDeck(deck) {
     
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Restore default values at state and local storage
+   * 
+   * @param {Object} deck 
+   */
   resetDecks() {
     DeckCollection.put(decks);
   }
@@ -66,7 +113,10 @@ class App extends Component {
    * 
    * Renders the play container
    */
-  renderPlay = () => <Play {...this.state} {...this.props} />;
+  renderPlay = () => <Play 
+    {...this.funcs}
+    {...this.state} 
+  />;
 
   /**
    * @author Victor Heringer
@@ -74,9 +124,8 @@ class App extends Component {
    * Renders the decks container
    */
   renderDecks = () => <Decks
-    resetDecks={this.resetDecks} 
-    {...this.state} 
-    {...this.props} 
+    {...this.funcs}
+    {...this.state}
   />;
 
   render() {

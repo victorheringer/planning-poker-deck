@@ -7,6 +7,7 @@ import Play from './containers/Play';
 import Rules from './containers/Rules';
 import Decks from './containers/Decks';
 import DeckCollection from './helpers/DeckCollection';
+import { decks } from './helpers/DeckList.js';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -15,7 +16,8 @@ import {
   faLongArrowAltLeft,
   faInfoCircle,
   faEllipsisV,
-  faListUl
+  faListUl,
+  faTrash
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEdit);
@@ -24,6 +26,7 @@ library.add(faLongArrowAltLeft);
 library.add(faInfoCircle);
 library.add(faEllipsisV);
 library.add(faListUl);
+library.add(faTrash);
 
 class App extends Component {
 
@@ -54,6 +57,10 @@ class App extends Component {
     
   }
 
+  resetDecks() {
+    DeckCollection.put(decks);
+  }
+
   /**
    * @author Victor Heringer
    * 
@@ -66,7 +73,11 @@ class App extends Component {
    * 
    * Renders the decks container
    */
-  renderDecks = () => <Decks {...this.state} {...this.props} />;
+  renderDecks = () => <Decks
+    resetDecks={this.resetDecks} 
+    {...this.state} 
+    {...this.props} 
+  />;
 
   render() {
     return (

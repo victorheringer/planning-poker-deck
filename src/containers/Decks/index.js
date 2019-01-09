@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DeckCollection from './../../helpers/DeckCollection';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './index.css';
 
 /**
@@ -21,10 +21,23 @@ class Decks extends Component {
             <input type="text" />
           </div>
           <div>
-            <button>Adicionar</button>
+            <button className="addButton">Adicionar</button>
           </div>
         </div>
-        { this.props.decks.map(deck => <h2>{deck.description}</h2>)}
+        <ul>
+          { this.props.decks.map(deck => 
+            <li>
+              {deck.description}
+              <hr/>
+            </li>
+          )}
+        </ul>
+        <div className="resetButtonWrapper">
+          <button className="resetButton" onClick={this.props.resetDecks}>
+            <FontAwesomeIcon icon="trash" /> &nbsp;
+            Resetar Decks
+          </button>
+        </div>
       </div>
     );
   }

@@ -96,23 +96,28 @@ class Deck extends Component {
   render() {
 
     const { editing, cards, deck } = this.state;
+    let time = 0.05;
 
     return (
       <React.Fragment>
         <div className='gridDeckContainer'>
           {!this.state.isSelected &&
-            cards.map(card =>
-              <Card
-                value={card.value}
-                key={card.value}
-                up={true}
-                icon={card.icon}
-                fixed={true}
-                editing={editing}
-                onClickRemove={this.handleClickRemoveCard}
-                onClick={this.handleClickShowCard}
-              />
-            )
+            cards.map(card => {
+              time = time * 1.15;
+              return(
+                <Card
+                  value={card.value}
+                  key={card.value}
+                  up={true}
+                  icon={card.icon}
+                  fixed={true}
+                  editing={editing}
+                  onClickRemove={this.handleClickRemoveCard}
+                  onClick={this.handleClickShowCard}
+                  time={time}
+                />
+              );
+            } )
           }
         </div>
         <div>

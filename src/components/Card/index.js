@@ -19,6 +19,7 @@ import './index.css';
  * @props {Function} onClickRemove
  * @props {Function} onClick
  * @props {String} className
+ * @props {String} time
  */
 const Card = ({ 
   value, 
@@ -28,7 +29,8 @@ const Card = ({
   className, 
   fixed,
   onClick,
-  onClickRemove
+  onClickRemove,
+  time
 }) => {
 
   /**
@@ -66,11 +68,18 @@ const Card = ({
    */
   const flipped = up ? ' flipped' : '';
 
+  const closeBtnClass = editing ? 'visible' : 'hidden'; 
+
+  console.log( closeBtnClass );
   return (
     <div className={"cardWrapper " + className} >
       <div className="cardContainer">
         <div className="close">
-          {editing && <button onClick={handleClickRemove}>X</button>}
+          <button 
+            className={closeBtnClass} 
+            onClick={handleClickRemove}
+            style={ { transitionDuration: `${time}s` } }
+          >X</button>
         </div>
         <div className={"card" + flipped} onClick={handleClick}>
           <FrontFace />

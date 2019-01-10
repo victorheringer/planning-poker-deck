@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { decks } from './helpers/DeckList.js';
+import update from 'immutability-helper';
 import './App.css';
 
 import Navbar from './components/Navbar';
@@ -41,7 +41,13 @@ class App extends Component {
    * 
    * @param {Object}
    */
-  state = { decks: [], current: {} };
+  state = { 
+    decks: [], 
+    current: {}, 
+    showModal: false, 
+    messageModal: '', 
+    titleModal: '' 
+  };
 
   /**
    * Object to spread functions
@@ -95,7 +101,7 @@ class App extends Component {
    * @param {Object} deck 
    */
   deleteDeck(deck) {
-    
+  
   }
 
   /**
@@ -105,8 +111,18 @@ class App extends Component {
    * 
    * @param {Object} deck 
    */
-  resetDecks() {
-    DeckCollection.put(decks);
+  resetDecks = () => {
+    //DeckCollection.put(decks);
+    const toUpdate = { 
+      showModal: { $set: !this.state.showModal },
+      titleModal: { $set: "Resetar decks" } ,
+      messageModal: { $set: "Esta ação não poderá ser desfeita." }
+    };
+    this.setState(update(this.state, toUpdate));
+  }
+
+  cancelModal = () => {
+    this.setState(update(this.state, { showModal: { $set: false } }));
   }
 
   /**
@@ -125,7 +141,7 @@ class App extends Component {
    * Renders the decks container
    */
   renderDecks = () => <Decks
-    {...this.funcs}
+    resetDecks={this.resetDecks}
     {...this.state}
   />;
 
@@ -139,7 +155,13 @@ class App extends Component {
               <Route path="/" exact render={this.renderPlay} />
               <Route path="/rules" exact component={Rules} />
               <Route path="/decks" exact render={this.renderDecks} />
-              <ConfirmBox />
+              <ConfirmBox
+                title={this.state.titleModal}
+                message={this.state.messageModal} 
+                show={this.state.showModal} 
+                onCancel={this.cancelModal}
+                onConfirm={this.cancelModal}
+              />
             </div>
           </div>
         </Router>

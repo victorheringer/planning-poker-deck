@@ -1,9 +1,12 @@
 import React from 'react';
 import './index.css';
 
-const ConfirmBox = ({ onConfirm, onCancel, title, message}) => {
+const ConfirmBox = ({show, onConfirm, onCancel, title, message}) => {
+
+  const visibility = show ? 'visible' : 'hidden';
+
   return( 
-    <div className="confirmBox">
+    <div className={"confirmBox " + visibility}>
       <div className="box">
         <div className="text">
           <h3 className="title">{title}</h3>

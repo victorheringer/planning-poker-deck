@@ -26,7 +26,7 @@ class Decks extends Component {
         </div>
         <ul>
           { this.props.decks.map(deck => 
-            <li>
+            <li key={deck.description}>
               {deck.description}
               <hr/>
             </li>

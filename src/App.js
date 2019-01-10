@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { decks } from './helpers/DeckList.js';
 import './App.css';
 
 import Navbar from './components/Navbar';
@@ -7,7 +8,7 @@ import Play from './containers/Play';
 import Rules from './containers/Rules';
 import Decks from './containers/Decks';
 import DeckCollection from './helpers/DeckCollection';
-import { decks } from './helpers/DeckList.js';
+import ConfirmBox from './components/ConfirmBox';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -138,6 +139,7 @@ class App extends Component {
               <Route path="/" exact render={this.renderPlay} />
               <Route path="/rules" exact component={Rules} />
               <Route path="/decks" exact render={this.renderDecks} />
+              <ConfirmBox />
             </div>
           </div>
         </Router>

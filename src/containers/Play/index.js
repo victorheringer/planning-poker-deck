@@ -7,7 +7,7 @@ import Deck from './../../components/Deck';
  * Container for play
  */
 const Play = ({ current }) => (
-  <div className='app'>
+  <div>
     <Deck initialDeck={current} cards={current.cards} />
   </div>
 );

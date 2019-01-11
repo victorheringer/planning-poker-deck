@@ -9,6 +9,7 @@ import Rules from './containers/Rules';
 import Decks from './containers/Decks';
 import DeckCollection from './helpers/DeckCollection';
 import ConfirmBox from './components/ConfirmBox';
+import { decks } from './helpers/DeckList';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -45,7 +46,8 @@ class App extends Component {
     decks: [], 
     current: {}, 
     showModal: false, 
-    messageModal: '', 
+    messageModal: '',
+    confirmModal: () => {}, 
     titleModal: '' 
   };
 
@@ -55,7 +57,6 @@ class App extends Component {
    * @param {Object}
    */
   funcs = {
-    resetDecks: this.resetDecks,
     pushDeck: this.pushDeck,
     putDeck: this.putDeck,
     deleteDeck: this.deleteDeck
@@ -104,6 +105,16 @@ class App extends Component {
   
   }
 
+  handleConfirmBoxResetDeck = () => {
+    const toUpdate = {
+      showModal: { $set: !this.state.showModal },
+      titleModal: { $set: "Resetar decks" },
+      messageModal: { $set: "Esta ação não poderá ser desfeita." },
+      confirmModal: { $set: this.resetDecks }
+    };
+    this.setState(update(this.state, toUpdate));
+  }
+
   /**
    * @author Victor Heringer
    * 
@@ -112,13 +123,12 @@ class App extends Component {
    * @param {Object} deck 
    */
   resetDecks = () => {
-    //DeckCollection.put(decks);
-    const toUpdate = { 
-      showModal: { $set: !this.state.showModal },
-      titleModal: { $set: "Resetar decks" } ,
-      messageModal: { $set: "Esta ação não poderá ser desfeita." }
-    };
-    this.setState(update(this.state, toUpdate));
+    console.log( 'reset' );
+    DeckCollection.put(decks);
+    this.setState(update(this.state, { 
+      decks: { $set: decks },
+      showModal: { $set: !this.state.showModal }
+    }));
   }
 
   cancelModal = () => {
@@ -141,7 +151,7 @@ class App extends Component {
    * Renders the decks container
    */
   renderDecks = () => <Decks
-    resetDecks={this.resetDecks}
+    handleConfirmBoxResetDeck={this.handleConfirmBoxResetDeck}
     {...this.state}
   />;
 
@@ -160,7 +170,7 @@ class App extends Component {
                 message={this.state.messageModal} 
                 show={this.state.showModal} 
                 onCancel={this.cancelModal}
-                onConfirm={this.cancelModal}
+                onConfirm={this.state.confirmModal}
               />
             </div>
           </div>

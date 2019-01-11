@@ -33,7 +33,7 @@ class Decks extends Component {
           )}
         </ul>
         <div className="resetButtonWrapper">
-          <button className="resetButton" onClick={this.props.resetDecks}>
+          <button className="resetButton" onClick={this.props.handleConfirmBoxResetDeck}>
             <FontAwesomeIcon icon="trash" /> &nbsp;
             Resetar Decks
           </button>

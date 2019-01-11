@@ -26,7 +26,7 @@ class Decks extends Component {
         </div>
         <ul>
           { this.props.decks.map(deck => 
-            <li key={deck.description}>
+            <li key={deck.id}>
               {deck.description}
               {deck.favorite && <div className="current"></div>}
             </li>

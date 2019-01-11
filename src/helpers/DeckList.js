@@ -2,7 +2,7 @@ import Collection from './Collection';
 
 export const decks = [
   { 
-    "id": Collection.generateId(),
+    "id": 1547171926660,
     "name": "fibonacci",
     "description": "Fibonacci",
     "favorite": true,
@@ -71,7 +71,7 @@ export const decks = [
     ]
   },
   {
-    "id": Collection.generateId(),
+    "id": 1547171926661,
     "name": "standard",
     "description": "Standard",
     "favorite": false,
@@ -136,7 +136,7 @@ export const decks = [
     ]
   },
   {
-    "id": Collection.generateId(),
+    "id": 1547171926662,
     "name": "t-shirt",
     "description": "T-Shirt",
     "favorite": false,

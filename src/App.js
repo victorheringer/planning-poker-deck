@@ -47,19 +47,8 @@ class App extends Component {
     current: {}, 
     showModal: false, 
     messageModal: '',
-    confirmModal: () => {}, 
+    confirmModal: undefined, 
     titleModal: '' 
-  };
-
-  /**
-   * Object to spread functions
-   * 
-   * @param {Object}
-   */
-  funcs = {
-    pushDeck: this.pushDeck,
-    putDeck: this.putDeck,
-    deleteDeck: this.deleteDeck
   };
 
   /**
@@ -132,6 +121,7 @@ class App extends Component {
   }
 
   cancelModal = () => {
+    console.log( 'cancel' );
     this.setState(update(this.state, { showModal: { $set: false } }));
   }
 
@@ -141,7 +131,6 @@ class App extends Component {
    * Renders the play container
    */
   renderPlay = () => <Play 
-    {...this.funcs}
     {...this.state} 
   />;
 

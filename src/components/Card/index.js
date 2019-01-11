@@ -70,7 +70,6 @@ const Card = ({
 
   const closeBtnClass = editing ? 'visible' : 'hidden'; 
 
-  console.log( closeBtnClass );
   return (
     <div className={"cardWrapper " + className} >
       <div className="cardContainer">

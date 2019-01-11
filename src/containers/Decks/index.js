@@ -18,7 +18,7 @@ class Decks extends Component {
       <div className="decks">
         <div className="addDeck">
           <div>
-            <input type="text" />
+            <input type="text" placeholder="Deck" />
           </div>
           <div>
             <button className="addButton">Adicionar</button>
@@ -28,7 +28,7 @@ class Decks extends Component {
           { this.props.decks.map(deck => 
             <li key={deck.description}>
               {deck.description}
-              <hr/>
+              {deck.favorite && <div className="current"></div>}
             </li>
           )}
         </ul>

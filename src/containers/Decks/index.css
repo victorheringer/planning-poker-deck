@@ -2,6 +2,7 @@
 
 }
 
+
 .decks ul {
   margin-top: 20px;
   list-style: none;
@@ -9,10 +10,22 @@
 
 .decks li {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 800;
+  font-size: 14px;
   margin-bottom: 30px;
   color: #212121;
+  padding: 15px 20px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.decks li .current {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #66BB6A;
+  float: right;
+  position: relative;
+  margin-top: 5px;
 }
 
 .addDeck {
@@ -27,18 +40,23 @@
   box-sizing:border-box;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  padding: 10px;
+  padding: 10px 15px;
   font-size: 12px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .addDeck .addButton {
   padding: 10px;
   border: 1px solid #CCC;
+  border-left: 0px;
   font-family: 'Open Sans', sans-serif;
   width: 100%;
   font-weight: 600;
   font-size: 12px;
   background-color: transparent;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .resetButtonWrapper {
@@ -50,7 +68,7 @@
   font-weight: 800;
   font-size: 14px;
   text-transform: uppercase;
-  color: #EF5350;
+  color: #E57373;
   border: 0;
   background-color: transparent;
   cursor: pointer;

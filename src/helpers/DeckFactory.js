@@ -22,7 +22,7 @@ class DeckFactory {
       "id": Collection.generateId(),
       "name": name,
       "description": name,
-      "favorite": true,
+      "favorite": false,
       "pattern": "tech-pattern",
       "cards": []
     };

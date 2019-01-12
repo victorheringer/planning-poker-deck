@@ -3,7 +3,7 @@
   background-color: #FFF;
   border-bottom: 1px solid #E0E0E0;
   padding: 20px 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, sans-serif;
   
 }
 
@@ -16,7 +16,7 @@
 
 .navbar .logo {
   padding-left: 20px;
-  font-weight: 800;
+  font-weight: bold;
   letter-spacing: -1px;
 }
 

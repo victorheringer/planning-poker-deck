@@ -28,7 +28,7 @@ class Decks extends Component {
           </div>
           <div>
             <button 
-              className="addButton" 
+              className="addButton ripple" 
               onClick={event => this.props.createDeck(event, this.props.deckNameInput)}
             >
             Adicionar
@@ -40,12 +40,13 @@ class Decks extends Component {
             <li key={deck.id}>
               {deck.description}
               {deck.favorite && <div className="current"></div>}
+              {!deck.favorite && <div className="notCurrent"></div>}
             </li>
           )}
         </ul>
         <div className="resetButtonWrapper">
           <button className="resetButton" onClick={this.props.handleConfirmBoxResetDeck}>
-            <FontAwesomeIcon icon="trash" /> &nbsp;
+            <FontAwesomeIcon icon="sync-alt" /> &nbsp;
             Resetar Decks
           </button>
         </div>

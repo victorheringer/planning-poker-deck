@@ -37,7 +37,7 @@
 .confirmBox .text {
   padding: 25px;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
@@ -62,8 +62,8 @@
   border: 0;
   padding: 15px 0;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
   color: #424242;
   background-color: #FFF;
 }
@@ -75,4 +75,5 @@
 
 .confirmBox .actions .confirm {
   border-bottom-right-radius: 20px;
+  color: #1565c0;
 }

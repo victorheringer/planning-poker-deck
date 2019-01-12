@@ -9,8 +9,8 @@
 }
 
 .decks li {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
   font-size: 14px;
   margin-bottom: 30px;
   color: #212121;
@@ -28,6 +28,16 @@
   margin-top: 5px;
 }
 
+.notCurrent {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+  float: right;
+  position: relative;
+  margin-top: 5px;
+}
+
 .addDeck {
   display: grid;
   grid-template-columns: 70% 30%;
@@ -38,7 +48,7 @@
   border: 1px solid #CCC;
   width: 100%;
   box-sizing:border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: 600;
   padding: 10px 15px;
   font-size: 12px;
@@ -50,7 +60,7 @@
   padding: 10px;
   border: 1px solid #CCC;
   border-left: 0px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, sans-serif;
   width: 100%;
   font-weight: 600;
   font-size: 12px;
@@ -65,8 +75,8 @@
 }
 
 .resetButton {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
   color: #E57373;

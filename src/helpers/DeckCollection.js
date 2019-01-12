@@ -34,11 +34,12 @@ class DeckCollection {
    * 
    * Push a new deck to local storage
    * 
-   * @param {decks} decks 
+   * @param {Array} decks
+   * @param {Bool} begin If true, put the deck at start of collection
    */
-  static push(deck) {
+  static push(deck, begin ) {
     const decks = Collection.find('decks');
-    decks.push(deck);
+    begin ? decks.unshift(deck) : decks.push(deck);
     DeckCollection.put(decks);
   }
 
@@ -60,6 +61,17 @@ class DeckCollection {
     }
 
     DeckCollection.put(decks);
+  }
+  
+  static favorite() {
+    
+    let decks = Collection.find('decks');
+
+    for (let i = 0; i < decks.length; i++) {
+      if (decks[i].favorite) {
+        return decks[i];
+      }
+    }
   }
 }
 

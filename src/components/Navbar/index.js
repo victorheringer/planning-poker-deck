@@ -30,6 +30,16 @@ class Navbar extends Component {
     this.nav.current.classList.toggle("active");
   }
 
+  share = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Planning Poker Deck',
+        text: 'This planning poker app rocks!',
+        url: 'http://planning-poker.victorheringer.com.br',
+      });
+    }
+  }
+
   render( ) {
 
     return (
@@ -70,6 +80,12 @@ class Navbar extends Component {
                         <Link to="/rules">
                           <FontAwesomeIcon icon={"info-circle"} size="lg" />
                           &nbsp; Como Jogar
+                        </Link>
+                      </li>
+                      <li onClick={this.share}>
+                        <Link to="/">
+                          <FontAwesomeIcon icon={"share-alt"} size="lg" />
+                          &nbsp; Compartilhar
                         </Link>
                       </li>
                       <li>

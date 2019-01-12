@@ -25,7 +25,9 @@ import {
   faInfoCircle,
   faEllipsisV,
   faListUl,
-  faTrash
+  faTrash,
+  faSyncAlt,
+  faShareAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEdit);
@@ -35,6 +37,8 @@ library.add(faInfoCircle);
 library.add(faEllipsisV);
 library.add(faListUl);
 library.add(faTrash);
+library.add(faSyncAlt);
+library.add(faShareAlt);
 
 /**
  * @author Victor Heringer
@@ -74,7 +78,8 @@ class App extends Component {
    */
   loadDecks = () => {
     const decks = DeckCollection.all();
-    this.setState({ decks: decks, current: decks[0] });
+    const favorite = DeckCollection.favorite();
+    this.setState({ decks: decks, current: favorite });
   }
 
   /**
@@ -85,8 +90,9 @@ class App extends Component {
    * @param {Object} deck 
    */
   createDeck = (event, name) => {
+    if( !name ) return;
     const deck = DeckFactory.create(name);
-    DeckCollection.push(deck);
+    DeckCollection.push(deck, true);
     this.setState({ deckNameInput: '' });
     this.loadDecks();
   }
@@ -168,6 +174,15 @@ class App extends Component {
   />;
 
   render() {
+
+    const confirmBox = <ConfirmBox
+      title={this.state.titleModal}
+      message={this.state.messageModal}
+      show={this.state.showModal}
+      onCancel={this.cancelModal}
+      onConfirm={this.state.confirmModal}
+    />;
+
     return (
       <React.Fragment>
         <Router>
@@ -177,13 +192,7 @@ class App extends Component {
               <Route path="/" exact render={this.renderPlay} />
               <Route path="/rules" exact component={Rules} />
               <Route path="/decks" exact render={this.renderDecks} />
-              <ConfirmBox
-                title={this.state.titleModal}
-                message={this.state.messageModal} 
-                show={this.state.showModal} 
-                onCancel={this.cancelModal}
-                onConfirm={this.state.confirmModal}
-              />
+              {confirmBox}
             </div>
           </div>
         </Router>

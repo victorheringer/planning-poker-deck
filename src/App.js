@@ -3,13 +3,19 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import update from 'immutability-helper';
 import './App.css';
 
+/** Components */
 import Navbar from './components/Navbar';
+import ConfirmBox from './components/ConfirmBox';
+
+/** Containers */
 import Play from './containers/Play';
 import Rules from './containers/Rules';
 import Decks from './containers/Decks';
-import DeckCollection from './helpers/DeckCollection';
-import ConfirmBox from './components/ConfirmBox';
+
+/** Helpers */
 import { decks } from './helpers/DeckList';
+import DeckFactory from './helpers/DeckFactory';
+import DeckCollection from './helpers/DeckCollection';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -48,7 +54,8 @@ class App extends Component {
     showModal: false, 
     messageModal: '',
     confirmModal: undefined, 
-    titleModal: '' 
+    titleModal: '',
+    deckNameInput: ''
   };
 
   /**
@@ -57,6 +64,15 @@ class App extends Component {
    * Lifecycle method to set some initial states
    */
   componentWillMount() {
+    this.loadDecks();
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Loads all decks
+   */
+  loadDecks = () => {
     const decks = DeckCollection.all();
     this.setState({ decks: decks, current: decks[0] });
   }
@@ -68,8 +84,11 @@ class App extends Component {
    * 
    * @param {Object} deck 
    */
-  pushDeck(deck) {
-
+  createDeck = (event, name) => {
+    const deck = DeckFactory.create(name);
+    DeckCollection.push(deck);
+    this.setState({ deckNameInput: '' });
+    this.loadDecks();
   }
 
   /**
@@ -94,6 +113,10 @@ class App extends Component {
   
   }
 
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
   handleConfirmBoxResetDeck = () => {
     const toUpdate = {
       showModal: { $set: !this.state.showModal },
@@ -112,7 +135,6 @@ class App extends Component {
    * @param {Object} deck 
    */
   resetDecks = () => {
-    console.log( 'reset' );
     DeckCollection.put(decks);
     this.setState(update(this.state, { 
       decks: { $set: decks },
@@ -121,7 +143,6 @@ class App extends Component {
   }
 
   cancelModal = () => {
-    console.log( 'cancel' );
     this.setState(update(this.state, { showModal: { $set: false } }));
   }
 
@@ -141,6 +162,8 @@ class App extends Component {
    */
   renderDecks = () => <Decks
     handleConfirmBoxResetDeck={this.handleConfirmBoxResetDeck}
+    createDeck={this.createDeck}
+    handleChange={this.handleChange}
     {...this.state}
   />;
 

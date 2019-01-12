@@ -14,6 +14,7 @@ class Collection {
    * @param {Mix} value 
    */
   static put(key, value) {
+    console.log(value);
     const asString = Collection.isJson(value) ? JSON.stringify(value) : value;
     localStorage.setItem(key, asString);
   }

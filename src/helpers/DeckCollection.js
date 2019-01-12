@@ -32,6 +32,19 @@ class DeckCollection {
   /**
    * @author Victor Heringer
    * 
+   * Push a new deck to local storage
+   * 
+   * @param {decks} decks 
+   */
+  static push(deck) {
+    const decks = Collection.find('decks');
+    decks.push(deck);
+    DeckCollection.put(decks);
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
    * Update a single deck at local storage
    * 
    * @param {Object} deck 

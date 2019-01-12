@@ -18,10 +18,21 @@ class Decks extends Component {
       <div className="decks">
         <div className="addDeck">
           <div>
-            <input type="text" placeholder="Deck" />
+            <input 
+              type="text" 
+              placeholder="Deck"
+              value={this.props.deckNameInput} 
+              name="deckNameInput" 
+              onChange={this.props.handleChange} 
+            />
           </div>
           <div>
-            <button className="addButton">Adicionar</button>
+            <button 
+              className="addButton" 
+              onClick={event => this.props.createDeck(event, this.props.deckNameInput)}
+            >
+            Adicionar
+          </button>
           </div>
         </div>
         <ul>

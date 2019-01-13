@@ -12,7 +12,7 @@
 
 - :mobile_phone_off: Offline first. You don't need to rely on your mobile connection to estimate things!
 
-- :floppy_disk: Small footprint. Less than 150kb gzipped!
+- :floppy_disk: Small footprint. Only 150kb gzipped and 300kb unpacked!
 
 - :memo: Create your own custom deck. Or use any of the given default decks that covers most common decks.
 

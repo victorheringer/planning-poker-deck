@@ -1,5 +1,5 @@
-export const decks = [
-  { 
+[
+  {
     "id": 1547171926660,
     "name": "fibonacci",
     "description": "Fibonacci",
@@ -178,4 +178,4 @@ export const decks = [
       }
     ]
   }
-];
+]

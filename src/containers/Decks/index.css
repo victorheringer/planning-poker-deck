@@ -13,7 +13,7 @@
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 30px;
-  color: #212121;
+  color: #616161;
   padding: 15px 20px;
   border-bottom: 1px solid #EEEEEE;
 }
@@ -47,6 +47,7 @@
   background-color: transparent;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  color: #616161;
 }
 
 .resetButtonWrapper {

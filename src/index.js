@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import DeckCollection from './helpers/DeckCollection';
-import { decks } from './helpers/DeckList.js';
+import decks from './data/decks.json';
 
 if (!DeckCollection.all() ) {
   DeckCollection.put(decks);

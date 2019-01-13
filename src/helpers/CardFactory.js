@@ -14,6 +14,8 @@ class CardFactory {
    * 
    * @param {Mix} value 
    * @param {Bool} icon 
+   * 
+   * @return {Object}
    */
   static create(value, icon) { 
     return { value: value, icon: icon } 

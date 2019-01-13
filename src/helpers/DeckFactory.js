@@ -16,6 +16,8 @@ class DeckFactory {
    * 
    * @param {Mix} value 
    * @param {Bool} icon 
+   * 
+   * @return {Object}
    */
   static create(name) {
     return { 

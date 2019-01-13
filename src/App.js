@@ -9,11 +9,11 @@ import ConfirmBox from './components/ConfirmBox';
 
 /** Containers */
 import Play from './containers/Play';
-import Rules from './containers/Rules';
 import Decks from './containers/Decks';
 
 /** Helpers */
-import { decks } from './helpers/DeckList';
+import I18n from './helpers/I18n';
+import decks from './data/decks.json';
 import DeckFactory from './helpers/DeckFactory';
 import DeckCollection from './helpers/DeckCollection';
 
@@ -27,7 +27,8 @@ import {
   faListUl,
   faTrash,
   faSyncAlt,
-  faShareAlt
+  faShareAlt,
+  faAngleRight
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEdit);
@@ -39,6 +40,7 @@ library.add(faListUl);
 library.add(faTrash);
 library.add(faSyncAlt);
 library.add(faShareAlt);
+library.add(faAngleRight);
 
 /**
  * @author Victor Heringer
@@ -61,7 +63,8 @@ class App extends Component {
     confirmModal: undefined, 
     titleModal: '',
     deckNameInput: '',
-    canShare: navigator.share ? true : false
+    canShare: navigator.share ? true : false,
+    text: {}
   };
 
   /**
@@ -73,6 +76,20 @@ class App extends Component {
    */
   componentWillMount() {
     this.loadDecks();
+    this.loadText(I18n.en());
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Loads all texts based on given language
+   * 
+   * @todo Change to context api
+   * 
+   * @return {void}
+   */
+  loadText = (lang) => {
+    this.setState({ text: I18n.get(lang) });
   }
 
   /**
@@ -143,10 +160,13 @@ class App extends Component {
    * @return {void}
    */
   handleConfirmBoxResetDeck = () => {
+
+    const { text } = this.state;
+
     const toUpdate = {
       showModal: { $set: !this.state.showModal },
-      titleModal: { $set: "Resetar decks" },
-      messageModal: { $set: "Esta ação não poderá ser desfeita." },
+      titleModal: { $set: text.confirmBox.refresh.title },
+      messageModal: { $set: text.confirmBox.refresh.message },
       confirmModal: { $set: this.resetDecks }
     };
     this.setState(update(this.state, toUpdate));
@@ -214,6 +234,8 @@ class App extends Component {
 
   render() {
 
+    
+
     const confirmBox = <ConfirmBox
       title={this.state.titleModal}
       message={this.state.messageModal}
@@ -229,7 +251,6 @@ class App extends Component {
             <Navbar />
             <div className='app'>
               <Route path="/" exact render={this.renderPlay} />
-              <Route path="/rules" exact component={Rules} />
               <Route path="/decks" exact render={this.renderDecks} />
               {confirmBox}
             </div>

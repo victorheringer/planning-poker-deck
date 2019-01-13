@@ -95,7 +95,7 @@ class Deck extends Component {
 
   render() {
 
-    const { editing, cards, deck } = this.state;
+    const { editing, cards } = this.state;
     let time = 0.05;
 
     return (

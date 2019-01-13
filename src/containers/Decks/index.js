@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './index.css';
+import Radio from './../../components/Radio';
 
 /**
  * @author Victor Heringer
@@ -8,10 +9,6 @@ import './index.css';
  * Container component to manage decks
  */
 class Decks extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -39,8 +36,7 @@ class Decks extends Component {
           { this.props.decks.map(deck => 
             <li key={deck.id}>
               {deck.description}
-              {deck.favorite && <div className="current"></div>}
-              {!deck.favorite && <div className="notCurrent"></div>}
+              <Radio active={deck.favorite} id={deck.id} onClick={this.props.favorite} />
             </li>
           )}
         </ul>

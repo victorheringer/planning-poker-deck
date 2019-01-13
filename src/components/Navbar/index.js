@@ -48,17 +48,15 @@ class Navbar extends Component {
           <div className="container">
             <div className='logo'>Planning Poker Deck</div>
             <div>
-              <a className="center">
-                
-              </a>
+              
             </div>
             <div>
               <nav className="nav" ref={this.nav}>
                 <ul>
                   <li>
-                    <a className="center" onClick={this.handleClick}>
+                    <div className="center" onClick={this.handleClick}>
                       <FontAwesomeIcon icon={"ellipsis-v"} size="lg" />
-                    </a>
+                    </div>
                     <ul>
                       <li onClick={this.handleClick}>
                         <Link to="/">

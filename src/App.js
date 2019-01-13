@@ -78,7 +78,7 @@ class App extends Component {
    */
   loadDecks = () => {
     const decks = DeckCollection.all();
-    const favorite = DeckCollection.favorite();
+    const favorite = DeckCollection.getFavorite();
     this.setState({ decks: decks, current: favorite });
   }
 
@@ -94,6 +94,11 @@ class App extends Component {
     const deck = DeckFactory.create(name);
     DeckCollection.push(deck, true);
     this.setState({ deckNameInput: '' });
+    this.loadDecks();
+  }
+
+  favorite = (id) => {
+    DeckCollection.setFavorite(id);
     this.loadDecks();
   }
 
@@ -170,6 +175,7 @@ class App extends Component {
     handleConfirmBoxResetDeck={this.handleConfirmBoxResetDeck}
     createDeck={this.createDeck}
     handleChange={this.handleChange}
+    favorite={this.favorite}
     {...this.state}
   />;
 

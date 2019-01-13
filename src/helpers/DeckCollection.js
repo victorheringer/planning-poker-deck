@@ -55,7 +55,7 @@ class DeckCollection {
     let decks = Collection.find('decks');
     
     for (let i = 0; i < decks.length; i++ ) {
-      if(decks[i].id == deck.id) {
+      if(decks[i].id === deck.id) {
         decks[i] = deck;
       }
     }
@@ -63,7 +63,7 @@ class DeckCollection {
     DeckCollection.put(decks);
   }
   
-  static favorite() {
+  static getFavorite() {
     
     let decks = Collection.find('decks');
 
@@ -72,6 +72,22 @@ class DeckCollection {
         return decks[i];
       }
     }
+  }
+
+  static setFavorite(id) {
+
+    let decks = Collection.find('decks');
+    let favorite = 0;
+
+    for (let i = 0; i < decks.length; i++) {
+      decks[i].favorite = false;
+      if (decks[i].id === id) {
+        favorite = i; 
+      }
+    }
+
+    decks[favorite].favorite = true;
+    DeckCollection.put(decks);
   }
 }
 

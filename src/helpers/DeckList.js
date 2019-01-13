@@ -1,5 +1,3 @@
-import Collection from './Collection';
-
 export const decks = [
   { 
     "id": 1547171926660,

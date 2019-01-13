@@ -18,26 +18,6 @@
   border-bottom: 1px solid #EEEEEE;
 }
 
-.decks li .current {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #66BB6A;
-  float: right;
-  position: relative;
-  margin-top: 5px;
-}
-
-.notCurrent {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #E0E0E0;
-  float: right;
-  position: relative;
-  margin-top: 5px;
-}
-
 .addDeck {
   display: grid;
   grid-template-columns: 70% 30%;

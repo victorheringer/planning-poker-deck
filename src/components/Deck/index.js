@@ -139,13 +139,13 @@ class Deck extends Component {
           {!this.state.isSelected && 
             <button onClick={this.handleClickEdit}>
               <FontAwesomeIcon icon="edit" /> &nbsp;
-              Editar
+              {this.props.text.btn.edit}
             </button>
           }
           {this.state.isSelected &&
             <button onClick={this.handleClickDeselectCard}>
               <FontAwesomeIcon icon="long-arrow-alt-left" /> &nbsp;
-              Voltar
+              {this.props.text.btn.back}
             </button>
           }
         </div>

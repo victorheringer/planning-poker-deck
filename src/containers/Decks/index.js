@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './index.css';
 import Radio from './../../components/Radio';
+import DeckList from './../../components/DeckList';
+import DeckItem from './../../components/DeckList/DeckItem';
+import DeckListSubItem from './../../components/DeckList/DeckSubItem';
 
 /**
  * @author Victor Heringer
@@ -17,7 +20,7 @@ class Decks extends Component {
           <div>
             <input 
               type="text" 
-              placeholder="Deck"
+              placeholder={this.props.text.input.placeholder.deck}
               value={this.props.deckNameInput} 
               name="deckNameInput" 
               onChange={this.props.handleChange} 
@@ -28,14 +31,17 @@ class Decks extends Component {
               className="addButton ripple" 
               onClick={event => this.props.createDeck(event, this.props.deckNameInput)}
             >
-            Adicionar
+            {this.props.text.btn.add}
           </button>
           </div>
         </div>
         <ul>
           { this.props.decks.map(deck => 
             <li key={deck.id}>
-              <span onClick={ () => this.props.share( deck.id ) }>{deck.description}</span>
+              <span onClick={ () => this.props.share( deck.id ) }>  
+                <FontAwesomeIcon icon={"angle-right"}/> &nbsp;
+                {deck.description}
+              </span>
               <Radio active={deck.favorite} id={deck.id} onClick={this.props.favorite} />
             </li>
           )}
@@ -43,7 +49,7 @@ class Decks extends Component {
         <div className="resetButtonWrapper">
           <button className="resetButton" onClick={this.props.handleConfirmBoxResetDeck}>
             <FontAwesomeIcon icon="sync-alt" /> &nbsp;
-            Resetar Decks
+            {this.props.text.btn.refresh}
           </button>
         </div>
       </div>

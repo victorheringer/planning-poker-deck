@@ -74,12 +74,6 @@ class Navbar extends Component {
                           &nbsp; Decks
                         </Link>
                       </li>
-                      <li onClick={this.handleClick}>
-                        <Link to="/rules">
-                          <FontAwesomeIcon icon={"info-circle"} size="lg" />
-                          &nbsp; Como Jogar
-                        </Link>
-                      </li>
                       <li onClick={this.share}>
                         <Link to="/">
                           <FontAwesomeIcon icon={"share-alt"} size="lg" />

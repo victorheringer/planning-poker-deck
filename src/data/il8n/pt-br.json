@@ -1,0 +1,29 @@
+{
+  "btn": {
+    "refresh": "Resetar Decks",
+    "add": "Adicionar",
+    "edit": "Editar",
+    "back": "Voltar"
+  },
+  "nav": {
+    "play": "Jogar",
+    "deck": "Decks",
+    "share": "Compartilhar",
+    "github": "Github"
+  },
+  "input": {
+    "placeholder": {
+      "deck": "Deck"
+    }
+  },
+  "confirmBox": {
+    "refresh": {
+      "title": "Resetar decks",
+      "message": "Esta ação não poderá ser desfeita."
+    },
+    "bnt": {
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    }
+  }
+}

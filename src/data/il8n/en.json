@@ -1,0 +1,29 @@
+{
+  "btn": {
+    "refresh": "Reset Decks",
+    "add": "Add",
+    "edit": "Edit",
+    "back": "back"
+  },
+  "nav": {
+    "play": "Play",
+    "deck": "Decks",
+    "share": "Share",
+    "github": "Github"
+  },
+  "input": {
+    "placeholder": {
+      "deck": "Deck"
+    }
+  },
+  "confirmBox": {
+    "refresh": {
+      "title": "Reset decks",
+      "message": "This action can't be undone."
+    },
+    "bnt": {
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    }
+  }
+}

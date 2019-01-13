@@ -6,9 +6,9 @@ import Deck from './../../components/Deck';
  * 
  * Container for play
  */
-const Play = ({ current }) => (
+const Play = ({ current, text }) => (
   <div>
-    <Deck initialDeck={current} cards={current.cards} />
+    <Deck text={text} initialDeck={current} cards={current.cards} />
   </div>
 );
 

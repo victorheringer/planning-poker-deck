@@ -37,7 +37,7 @@ class DeckCollection {
    * @param {Array} decks
    * @param {Bool} begin If true, put the deck at start of collection
    */
-  static push(deck, begin ) {
+  static push(deck, begin) {
     const decks = Collection.find('decks');
     begin ? decks.unshift(deck) : decks.push(deck);
     DeckCollection.put(decks);
@@ -61,6 +61,17 @@ class DeckCollection {
     }
 
     DeckCollection.put(decks);
+  }
+
+  static find(id) {
+    
+    let decks = Collection.find('decks');
+
+    for (let i = 0; i < decks.length; i++) {
+      if (decks[i].id === id) {
+        return decks[i];
+      }
+    }
   }
   
   static getFavorite() {

@@ -35,7 +35,7 @@ class Decks extends Component {
         <ul>
           { this.props.decks.map(deck => 
             <li key={deck.id}>
-              {deck.description}
+              <span onClick={ () => this.props.share( deck.id ) }>{deck.description}</span>
               <Radio active={deck.favorite} id={deck.id} onClick={this.props.favorite} />
             </li>
           )}

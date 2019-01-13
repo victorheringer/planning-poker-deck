@@ -43,7 +43,8 @@ library.add(faShareAlt);
 /**
  * @author Victor Heringer
  * 
- * Hold all functions and a 'global state' since this is a tiny application
+ * Hold all functions and a 'global state'. Since this is a tiny application,
+ * there is no need to use redux or complicate too much to handle states.
  */
 class App extends Component {
 
@@ -59,13 +60,16 @@ class App extends Component {
     messageModal: '',
     confirmModal: undefined, 
     titleModal: '',
-    deckNameInput: ''
+    deckNameInput: '',
+    canShare: navigator.share ? true : false
   };
 
   /**
    * @author Victor Heringer
    * 
    * Lifecycle method to set some initial states
+   * 
+   * @return {void}
    */
   componentWillMount() {
     this.loadDecks();
@@ -75,6 +79,8 @@ class App extends Component {
    * @author Victor Heringer
    * 
    * Loads all decks
+   * 
+   * @return {void}
    */
   loadDecks = () => {
     const decks = DeckCollection.all();
@@ -88,15 +94,29 @@ class App extends Component {
    * Add a deck to state and local storage
    * 
    * @param {Object} deck 
+   * 
+   * @return {void}
    */
   createDeck = (event, name) => {
-    if( !name ) return;
-    const deck = DeckFactory.create(name);
-    DeckCollection.push(deck, true);
-    this.setState({ deckNameInput: '' });
-    this.loadDecks();
+    event.preventDefault();
+
+    if( name ) {
+      const deck = DeckFactory.create(name);
+      DeckCollection.push(deck, true);
+      this.setState({ deckNameInput: '' });
+      this.loadDecks();
+    }
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Turns a deck to favorite. The favorite deck will be used to play.
+   * 
+   * @param {Number} id
+   * 
+   * @return {void}
+   */
   favorite = (id) => {
     DeckCollection.setFavorite(id);
     this.loadDecks();
@@ -105,29 +125,23 @@ class App extends Component {
   /**
    * @author Victor Heringer
    * 
-   * Updates a deck at state and local storage
+   * Handles form input change
    * 
-   * @param {Object} deck 
+   * @param {Object} event 
+   * 
+   * @return {void}
    */
-  putDeck(deck) {
-
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   /**
    * @author Victor Heringer
    * 
-   * Removes a deck from state and local storage
+   * Set the values to confirm box related to reset deck action
    * 
-   * @param {Object} deck 
+   * @return {void}
    */
-  deleteDeck(deck) {
-  
-  }
-
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
   handleConfirmBoxResetDeck = () => {
     const toUpdate = {
       showModal: { $set: !this.state.showModal },
@@ -143,7 +157,7 @@ class App extends Component {
    * 
    * Restore default values at state and local storage
    * 
-   * @param {Object} deck 
+   * @return {void}
    */
   resetDecks = () => {
     DeckCollection.put(decks);
@@ -153,6 +167,26 @@ class App extends Component {
     }));
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Share a deck through other apps
+   * 
+   * @return {void}
+   */
+  shareDeck = (id) => {
+    let deck = DeckCollection.find(id);
+    deck.favorite = false;
+    this.state.canShare && navigator.share({ text: JSON.stringify(deck) });
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Closes confirm box modal
+   * 
+   * @return {void}
+   */
   cancelModal = () => {
     this.setState(update(this.state, { showModal: { $set: false } }));
   }
@@ -162,9 +196,7 @@ class App extends Component {
    * 
    * Renders the play container
    */
-  renderPlay = () => <Play 
-    {...this.state} 
-  />;
+  renderPlay = () => <Play {...this.state} />;
 
   /**
    * @author Victor Heringer
@@ -176,6 +208,7 @@ class App extends Component {
     createDeck={this.createDeck}
     handleChange={this.handleChange}
     favorite={this.favorite}
+    share={this.shareDeck}
     {...this.state}
   />;
 

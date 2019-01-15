@@ -9,7 +9,8 @@
     "play": "Play",
     "deck": "Decks",
     "share": "Share",
-    "github": "Github"
+    "github": "Github",
+    "config": "Config"
   },
   "input": {
     "placeholder": {

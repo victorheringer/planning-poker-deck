@@ -65,7 +65,7 @@ class Navbar extends Component {
                             src={deckIcon}
                             alt="icon"
                           />
-                          Jogar
+                          {this.props.text.nav.play}
                         </Link>
                       </li>
                       <li onClick={this.handleClick}>
@@ -74,10 +74,16 @@ class Navbar extends Component {
                           &nbsp; Decks
                         </Link>
                       </li>
+                      <li onClick={this.handleClick}>
+                        <Link to="/config">
+                          <FontAwesomeIcon icon={"cog"} size="lg" />
+                          &nbsp; {this.props.text.nav.config}
+                        </Link>
+                      </li>
                       <li onClick={this.share}>
                         <Link to="/">
                           <FontAwesomeIcon icon={"share-alt"} size="lg" />
-                          &nbsp; Compartilhar
+                          &nbsp; {this.props.text.nav.share}
                         </Link>
                       </li>
                       <li>

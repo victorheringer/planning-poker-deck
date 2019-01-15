@@ -10,12 +10,14 @@ import ConfirmBox from './components/ConfirmBox';
 /** Containers */
 import Play from './containers/Play';
 import Decks from './containers/Decks';
+import Config from './containers/Config';
 
 /** Helpers */
 import I18n from './helpers/I18n';
 import decks from './data/decks.json';
 import DeckFactory from './helpers/DeckFactory';
 import DeckCollection from './helpers/DeckCollection';
+import ConfigCollection from './helpers/ConfigCollection';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -28,7 +30,8 @@ import {
   faTrash,
   faSyncAlt,
   faShareAlt,
-  faAngleRight
+  faAngleRight,
+  faCog
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEdit);
@@ -41,6 +44,7 @@ library.add(faTrash);
 library.add(faSyncAlt);
 library.add(faShareAlt);
 library.add(faAngleRight);
+library.add(faCog);
 
 /**
  * @author Victor Heringer
@@ -56,15 +60,16 @@ class App extends Component {
    * @param {Object}
    */
   state = { 
-    decks: [], 
+    decks: [],
     current: {}, 
     showModal: false, 
     messageModal: '',
     confirmModal: undefined, 
     titleModal: '',
     deckNameInput: '',
+    lang: this.props.lang,
     canShare: navigator.share ? true : false,
-    text: {}
+    text: this.props.text
   };
 
   /**
@@ -76,7 +81,6 @@ class App extends Component {
    */
   componentWillMount() {
     this.loadDecks();
-    this.loadText(I18n.en());
   }
 
   /**
@@ -89,7 +93,7 @@ class App extends Component {
    * @return {void}
    */
   loadText = (lang) => {
-    this.setState({ text: I18n.get(lang) });
+    this.setState(update( this.state, { $set: { text: I18n.get(lang) } } ) );
   }
 
   /**
@@ -150,6 +154,14 @@ class App extends Component {
    */
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleSelectLang = (event) => {
+    const config = ConfigCollection.all();
+    config.lang = event.target.value;
+    ConfigCollection.put(config)
+    this.loadText(event.target.value);
+    this.handleChange(event);
   }
 
   /**
@@ -232,9 +244,12 @@ class App extends Component {
     {...this.state}
   />;
 
-  render() {
+  renderConfig = () => <Config 
+    {...this.state} 
+    handleSelectLang={this.handleSelectLang}
+  />;
 
-    
+  render() {
 
     const confirmBox = <ConfirmBox
       title={this.state.titleModal}
@@ -244,14 +259,17 @@ class App extends Component {
       onConfirm={this.state.confirmModal}
     />;
 
+    console.log(this.state);
+
     return (
       <React.Fragment>
         <Router>
           <div>
-            <Navbar />
+            <Navbar {...this.state} />
             <div className='app'>
               <Route path="/" exact render={this.renderPlay} />
               <Route path="/decks" exact render={this.renderDecks} />
+              <Route path="/config" exact render={this.renderConfig} />
               {confirmBox}
             </div>
           </div>

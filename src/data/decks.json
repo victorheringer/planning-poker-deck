@@ -55,8 +55,8 @@
         "icon": false
       },
       {
-        "value": "∞",
-        "icon": false
+        "value": "infinity",
+        "icon": true
       },
       {
         "value": "?",
@@ -120,8 +120,8 @@
         "icon": false
       },
       {
-        "value": "∞",
-        "icon": false
+        "value": "infinity",
+        "icon": true
       },
       {
         "value": "?",
@@ -165,8 +165,8 @@
         "icon": false
       },
       {
-        "value": "∞",
-        "icon": false
+        "value": "infinity",
+        "icon": true
       },
       {
         "value": "?",

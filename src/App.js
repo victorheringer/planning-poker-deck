@@ -31,7 +31,8 @@ import {
   faSyncAlt,
   faShareAlt,
   faAngleRight,
-  faCog
+  faCog,
+  faInfinity
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEdit);
@@ -45,6 +46,7 @@ library.add(faSyncAlt);
 library.add(faShareAlt);
 library.add(faAngleRight);
 library.add(faCog);
+library.add(faInfinity);
 
 /**
  * @author Victor Heringer
@@ -258,8 +260,6 @@ class App extends Component {
       onCancel={this.cancelModal}
       onConfirm={this.state.confirmModal}
     />;
-
-    console.log(this.state);
 
     return (
       <React.Fragment>

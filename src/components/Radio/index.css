@@ -5,6 +5,7 @@
   float: right;
   position: relative;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .radio.active {

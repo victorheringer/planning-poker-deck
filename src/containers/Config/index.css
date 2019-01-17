@@ -1,0 +1,22 @@
+.config ul {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.config li {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #616161;
+  padding: 15px 20px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.config li select {
+  float: right;
+  border: 0px;
+  background-color: #FFF;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}

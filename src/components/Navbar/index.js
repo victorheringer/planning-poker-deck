@@ -80,12 +80,13 @@ class Navbar extends Component {
                           &nbsp; {this.props.text.nav.config}
                         </Link>
                       </li>
-                      <li onClick={this.share}>
+                      { this.props.canShare && <li onClick={this.share}>
                         <Link to="/">
                           <FontAwesomeIcon icon={"share-alt"} size="lg" />
                           &nbsp; {this.props.text.nav.share}
                         </Link>
-                      </li>
+                        </li> 
+                      } 
                       <li>
                         <a 
                           href="https://github.com/VictorHeringer/planning-poker-deck" 

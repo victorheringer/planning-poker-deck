@@ -12,6 +12,11 @@
     "github": "Github",
     "config": "Configurações"
   },
+  "config": {
+    "list": {
+      "language": "Língua"
+    }
+  },
   "input": {
     "placeholder": {
       "deck": "Deck"

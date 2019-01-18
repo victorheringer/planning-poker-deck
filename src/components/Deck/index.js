@@ -17,22 +17,10 @@ class Deck extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      cards: [],
-      deck: {},
       editing: false, 
       isSelected: false,
       cardSelected: null
     };
-  }
-
-  /**
-   * @author Victor Heringer
-   * 
-   * Lifecycle method to set some initial states
-   */
-  componentDidMount() {
-    this.setState({ cards: this.props.cards });
-    this.setState({ deck: this.props.initialDeck });
   }
 
   /**
@@ -55,10 +43,11 @@ class Deck extends Component {
    * @param {Object} card
    */
   handleClickRemoveCard = (event, card) => {
-    const cards = this.state.cards.filter(cards => cards.value !== card);
-    this.setState(update(this.state, {
-      cards: { $set: cards }, deck: { cards: { $set: cards } } 
-    }), () => DeckCollection.update(this.state.deck));
+    const cards = this.props.cards.filter(cards => cards.value !== card);
+    let deck = { ...this.props.initialDeck};
+    deck.cards = cards;
+    DeckCollection.update(deck);
+    this.props.loadDecks();
   }
 
   /**
@@ -95,14 +84,14 @@ class Deck extends Component {
 
   render() {
 
-    const { editing, cards } = this.state;
+    const { editing } = this.state;
     let time = 0.05;
 
     return (
       <React.Fragment>
         <div className='gridDeckContainer'>
           {!this.state.isSelected &&
-            cards.map(card => {
+            this.props.cards.map(card => {
               time = time * 1.15;
               return(
                 <Card
@@ -118,6 +107,17 @@ class Deck extends Component {
                 />
               );
             } )
+          }
+          {
+            !this.state.isSelected && editing && <Card
+              value={'+'}
+              pattern={'none'}
+              up={true}
+              icon={false}
+              fixed={true}
+              editing={false}
+              onClick={this.props.addCard}
+            />
           }
         </div>
         <div>

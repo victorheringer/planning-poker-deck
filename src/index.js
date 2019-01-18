@@ -8,6 +8,34 @@ import ConfigCollection from './helpers/ConfigCollection';
 import decks from './data/decks.json';
 import config from './data/config.json';
 import I18n from './helpers/I18n';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faEdit,
+  faMugHot,
+  faLongArrowAltLeft,
+  faInfoCircle,
+  faEllipsisV,
+  faListUl,
+  faTrash,
+  faSyncAlt,
+  faShareAlt,
+  faAngleRight,
+  faCog,
+  faInfinity
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(faEdit);
+library.add(faMugHot);
+library.add(faLongArrowAltLeft);
+library.add(faInfoCircle);
+library.add(faEllipsisV);
+library.add(faListUl);
+library.add(faTrash);
+library.add(faSyncAlt);
+library.add(faShareAlt);
+library.add(faAngleRight);
+library.add(faCog);
+library.add(faInfinity);
 
 if (!DeckCollection.all() ) {
   DeckCollection.put(decks);

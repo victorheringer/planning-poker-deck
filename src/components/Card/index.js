@@ -30,7 +30,8 @@ const Card = ({
   fixed,
   onClick,
   onClickRemove,
-  time
+  time,
+  pattern
 }) => {
 
   /**
@@ -82,7 +83,7 @@ const Card = ({
         </div>
         <div className={"card" + flipped} onClick={handleClick}>
           <FrontFace />
-          <BackFace icon={icon} value={value} pattern={"tech-pattern"} />
+          <BackFace icon={icon} value={value} pattern={pattern} />
         </div>
       </div>
     </div>

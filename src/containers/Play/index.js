@@ -6,10 +6,12 @@ import Deck from './../../components/Deck';
  * 
  * Container for play
  */
-const Play = ({ current, text }) => (
-  <div>
-    <Deck text={text} initialDeck={current} cards={current.cards} />
-  </div>
-);
+const Play = ({ current, text, addCard, loadDecks }) => {
+  return (
+    <div>
+      <Deck addCard={addCard} text={text} initialDeck={current} cards={current.cards} loadDecks={loadDecks} />
+    </div>
+  );
+}
 
 export default Play;

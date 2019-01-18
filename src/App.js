@@ -19,35 +19,6 @@ import DeckFactory from './helpers/DeckFactory';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faEdit,
-  faMugHot,
-  faLongArrowAltLeft,
-  faInfoCircle,
-  faEllipsisV,
-  faListUl,
-  faTrash,
-  faSyncAlt,
-  faShareAlt,
-  faAngleRight,
-  faCog,
-  faInfinity
-} from '@fortawesome/free-solid-svg-icons';
-
-library.add(faEdit);
-library.add(faMugHot);
-library.add(faLongArrowAltLeft);
-library.add(faInfoCircle);
-library.add(faEllipsisV);
-library.add(faListUl);
-library.add(faTrash);
-library.add(faSyncAlt);
-library.add(faShareAlt);
-library.add(faAngleRight);
-library.add(faCog);
-library.add(faInfinity);
-
 /**
  * @author Victor Heringer
  * 
@@ -108,7 +79,9 @@ class App extends Component {
   loadDecks = () => {
     const decks = DeckCollection.all();
     const favorite = DeckCollection.getFavorite();
-    this.setState({ decks: decks, current: favorite });
+    this.setState(update(this.state, 
+      { decks: { $set: decks }, current: { $set: favorite } }
+    ));
   }
 
   /**
@@ -158,12 +131,37 @@ class App extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Handles language selection
+   * 
+   * @param {Object} event 
+   * 
+   * @return {void}
+   */
   handleSelectLang = (event) => {
     const config = ConfigCollection.all();
     config.lang = event.target.value;
     ConfigCollection.put(config)
     this.loadText(event.target.value);
     this.handleChange(event);
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Handles push card to decks
+   * 
+   * @param {Object} event 
+   * 
+   * @return {void}
+   */
+  handlePushCardToCurrentDeck = (event, card) => {
+    let deck = DeckCollection.getFavorite();
+    deck.cards.push({ value: 'Ok' , icon: false });
+    DeckCollection.update(deck);
+    this.loadDecks();
   }
 
   /**
@@ -230,7 +228,11 @@ class App extends Component {
    * 
    * Renders the play container
    */
-  renderPlay = () => <Play {...this.state} />;
+  renderPlay = () => <Play 
+    {...this.state} 
+    addCard={this.handlePushCardToCurrentDeck}
+    loadDecks={this.loadDecks}
+  />;
 
   /**
    * @author Victor Heringer
@@ -246,6 +248,11 @@ class App extends Component {
     {...this.state}
   />;
 
+  /**
+   * @author Victor Heringer
+   * 
+   * Renders the config container
+   */
   renderConfig = () => <Config 
     {...this.state} 
     handleSelectLang={this.handleSelectLang}

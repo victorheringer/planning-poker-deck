@@ -8,6 +8,10 @@ const Config = ({ lang, handleSelectLang, text }) => {
     <div className="config">
       <ul>
         <li>
+          App Version
+          <span style={{float: 'right'}}>0.0.1</span>
+        </li>
+        <li>
           {text.config.list.language}
           <select name="lang" value={lang} onChange={handleSelectLang}>
             {I18n.available().map( lang =>

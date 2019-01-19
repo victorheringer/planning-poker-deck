@@ -1,11 +1,16 @@
-.navbar {
-  padding: 5px;
+.navbarWrapper {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
   background-color: #FFF;
   border-bottom: 1px solid #E0E0E0;
+}
+
+.navbar {
+  padding: 5px;
   padding: 20px 0;
   font-family: Arial, sans-serif;
   color: #616161;
-  
 }
 
 .container {
@@ -95,13 +100,27 @@
   height: 45px;
 }
 
-.nav .icon {
-  height: 20px;
+.navbarWrapper .icon {
+  height: 35px;
   vertical-align: middle;
-  margin-right: 10px;
-  margin-bottom: 5px;
+}
+
+.navbarWrapper a {
+  color: #212121;
 }
 
 .nav .selected {
   color: #1565C0;
+}
+
+.navbarWrapper .navTab {
+  margin: 0 auto;
+  max-width: 575.98px;
+  border-top: 1px solid #E0E0E0;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  text-align: center;
+}
+.navbarWrapper .navTab > div {
+  padding: 10px 0;
 }

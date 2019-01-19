@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import githubIcon from './../../assets/img/github.svg';
-import deckIcon from './../../assets/img/deck.svg';
+import deckIcon from './../../assets/img/icon.png';
 import './index.css';
 
 /**
@@ -43,13 +43,11 @@ class Navbar extends Component {
   render( ) {
 
     return (
-      <React.Fragment>
-        <div className="navbar">
+        <div className="navbarWrapper">
+        {false &&   <div className="navbar">
           <div className="container">
-            <div className='logo'>Planning Poker Deck</div>
-            <div>
-              
-            </div>
+          <div className='logo'>Planning Poker Deck</div>
+            <div></div>
             <div>
               <nav className="nav" ref={this.nav}>
                 <ul>
@@ -107,8 +105,44 @@ class Navbar extends Component {
               </nav>
             </div>
           </div>
+        </div> }
+        <div className="navTab">
+          <div style={{ borderBottom: '3px solid #1565c0' }}>
+            <Link to="/">
+              <img
+                className="icon"
+                src={deckIcon}
+                alt="icon"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="/decks">
+              <FontAwesomeIcon icon={"list-ul"} size="lg" />
+              &nbsp;
+            </Link>
+          </div>
+          <div>
+            <Link to="/config">
+              <FontAwesomeIcon icon={"cog"} size="lg" />
+              &nbsp;
+            </Link>
+          </div>
+          <div>
+            <a
+              href="https://github.com/VictorHeringer/planning-poker-deck"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="icon"
+                src={githubIcon}
+                alt="icon"
+              />
+            </a>
+          </div>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

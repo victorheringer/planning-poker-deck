@@ -27,7 +27,7 @@
       "title": "Reset decks",
       "message": "This action can't be undone."
     },
-    "bnt": {
+    "btn": {
       "confirm": "Confirm",
       "cancel": "Cancel"
     }

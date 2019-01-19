@@ -266,6 +266,7 @@ class App extends Component {
       show={this.state.showModal}
       onCancel={this.cancelModal}
       onConfirm={this.state.confirmModal}
+      text={this.state.text}
     />;
 
     return (

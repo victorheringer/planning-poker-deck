@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { withRouter } from 'react-router-dom';
 
 import githubIcon from './../../assets/img/github.svg';
 import deckIcon from './../../assets/img/icon.png';
@@ -41,6 +42,8 @@ class Navbar extends Component {
   }
 
   render( ) {
+
+    const route = this.props.location.pathname;
 
     return (
         <div className="navbarWrapper">
@@ -107,7 +110,7 @@ class Navbar extends Component {
           </div>
         </div> }
         <div className="navTab">
-          <div style={{ borderBottom: '3px solid #1565c0' }}>
+          <div className={ route == "/" ? "selected" : "" }>
             <Link to="/">
               <img
                 className="icon"
@@ -116,15 +119,15 @@ class Navbar extends Component {
               />
             </Link>
           </div>
-          <div>
+          <div className={ route == "/decks" ? "selected" : "" }>
             <Link to="/decks">
-              <FontAwesomeIcon icon={"list-ul"} size="lg" />
+              <FontAwesomeIcon className="icons" icon={"folder-open"} size="lg" />
               &nbsp;
             </Link>
           </div>
-          <div>
+          <div className={ route == "/config" ? "selected" : "" }>
             <Link to="/config">
-              <FontAwesomeIcon icon={"cog"} size="lg" />
+              <FontAwesomeIcon className="icons" icon={"cog"} size="lg" />
               &nbsp;
             </Link>
           </div>
@@ -135,7 +138,7 @@ class Navbar extends Component {
               rel="noopener noreferrer"
             >
               <img
-                className="icon"
+                className="icon githubicon"
                 src={githubIcon}
                 alt="icon"
               />
@@ -147,4 +150,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

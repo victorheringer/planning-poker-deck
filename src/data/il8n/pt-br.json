@@ -27,7 +27,7 @@
       "title": "Resetar decks",
       "message": "Esta ação não poderá ser desfeita."
     },
-    "bnt": {
+    "btn": {
       "confirm": "Confirmar",
       "cancel": "Cancelar"
     }

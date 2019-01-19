@@ -21,7 +21,8 @@ import {
   faShareAlt,
   faAngleRight,
   faCog,
-  faInfinity
+  faInfinity,
+  faFolderOpen
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEdit);
@@ -36,6 +37,7 @@ library.add(faShareAlt);
 library.add(faAngleRight);
 library.add(faCog);
 library.add(faInfinity);
+library.add(faFolderOpen);
 
 if (!DeckCollection.all() ) {
   DeckCollection.put(decks);

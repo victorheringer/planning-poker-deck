@@ -101,16 +101,12 @@
 }
 
 .navbarWrapper .icon {
-  height: 35px;
-  vertical-align: middle;
+  height: 32px;
+  margin-top: 3px;
 }
 
 .navbarWrapper a {
   color: #212121;
-}
-
-.nav .selected {
-  color: #1565C0;
 }
 
 .navbarWrapper .navTab {
@@ -122,5 +118,28 @@
   text-align: center;
 }
 .navbarWrapper .navTab > div {
-  padding: 10px 0;
+  padding: 7px 0;
+}
+
+.navbarWrapper .icon.githubicon {
+  height: 25px;
+  margin-top: 7px;
+}
+
+.navbarWrapper .selected {
+  border-bottom: 2px solid #1565c0;
+  color: #1565c0;
+}
+
+.navbarWrapper a {
+  text-decoration: none;
+}
+
+.navbarWrapper .icons {
+  font-size: 25px;
+  margin-top: 7px;
+}
+
+.navbarWrapper .selected .icons {
+  color: #1565C0;
 }

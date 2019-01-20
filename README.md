@@ -7,6 +7,7 @@
 [![LastComit](https://img.shields.io/github/last-commit/google/skia.svg)](https://github.com/VictorHeringer/planning-poker-deck)
 
 ![Example](example.gif)
+![Example](example_2.gif)
 
 ## Why Planning Poker Deck
 

@@ -41,6 +41,8 @@ class App extends Component {
     titleModal: '',
     deckNameInput: '',
     lang: this.props.lang,
+    grid: this.props.grid,
+    grids: this.props.grids,
     canShare: navigator.share ? true : false,
     text: this.props.text
   };
@@ -145,6 +147,22 @@ class App extends Component {
     config.lang = event.target.value;
     ConfigCollection.put(config)
     this.loadText(event.target.value);
+    this.handleChange(event);
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Handles language selection
+   * 
+   * @param {Object} event 
+   * 
+   * @return {void}
+   */
+  handleSelectGrid = (event) => {
+    const config = ConfigCollection.all();
+    config.grid = event.target.value;
+    ConfigCollection.put(config)
     this.handleChange(event);
   }
 
@@ -256,6 +274,7 @@ class App extends Component {
   renderConfig = () => <Config 
     {...this.state} 
     handleSelectLang={this.handleSelectLang}
+    handleSelectGrid={this.handleSelectGrid}
   />;
 
   render() {

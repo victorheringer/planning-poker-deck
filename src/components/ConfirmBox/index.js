@@ -11,7 +11,6 @@ const ConfirmBox = ({
 }) => {
 
   const visibility = show ? 'visible' : 'hidden';
-  console.log(text);
 
   return( 
     <div className={"confirmBox " + visibility}>

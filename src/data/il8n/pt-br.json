@@ -14,7 +14,9 @@
   },
   "config": {
     "list": {
-      "language": "Língua"
+      "version": "Versão do App",
+      "language": "Língua",
+      "grid": "Cartas por linha"
     }
   },
   "input": {

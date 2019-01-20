@@ -51,6 +51,8 @@ ReactDOM.render(
   <App 
     text={I18n.get(ConfigCollection.all().lang)} 
     lang={ConfigCollection.all().lang}
+    grids={[3,4]}
+    grid={ConfigCollection.all().grid}
   />, 
   document.getElementById('root')
 );

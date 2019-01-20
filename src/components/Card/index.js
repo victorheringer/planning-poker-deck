@@ -90,7 +90,7 @@ const Card = ({
   );
 }
 
-BackFace.propTypes = {
+Card.propTypes = {
   value: PropTypes.string,
   fliped: PropTypes.bool,
   fixed: PropTypes.bool,

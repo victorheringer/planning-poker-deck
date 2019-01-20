@@ -1,0 +1,12 @@
+.tab {
+  display: flex;
+}
+
+.tabItem {
+  flex-grow: 1;
+  padding: 5px 0;
+}
+
+.tabItem a {
+  text-decoration: none;
+}

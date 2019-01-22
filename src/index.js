@@ -23,7 +23,8 @@ import {
   faAngleRight,
   faCog,
   faInfinity,
-  faFolderOpen
+  faFolderOpen,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faEdit);
@@ -39,6 +40,7 @@ library.add(faAngleRight);
 library.add(faCog);
 library.add(faInfinity);
 library.add(faFolderOpen);
+library.add(faTimes);
 
 const VERSION ='0.0.1';
 

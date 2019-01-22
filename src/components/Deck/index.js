@@ -136,9 +136,13 @@ class Deck extends Component {
           }
         </div>
         <div className="deckActions">
-          {!this.state.isSelected && 
+          {!this.state.isSelected &&
             <button onClick={this.handleClickEdit}>
-              <FontAwesomeIcon icon="edit" /> &nbsp;
+            {editing ? 
+              <FontAwesomeIcon icon="times" /> : 
+              <FontAwesomeIcon icon="edit" /> 
+            } 
+              &nbsp;
               {this.props.text.btn.edit}
             </button>
           }

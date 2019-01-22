@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';
+import Collection from './helpers/Collection';
 import decks from './data/decks.json';
 import config from './data/config.json';
 import I18n from './helpers/I18n';
@@ -38,6 +39,15 @@ library.add(faAngleRight);
 library.add(faCog);
 library.add(faInfinity);
 library.add(faFolderOpen);
+
+const VERSION ='0.0.1';
+
+if( Collection.find('version') != VERSION ) {
+  Collection.delete('version');
+  ConfigCollection.delete();
+  DeckCollection.delete();
+  Collection.put('version',VERSION);
+}
 
 if (!DeckCollection.all() ) {
   DeckCollection.put(decks);

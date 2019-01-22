@@ -43,6 +43,10 @@ class DeckCollection {
     DeckCollection.put(decks);
   }
 
+  static delete() {
+    Collection.delete('decks');
+  }
+
   /**
    * @author Victor Heringer
    * 

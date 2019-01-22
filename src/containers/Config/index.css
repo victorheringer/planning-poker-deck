@@ -15,6 +15,7 @@
 
 .config li select {
   float: right;
+  text-align-last:right;
   border: 0px;
   background-color: #FFF;
   font-size: 14px;

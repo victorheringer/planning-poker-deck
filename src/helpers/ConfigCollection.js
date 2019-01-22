@@ -18,6 +18,10 @@ class ConfigCollection {
     return Collection.find('config');
   }
 
+  static delete() {
+    Collection.delete('config');
+  }
+
   /**
    * @author Victor Heringer
    * 

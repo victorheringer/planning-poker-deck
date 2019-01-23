@@ -8,6 +8,9 @@ const Config = ({
   grids,
   grid,
   handleSelectGrid,
+  themes,
+  theme,
+  handleSelectTheme,
   text 
 }) => {
 
@@ -16,7 +19,7 @@ const Config = ({
       <ul>
         <li>
           {text.config.list.version}
-          <span style={{float: 'right'}}>0.0.1</span>
+          <span style={{float: 'right'}}>0.0.2</span>
         </li>
         <li>
           {text.config.list.language}
@@ -31,6 +34,14 @@ const Config = ({
           <select name="grid" value={grid} onChange={handleSelectGrid}>
             {grids.map(grid =>
               <option key={grid} value={grid}>{grid}</option>)
+            }
+          </select>
+        </li>
+        <li>
+          {text.config.list.theme}
+          <select name="theme" value={theme} onChange={handleSelectTheme}>
+            {themes.map(theme =>
+              <option key={theme} value={theme}>{theme}</option>)
             }
           </select>
         </li>

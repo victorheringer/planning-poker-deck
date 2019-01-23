@@ -16,7 +16,8 @@
     "list": {
       "version": "App Version",
       "language": "Language",
-      "grid": "Cards per Line"
+      "grid": "Cards per Line",
+      "theme": "Theme"
     }
   },
   "input": {

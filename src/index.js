@@ -42,7 +42,7 @@ library.add(faInfinity);
 library.add(faFolderOpen);
 library.add(faTimes);
 
-const VERSION ='0.0.1';
+const VERSION ='0.0.2';
 
 if( Collection.find('version') != VERSION ) {
   Collection.delete('version');
@@ -65,6 +65,8 @@ ReactDOM.render(
     lang={ConfigCollection.all().lang}
     grids={[3,4]}
     grid={ConfigCollection.all().grid}
+    themes={['tech', 'dark']}
+    theme={ConfigCollection.all().theme}
   />, 
   document.getElementById('root')
 );

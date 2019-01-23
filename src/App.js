@@ -43,6 +43,8 @@ class App extends Component {
     lang: this.props.lang,
     grid: this.props.grid,
     grids: this.props.grids,
+    theme: this.props.theme,
+    themes: this.props.themes,
     canShare: navigator.share ? true : false,
     text: this.props.text
   };
@@ -169,6 +171,22 @@ class App extends Component {
   /**
    * @author Victor Heringer
    * 
+   * Handles theme selection
+   * 
+   * @param {Object} event 
+   * 
+   * @return {void}
+   */
+  handleSelectTheme = (event) => {
+    const config = ConfigCollection.all();
+    config.theme = event.target.value;
+    ConfigCollection.put(config)
+    this.handleChange(event);
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
    * Handles push card to decks
    * 
    * @param {Object} event 
@@ -275,6 +293,7 @@ class App extends Component {
     {...this.state} 
     handleSelectLang={this.handleSelectLang}
     handleSelectGrid={this.handleSelectGrid}
+    handleSelectTheme={this.handleSelectTheme}
   />;
 
   render() {

@@ -106,7 +106,7 @@ Card.defaultProps = {
   value: "", 
   fliped: false,
   fixed: false,
-  pattern: "tech-pattern",
+  pattern: "dark-pattern",
   editing: false,
   icon: false,
   onClickRemove: null,

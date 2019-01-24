@@ -59,7 +59,8 @@
 }
 
 .card .front {
-  background: #1565c0;
+  /*background: #1565c0;*/
+  background: #212121;
 }
 
 .card .back {
@@ -67,7 +68,8 @@
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  background-color: #1565c0;
+  /*background-color: #1565c0;*/
+  background-color: #212121;
   color: #FFF;
 }
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import CardFactory from './../../helpers/CardFactory';
 import FrontFace from './FrontFace';
 import BackFace from './BackFace';
+import { ThemeContext } from './../../contexts/ThemeContext';
 import './index.css';
 
 /**
@@ -72,21 +73,25 @@ const Card = ({
   const closeBtnClass = editing ? 'visible' : 'hidden'; 
 
   return (
-    <div className={"cardWrapper " + className} >
-      <div className="cardContainer">
-        <div className="close">
-          <button 
-            className={closeBtnClass} 
-            onClick={handleClickRemove}
-            style={ { transitionDuration: `${time}s` } }
-          >X</button>
-        </div>
-        <div className={"card" + flipped} onClick={handleClick}>
-          <FrontFace />
-          <BackFace icon={icon} value={value} pattern={pattern} />
+    <ThemeContext.Consumer>
+      {theme => (
+      <div className={"cardWrapper " + className}>
+        <div className="cardContainer">
+          <div className="close">
+            <button 
+              className={closeBtnClass} 
+              onClick={handleClickRemove}
+              style={ { transitionDuration: `${time}s` } }
+            >X</button>
+          </div>
+          <div className={"card" + flipped} onClick={handleClick}>
+            <FrontFace />
+              <BackFace icon={icon} value={value} pattern={theme} />
+          </div>
         </div>
       </div>
-    </div>
+      )}
+    </ThemeContext.Consumer>
   );
 }
 

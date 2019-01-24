@@ -12,6 +12,9 @@ import Play from './containers/Play';
 import Decks from './containers/Decks';
 import Config from './containers/Config';
 
+/** Contexts */
+import { ThemeContext } from './contexts/ThemeContext';
+
 /** Helpers */
 import I18n from './helpers/I18n';
 import decks from './data/decks.json';
@@ -307,8 +310,10 @@ class App extends Component {
       text={this.state.text}
     />;
 
+    const theme = 'tech-pattern';
+
     return (
-      <React.Fragment>
+      <ThemeContext.Provider value={theme}>
         <Router>
           <div>
             <Navbar {...this.state} />
@@ -320,7 +325,7 @@ class App extends Component {
             </div>
           </div>
         </Router>
-      </React.Fragment>
+      </ThemeContext.Provider>
     );
   }
 }

@@ -2,10 +2,10 @@
   position: fixed;
   z-index: 999;
   width: 100%;
-  /*background-color: #FFF;*/
-  background-color: #333333;
-  /*border-bottom: 1px solid #E0E0E0;*/
-  border-bottom: 1px solid #212121;
+  background-color: #FFF;
+  /*background-color: #333333;*/
+  border-bottom: 1px solid #E0E0E0;
+  /*border-bottom: 1px solid #212121;*/
 }
 
 .navbar .wrapper {

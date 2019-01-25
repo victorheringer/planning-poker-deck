@@ -6,4 +6,5 @@ const DeckListSubItem = ({ children }) => {
   );
 }
 
+DeckListSubItem.displayName = 'DeckListSubItem';
 export default DeckListSubItem;

@@ -26,8 +26,8 @@
 
 .deckList > li > .hidden {
   max-height: 0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s;
   overflow: hidden;
   opacity: 0;
 }
@@ -35,26 +35,26 @@
 .deckList > li > .show {
   max-height: 110px;
   opacity: 1;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s;
 }
 
 .deckList > li > ul.hidden li {
   margin-top: -40px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s;
 }
 
 .deckList > li > ul.show li {
   margin-top: 0px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s;
 }
 
 .rotate-down {
   transform: rotate(90deg);
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s;
 }
 
 .rotate-up {

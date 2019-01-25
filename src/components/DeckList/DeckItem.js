@@ -1,6 +1,7 @@
 import React from 'react';
 import update from 'immutability-helper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import DeckSubItem from './DeckSubItem';
 
 class DeckItem extends React.Component {
   
@@ -24,11 +25,11 @@ class DeckItem extends React.Component {
           {title}
         </span>
         {children.filter(
-          val => !val.type || val.type.name != 'DeckListSubItem'
+          val => !val.type || val.type.displayName != 'DeckListSubItem'
         )}
         <ul className={this.state.show ? 'show' : 'hidden'}>
           {children.filter(
-            val => val.type && val.type.name == 'DeckListSubItem'
+            val => val.type && val.type.displayName == 'DeckListSubItem'
           )}
         </ul>
       </li>

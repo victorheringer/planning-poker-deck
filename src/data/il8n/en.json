@@ -12,6 +12,10 @@
     "github": "Github",
     "config": "Config"
   },
+  "deckList": {
+    "share": "Share",
+    "delete": "Delete"
+  },
   "config": {
     "list": {
       "version": "App Version",

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DeckCollection from './../../helpers/DeckCollection';
-import update from 'immutability-helper';
+import ButtonLink from './../../components/ButtonLink';
 import Card from './../Card';
 import './index.css';
 
@@ -142,15 +142,14 @@ class Deck extends Component {
               <FontAwesomeIcon icon="times" /> : 
               <FontAwesomeIcon icon="edit" /> 
             } 
-              &nbsp;
-              {this.props.text.btn.edit}
+              &nbsp; {this.props.text.btn.edit}
             </button>
           }
           {this.state.isSelected &&
-            <button onClick={this.handleClickDeselectCard}>
-              <FontAwesomeIcon icon="long-arrow-alt-left" /> &nbsp;
-              {this.props.text.btn.back}
-            </button>
+            <ButtonLink theme="default" onClick={this.handleClickDeselectCard}>
+              <FontAwesomeIcon icon="long-arrow-alt-left" /> 
+              &nbsp; {this.props.text.btn.back}
+            </ButtonLink>
           }
         </div>
       </React.Fragment>

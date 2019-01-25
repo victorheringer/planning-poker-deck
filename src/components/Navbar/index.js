@@ -27,17 +27,17 @@ const Navbar = ({ location }) => {
           </Link>
         </NavTabItem>
         <NavTabItem className={route == "/decks" ? "active" : ""}>
-          <Link to="/decks">
+          <Link to="/decks" aria-label="Deck List">
             <FontAwesomeIcon className="icon" icon={"folder-open"} />
           </Link>
         </NavTabItem>
         <NavTabItem className={route == "/config" ? "active" : ""}>
-          <Link to="/config">
+          <Link to="/config" aria-label="Configurations">
             <FontAwesomeIcon className="icon" icon={"cog"} />
           </Link>
         </NavTabItem>
         <NavTabItem>
-          <a href={githubURL} target="_blank" rel="noopener noreferrer">
+          <a aria-label="Github" href={githubURL} target="_blank" rel="noopener noreferrer">
             <img className="icon" src={githubIcon} alt="icon" />
           </a>
         </NavTabItem>

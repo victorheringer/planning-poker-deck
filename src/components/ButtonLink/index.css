@@ -1,0 +1,22 @@
+.buttonLinkWrapper {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.buttonLinkWrapper button {
+  border: 0;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.buttonLinkWrapper .danger {
+  color: #E57373;
+}
+
+.buttonLinkWrapper .default {
+  color: #616161;
+}

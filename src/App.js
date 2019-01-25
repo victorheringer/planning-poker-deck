@@ -114,6 +114,30 @@ class App extends Component {
   /**
    * @author Victor Heringer
    * 
+   * Deletes a deck from state and local storage
+   * 
+   * @param {Int} id
+   * 
+   * @return {void}
+   */
+  deleteDeck = (id) => {
+
+    const deck = DeckCollection.find(id);
+    const toUpdate = DeckCollection.all().filter( deck => deck.id !== id );
+
+    if (toUpdate.length == 0) return;
+
+    if (deck.favorite) {
+      toUpdate[0].favorite = true;
+    }
+
+    DeckCollection.put(toUpdate);
+    this.loadDecks();
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
    * Turns a deck to favorite. The favorite deck will be used to play.
    * 
    * @param {Number} id
@@ -220,6 +244,7 @@ class App extends Component {
       messageModal: { $set: text.confirmBox.refresh.message },
       confirmModal: { $set: this.resetDecks }
     };
+
     this.setState(update(this.state, toUpdate));
   }
 
@@ -281,6 +306,7 @@ class App extends Component {
   renderDecks = () => <Decks
     handleConfirmBoxResetDeck={this.handleConfirmBoxResetDeck}
     createDeck={this.createDeck}
+    deleteDeck={this.deleteDeck}
     handleChange={this.handleChange}
     favorite={this.favorite}
     share={this.shareDeck}

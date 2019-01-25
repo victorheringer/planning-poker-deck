@@ -33,13 +33,13 @@ class Decks extends Component {
             <DeckItem key={deck.id} title={deck.description}>
               <Radio active={deck.favorite} id={deck.id} onClick={this.props.favorite} />
               <DeckListSubItem>
-                <h4>
+                <h4 onClick={this.props.shareDeck}>
                   <FontAwesomeIcon icon={"share-alt"} /> 
                   &nbsp; {this.props.text.deckList.share}
                 </h4>
               </DeckListSubItem>
               <DeckListSubItem>
-                <h4>
+                <h4 onClick={ () => this.props.deleteDeck( deck.id ) }>
                   <FontAwesomeIcon icon={"trash"} /> 
                   &nbsp; {this.props.text.deckList.delete}
                 </h4>

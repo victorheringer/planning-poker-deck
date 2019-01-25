@@ -13,7 +13,7 @@ import Decks from './containers/Decks';
 import Config from './containers/Config';
 
 /** Contexts */
-import { ThemeContext } from './contexts/ThemeContext';
+import { ThemeContext } from './Contexts';
 
 /** Helpers */
 import I18n from './helpers/I18n';

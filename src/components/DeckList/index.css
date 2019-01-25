@@ -1,0 +1,64 @@
+.deckList {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.deckList > li {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #616161;
+  padding: 15px 20px;
+  border-bottom: 1px solid #EEEEEE;
+  cursor: pointer;
+}
+
+.deckList > li > ul {
+  list-style: none;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.deckList > li > ul > li {
+  padding: 20px 0 20px 0;
+}
+
+.deckList > li > .hidden {
+  max-height: 0;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.deckList > li > .show {
+  max-height: 110px;
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s;
+}
+
+.deckList > li > ul.hidden li {
+  margin-top: -40px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s;
+}
+
+.deckList > li > ul.show li {
+  margin-top: 0px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s;
+}
+
+.rotate-down {
+  transform: rotate(90deg);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s;
+}
+
+.rotate-up {
+  transform: rotate(0deg);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s;
+}

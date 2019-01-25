@@ -15,6 +15,8 @@ class Decks extends Component {
 
   render() {
     return (
+      <React.Fragment>
+        
       <div className="decks">
         <div className="addDeck">
           <div>
@@ -35,17 +37,19 @@ class Decks extends Component {
           </button>
           </div>
         </div>
-        <ul>
+        <DeckList>
           { this.props.decks.map(deck => 
-            <li key={deck.id}>
-              <span onClick={ () => this.props.share( deck.id ) }>  
-                <FontAwesomeIcon icon={"angle-right"}/> &nbsp;
-                {deck.description}
-              </span>
+            <DeckItem key={deck.id} title={deck.description}>
               <Radio active={deck.favorite} id={deck.id} onClick={this.props.favorite} />
-            </li>
+              <DeckListSubItem>
+                <h4><FontAwesomeIcon icon={"share-alt"} /> &nbsp; Share</h4>
+              </DeckListSubItem>
+              <DeckListSubItem>
+                <h4><FontAwesomeIcon icon={"trash"} /> &nbsp; Delete</h4>
+              </DeckListSubItem>
+            </DeckItem>
           )}
-        </ul>
+        </DeckList>
         <div className="resetButtonWrapper">
           <button className="resetButton" onClick={this.props.handleConfirmBoxResetDeck}>
             <FontAwesomeIcon icon="sync-alt" /> &nbsp;
@@ -53,6 +57,7 @@ class Decks extends Component {
           </button>
         </div>
       </div>
+      </React.Fragment>
     );
   }
 }

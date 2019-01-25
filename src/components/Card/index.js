@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CardFactory from './../../helpers/CardFactory';
 import FrontFace from './FrontFace';
 import BackFace from './BackFace';
-import { ThemeContext } from './../../contexts/ThemeContext';
+import { ThemeContext } from './../../Contexts';
 import './index.css';
 
 /**
@@ -86,7 +86,7 @@ const Card = ({
           </div>
           <div className={"card" + flipped} onClick={handleClick}>
             <FrontFace />
-              <BackFace icon={icon} value={value} pattern={theme} />
+            <BackFace icon={icon} value={value} pattern={theme} />
           </div>
         </div>
       </div>

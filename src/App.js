@@ -6,6 +6,7 @@ import './App.css';
 /** Components */
 import Navbar from './components/Navbar';
 import ConfirmBox from './components/ConfirmBox';
+import Toastr from './components/Toastr';
 
 /** Containers */
 import Play from './containers/Play';
@@ -336,6 +337,8 @@ class App extends Component {
       text={this.state.text}
     />;
 
+    const toastr = <Toastr />
+
     const theme = 'tech-pattern';
 
     return (
@@ -348,6 +351,7 @@ class App extends Component {
               <Route path="/decks" exact render={this.renderDecks} />
               <Route path="/config" exact render={this.renderConfig} />
               {confirmBox}
+              {toastr}
             </div>
           </div>
         </Router>

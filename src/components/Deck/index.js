@@ -10,7 +10,7 @@ import './index.css';
  * 
  * Renders a card deck component
  * 
- * @props String numbers
+ * @prop {String} numbers
  */
 class Deck extends Component {
 

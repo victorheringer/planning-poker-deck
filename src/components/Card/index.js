@@ -11,16 +11,16 @@ import './index.css';
  * 
  * Renders a card component
  * 
- * @props {Number} value 
- * @props {Bool} fliped
- * @props {Bool} fixed
- * @props {String} pattern
- * @props {Bool} editing
- * @props {Bool} icon
- * @props {Function} onClickRemove
- * @props {Function} onClick
- * @props {String} className
- * @props {String} time
+ * @prop {Number} value 
+ * @prop {Bool} fliped
+ * @prop {Bool} fixed
+ * @prop {String} pattern
+ * @prop {Bool} editing
+ * @prop {Bool} icon
+ * @prop {Function} onClickRemove
+ * @prop {Function} onClick
+ * @prop {String} className
+ * @prop {String} time
  */
 const Card = ({ 
   value, 

@@ -7,8 +7,8 @@ import './index.css';
  * 
  * Nav tab component
  * 
- * @props {Object} children
- * @props {String} className 
+ * @prop {Object} children
+ * @prop {String} className 
  */
 const NavTab = ({ children, className }) => {
   return <div className={"tab " + className}>{children}</div>;
@@ -27,8 +27,8 @@ NavTab.defaultProps = {
  *
  * Nac tab item
  * 
- * @props {Object} children
- * @props {String} className
+ * @prop {Object} children
+ * @prop {String} className
  */
 const NavTabItem = ({ children, className }) => {
   return <div className={"tabItem " + className}>{children}</div>;

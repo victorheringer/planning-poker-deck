@@ -1,16 +1,19 @@
 import React from 'react';
 import './index.css';
 
-const Toastr = () => {
+const Toastr = ({ show, handleClose, actionText, messageText }) => {
+
+  const visibility = show ? 'visible' : 'hidden';
+
   return (
-    <div className='toastr hidden'>
+    <div className={ 'toastr ' + visibility }>
       <div className='box'>
         <div>
-          <p className='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacinia nec mauris laoreet pretium. Mauris vehicula, dui quis ullamcorper dapibus, orci dui sollicitudin justo, vel tristique urna sapien et nisi. </p>
+          <p className='text'>{messageText}</p>
         </div>
         <div></div>
-        <div className='action'>
-          <p>Action</p>
+        <div className='action' onClick={handleClose}>
+          <p>{actionText}</p>
         </div>
       </div>
     </div>

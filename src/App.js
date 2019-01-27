@@ -22,6 +22,7 @@ import decks from './data/decks.json';
 import DeckFactory from './helpers/DeckFactory';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';
+import { timeout } from 'q';
 
 /**
  * @author Victor Heringer
@@ -50,7 +51,12 @@ class App extends Component {
     theme: this.props.theme,
     themes: this.props.themes,
     canShare: navigator.share ? true : false,
-    text: this.props.text
+    text: this.props.text,
+    toastr: {
+      show: false,
+      message: '',
+      action: ''
+    }
   };
 
   /**
@@ -84,12 +90,12 @@ class App extends Component {
    * 
    * @return {void}
    */
-  loadDecks = () => {
+  loadDecks = callback => {
     const decks = DeckCollection.all();
     const favorite = DeckCollection.getFavorite();
     this.setState(update(this.state, 
       { decks: { $set: decks }, current: { $set: favorite } }
-    ));
+    ), callback);
   }
 
   /**
@@ -107,8 +113,7 @@ class App extends Component {
     if( name ) {
       const deck = DeckFactory.create(name);
       DeckCollection.push(deck, true);
-      this.setState({ deckNameInput: '' });
-      this.loadDecks();
+      this.loadDecks(() => this.setState({ deckNameInput: '' }));
     }
   }
 
@@ -126,14 +131,17 @@ class App extends Component {
     const deck = DeckCollection.find(id);
     const toUpdate = DeckCollection.all().filter( deck => deck.id !== id );
 
-    if (toUpdate.length == 0) return;
+    if (toUpdate.length == 0) {
+      this.showToastr(this.state.text.toastr.messages.deckCantDelete);
+      return
+    };
 
     if (deck.favorite) {
       toUpdate[0].favorite = true;
     }
 
     DeckCollection.put(toUpdate);
-    this.loadDecks();
+    this.loadDecks(() => this.showToastr(this.state.text.toastr.messages.deckDelete));
   }
 
   /**
@@ -291,6 +299,45 @@ class App extends Component {
   /**
    * @author Victor Heringer
    * 
+   * Closes the toastr
+   * 
+   * @return {void}
+   */
+  handleCloseToastr = () => {
+    this.setState(update(this.state, {
+      toastr: {
+        show: { $set: false }
+      }
+    }));
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
+   * Shows the toastr
+   * 
+   * @param {String} message
+   * 
+   * @return {void}
+   */
+  showToastr = message => {
+    const closeAfter = () => {
+      setTimeout( () => {
+        this.setState(update(this.state, {
+          toastr: { show: { $set: false } }
+        }));
+      }, 2000);
+    }
+    this.setState(update(this.state, { toastr: { 
+      show: { $set: true },
+      message: { $set: message },
+      action: { $set: this.state.text.toastr.action }
+    } }), closeAfter );
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
    * Renders the play container
    */
   renderPlay = () => <Play 
@@ -337,7 +384,12 @@ class App extends Component {
       text={this.state.text}
     />;
 
-    const toastr = <Toastr />
+    const toastr = <Toastr 
+      show={this.state.toastr.show}
+      handleClose={this.handleCloseToastr}
+      actionText={this.state.toastr.action}
+      messageText={this.state.toastr.message}
+    />
 
     const theme = 'tech-pattern';
 

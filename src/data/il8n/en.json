@@ -38,5 +38,12 @@
       "confirm": "Confirm",
       "cancel": "Cancel"
     }
+  },
+  "toastr": {
+    "action": "Close",
+    "messages": {
+      "deckDelete": "Deck deleted",
+      "deckCantDelete": "Can't be delete"
+    }
   }
 }

@@ -6,10 +6,17 @@ import Deck from './../../components/Deck';
  * 
  * Container for play
  */
-const Play = ({ current, text, addCard, loadDecks }) => {
+const Play = ({ current, text, addCard, loadDecks, gridSize }) => {
   return (
     <div>
-      <Deck addCard={addCard} text={text} initialDeck={current} cards={current.cards} loadDecks={loadDecks} />
+      <Deck 
+        addCard={addCard} 
+        text={text} 
+        initialDeck={current} 
+        cards={current.cards} 
+        loadDecks={loadDecks} 
+        gridSize={gridSize}
+      />
     </div>
   );
 }

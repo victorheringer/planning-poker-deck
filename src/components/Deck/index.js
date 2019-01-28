@@ -85,11 +85,13 @@ class Deck extends Component {
   render() {
 
     const { editing } = this.state;
+    const gridDeckContainer = this.props.gridSize == 4 ? 'gridDeckContainerFour' : 'gridDeckContainerThree';
+    const cardSize = this.props.gridSize == 4 ? 'sm' : 'md';
     let time = 0.05;
 
     return (
       <React.Fragment>
-        <div className='gridDeckContainer'>
+        <div className={ gridDeckContainer }>
           {!this.state.isSelected &&
             this.props.cards.map(card => {
               time = time * 1.15;
@@ -104,6 +106,7 @@ class Deck extends Component {
                   onClickRemove={this.handleClickRemoveCard}
                   onClick={this.handleClickShowCard}
                   time={time}
+                  size={cardSize}
                 />
               );
             } )
@@ -117,6 +120,7 @@ class Deck extends Component {
               fixed={true}
               editing={false}
               onClick={this.props.addCard}
+              size={cardSize}
             />
           }
         </div>

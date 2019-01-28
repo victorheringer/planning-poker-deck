@@ -32,6 +32,7 @@ const Card = ({
   onClick,
   onClickRemove,
   time,
+  size,
   pattern
 }) => {
 
@@ -70,6 +71,10 @@ const Card = ({
    */
   const flipped = up ? ' flipped' : '';
 
+  console.log(size);
+
+  const sizeClass = size == 'sm' ? 'cardSm' : 'cardMd';
+
   const closeBtnClass = editing ? 'visible' : 'hidden'; 
 
   return (
@@ -84,7 +89,7 @@ const Card = ({
               style={ { transitionDuration: `${time}s` } }
             >X</button>
           </div>
-          <div className={"card" + flipped} onClick={handleClick}>
+            <div className={sizeClass + " card " + flipped } onClick={handleClick}>
             <FrontFace />
             <BackFace icon={icon} value={value} pattern={theme} />
           </div>

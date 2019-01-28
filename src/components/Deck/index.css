@@ -1,6 +1,11 @@
-.gridDeckContainer {
+.gridDeckContainerThree {
   display: grid;
   grid-template-columns: auto auto auto;
+}
+
+.gridDeckContainerFour {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
 }
 
 .deckActions {

@@ -344,6 +344,7 @@ class App extends Component {
     {...this.state} 
     addCard={this.handlePushCardToCurrentDeck}
     loadDecks={this.loadDecks}
+    gridSize={this.state.grid}
   />;
 
   /**
@@ -392,6 +393,7 @@ class App extends Component {
     />
 
     const theme = 'tech-pattern';
+    console.log(this.state.grid);
 
     return (
       <ThemeContext.Provider value={theme}>

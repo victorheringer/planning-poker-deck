@@ -80,7 +80,7 @@ class App extends Component {
    * @return {void}
    */
   loadText = (lang) => {
-    this.setState(update( this.state, { $set: { text: I18n.get(lang) } } ) );
+    this.setState( state => update(state, { $set: { text: I18n.get(lang) } } ));
   }
 
   /**
@@ -93,7 +93,7 @@ class App extends Component {
   loadDecks = callback => {
     const decks = DeckCollection.all();
     const favorite = DeckCollection.getFavorite();
-    this.setState(update(this.state, 
+    this.setState(state => update(state, 
       { decks: { $set: decks }, current: { $set: favorite } }
     ), callback);
   }
@@ -254,7 +254,7 @@ class App extends Component {
       confirmModal: { $set: this.resetDecks }
     };
 
-    this.setState(update(this.state, toUpdate));
+    this.setState(state => update(state, toUpdate));
   }
 
   /**
@@ -266,7 +266,7 @@ class App extends Component {
    */
   resetDecks = () => {
     DeckCollection.put(decks);
-    this.setState(update(this.state, { 
+    this.setState( state => update(state, { 
       decks: { $set: decks },
       showModal: { $set: !this.state.showModal }
     }));
@@ -293,7 +293,7 @@ class App extends Component {
    * @return {void}
    */
   cancelModal = () => {
-    this.setState(update(this.state, { showModal: { $set: false } }));
+    this.setState(state => update(state, { showModal: { $set: false } }));
   }
 
   /**
@@ -304,7 +304,7 @@ class App extends Component {
    * @return {void}
    */
   handleCloseToastr = () => {
-    this.setState(update(this.state, {
+    this.setState(state => update(state, {
       toastr: {
         show: { $set: false }
       }
@@ -323,12 +323,12 @@ class App extends Component {
   showToastr = message => {
     const closeAfter = () => {
       setTimeout( () => {
-        this.setState(update(this.state, {
+        this.setState(state => update(state, {
           toastr: { show: { $set: false } }
         }));
       }, 2000);
     }
-    this.setState(update(this.state, { toastr: { 
+    this.setState( state => update(state, { toastr: { 
       show: { $set: true },
       message: { $set: message },
       action: { $set: this.state.text.toastr.action }
@@ -393,7 +393,6 @@ class App extends Component {
     />
 
     const theme = 'tech-pattern';
-    console.log(this.state.grid);
 
     return (
       <ThemeContext.Provider value={theme}>

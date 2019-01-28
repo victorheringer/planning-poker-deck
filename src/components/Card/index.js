@@ -71,8 +71,6 @@ const Card = ({
    */
   const flipped = up ? ' flipped' : '';
 
-  console.log(size);
-
   const sizeClass = size == 'sm' ? 'cardSm' : 'cardMd';
 
   const closeBtnClass = editing ? 'visible' : 'hidden'; 

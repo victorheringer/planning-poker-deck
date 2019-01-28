@@ -22,7 +22,6 @@ import decks from './data/decks.json';
 import DeckFactory from './helpers/DeckFactory';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';
-import { timeout } from 'q';
 
 /**
  * @author Victor Heringer
@@ -131,7 +130,7 @@ class App extends Component {
     const deck = DeckCollection.find(id);
     const toUpdate = DeckCollection.all().filter( deck => deck.id !== id );
 
-    if (toUpdate.length == 0) {
+    if (toUpdate.length === 0) {
       this.showToastr(this.state.text.toastr.messages.deckCantDelete);
       return
     };

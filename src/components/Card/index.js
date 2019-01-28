@@ -71,7 +71,7 @@ const Card = ({
    */
   const flipped = up ? ' flipped' : '';
 
-  const sizeClass = size == 'sm' ? 'cardSm' : 'cardMd';
+  const sizeClass = size === 'sm' ? 'cardSm' : 'cardMd';
 
   const closeBtnClass = editing ? 'visible' : 'hidden'; 
 

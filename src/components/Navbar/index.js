@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withRouter } from 'react-router-dom';
@@ -21,17 +21,17 @@ const Navbar = ({ location }) => {
   return (
     <div className="navbar">
       <NavTab className={"wrapper"}>
-        <NavTabItem className={route == "/" ? "active" : ""}>
+        <NavTabItem className={route === "/" ? "active" : ""}>
           <Link to="/">
             <img className="icon" src={deckIcon} alt="icon" />
           </Link>
         </NavTabItem>
-        <NavTabItem className={route == "/decks" ? "active" : ""}>
+        <NavTabItem className={route === "/decks" ? "active" : ""}>
           <Link to="/decks" aria-label="Deck List">
             <FontAwesomeIcon className="icon" icon={"folder-open"} />
           </Link>
         </NavTabItem>
-        <NavTabItem className={route == "/config" ? "active" : ""}>
+        <NavTabItem className={route === "/config" ? "active" : ""}>
           <Link to="/config" aria-label="Configurations">
             <FontAwesomeIcon className="icon" icon={"cog"} />
           </Link>

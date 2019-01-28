@@ -44,7 +44,7 @@ library.add(faTimes);
 
 const VERSION ='0.0.2';
 
-if( Collection.find('version') != VERSION ) {
+if( Collection.find('version') !== VERSION ) {
   Collection.delete('version');
   ConfigCollection.delete();
   DeckCollection.delete();

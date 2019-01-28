@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withRouter } from 'react-router-dom';
 import { NavTab, NavTabItem } from './../NavTab';
 
-import githubIcon from './../../assets/img/github.svg';
 import deckIcon from './../../assets/img/icon.png';
 import './index.css';
 
@@ -38,7 +37,7 @@ const Navbar = ({ location }) => {
         </NavTabItem>
         <NavTabItem>
           <a aria-label="Github" href={githubURL} target="_blank" rel="noopener noreferrer">
-            <img className="icon" src={githubIcon} alt="icon" />
+            <FontAwesomeIcon className="icon" icon={['fab', 'github']} />
           </a>
         </NavTabItem>
       </NavTab>

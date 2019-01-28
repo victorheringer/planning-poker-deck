@@ -11,11 +11,13 @@
 
 ## Why Planning Poker Deck
 
-- :mobile_phone_off: Offline first. You don't need to rely on your mobile connection to estimate things!
+- 📴 Offline first. You don't need to rely on your mobile connection to estimate things!
 
-- :floppy_disk: Small footprint. Only 150kb gzipped and 300kb unpacked!
+- 💾 Small footprint. Only 150kb gzipped and 300kb unpacked!
 
-- :memo: Create your own custom deck. Or use any of the given default decks that covers most common decks.
+- 📝 Create your own custom deck. Or use any of the given default decks that covers most common decks.
+
+- 🆓 No adds. Really, this app will never ever have ads.
 
 - :octocat: Open Source. You know everything that is installed on your phone and always can send a pull resquest to fix or add a feature.
 
@@ -31,6 +33,38 @@ cd planning-poker-deck
 npm install
 ```
 
+## Contributing Translations
+
+You can help translate all text in this app, and it is dead simple.
+
+```
+src
+├─ assets
+  └─ il8n
+      en.json
+      pt-br.json
+      // Add your translation file here
+└─ helpers
+    I18l.js
+```
+
+```js
+import ptJson from '../data/il8n/pt-br.json';
+import enJson from '../data/il8n/en.json';
+```
+
+```js
+static get(lang) {
+  const data = { [I18n.br()]: ptJson, [I18n.en()]: enJson };
+  return data[lang];
+}
+```
+
+```js
+static available() {
+  return [I18n.en(), I18n.br()];
+}
+```
 
 ## Release History
 * 0.0.1

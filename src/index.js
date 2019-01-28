@@ -27,6 +27,8 @@ import {
   faTimes
 } from '@fortawesome/free-solid-svg-icons';
 
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 library.add(faEdit);
 library.add(faMugHot);
 library.add(faLongArrowAltLeft);
@@ -41,6 +43,7 @@ library.add(faCog);
 library.add(faInfinity);
 library.add(faFolderOpen);
 library.add(faTimes);
+library.add(faGithub);
 
 const VERSION ='0.0.2';
 

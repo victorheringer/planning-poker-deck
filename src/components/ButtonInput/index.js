@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.css';
 
 /**
@@ -42,5 +43,15 @@ const ButtonInput = ({
     </div>
   );
 }
+
+ButtonInput.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  children: PropTypes.any.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
+};
 
 export default ButtonInput;

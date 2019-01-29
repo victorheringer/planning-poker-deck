@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.css';
 
 /**
@@ -14,5 +15,11 @@ const Radio = ({ id, active, onClick }) => {
   const activeClass = active ? 'active radio' : 'inactive radio';
   return <div className={activeClass} onClick={() => onClick(id)}></div>;
 }
+
+Radio.propTypes = {
+  id: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired
+};
 
 export default Radio;

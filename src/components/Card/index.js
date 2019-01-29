@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import CardFactory from './../../helpers/CardFactory';
 import FrontFace from './FrontFace';
 import BackFace from './BackFace';
+import ButtonEdit from './ButtonEdit';
 import { ThemeContext } from './../../Contexts';
+import classNames from 'classnames';
 import './index.css';
 
 /**
@@ -64,30 +66,27 @@ const Card = ({
   const handleClickRemove = event => {
     onClickRemove(event, value);
   }
-  
-  /**
-   * Checks if card is fliped
-   * @var String
-   */
-  const flipped = up ? ' flipped' : '';
 
-  const sizeClass = size === 'sm' ? 'cardSm' : 'cardMd';
+  const wrapperClasses = classNames('cardWrapper', className);
+
+  const classes = classNames(
+    'card',
+    { 'flipped': up, 'cardSm': size === 'sm', 'cardMd': size === 'md' }
+  );
 
   const closeBtnClass = editing ? 'visible' : 'hidden'; 
 
   return (
     <ThemeContext.Consumer>
       {theme => (
-      <div className={"cardWrapper " + className}>
+      <div className={wrapperClasses}>
         <div className="cardContainer">
-          <div className="close">
-            <button 
-              className={closeBtnClass} 
-              onClick={handleClickRemove}
-              style={ { transitionDuration: `${time}s` } }
-            >X</button>
-          </div>
-            <div className={sizeClass + " card " + flipped } onClick={handleClick}>
+          <ButtonEdit 
+            className={closeBtnClass}
+            handleClick={handleClickRemove} 
+            time={time}
+          />
+          <div className={classes} onClick={handleClick}>
             <FrontFace />
             <BackFace icon={icon} value={value} pattern={theme} />
           </div>

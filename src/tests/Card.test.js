@@ -6,29 +6,29 @@ import { faMugHot } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faMugHot);
 
-it('renders BackFace without crashing for normal card', () => {
-  const div = document.createElement('div');
+describe('ButtonLink', () => {
 
-  const componentToTest = <BackFace 
-    icon={false} 
-    value={5} 
-    pattern={"tech-pattern"} 
-  />;
+  it('renders BackFace without crashing for normal card', () => {
+    const div = document.createElement('div');
+    const componentToTest = <BackFace 
+      icon={false} 
+      value={'5'} 
+      pattern={"tech-pattern"} 
+    />;
+    ReactDOM.render(componentToTest, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 
-  ReactDOM.render(componentToTest, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
 
+  it('renders BackFace without crashing for icon card', () => {
+    const div = document.createElement('div');
+    const componentToTest = <BackFace
+      icon={true}
+      value={'mug-hot'}
+      pattern={"tech-pattern"}
+    />;
 
-it('renders BackFace without crashing for icon card', () => {
-  const div = document.createElement('div');
-
-  const componentToTest = <BackFace
-    icon={true}
-    value={'mug-hot'}
-    pattern={"tech-pattern"}
-  />;
-
-  ReactDOM.render(componentToTest, div);
-  ReactDOM.unmountComponentAtNode(div);
+    ReactDOM.render(componentToTest, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 });

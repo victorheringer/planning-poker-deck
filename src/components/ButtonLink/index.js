@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.css';
 
 /**
@@ -19,5 +20,11 @@ const ButtonLink = ({ children, onClick, theme }) => {
     </div>
   );
 }
+
+ButtonLink.propTypes = {
+  children: PropTypes.any.isRequired,
+  onClick: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired
+};
 
 export default ButtonLink;

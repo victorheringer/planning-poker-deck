@@ -18,7 +18,7 @@ import { ThemeContext } from './Contexts';
 
 /** Helpers */
 import I18n from './helpers/I18n';
-import decks from './data/decks.json';
+import decks from './resources/decks.json';
 import DeckFactory from './helpers/DeckFactory';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';

@@ -33,13 +33,13 @@ cd planning-poker-deck
 npm install
 ```
 
-## Contributing Translations
+## Contributing Translations (Soon)
 
 You can help translate all text in this app, and it is dead simple.
 
 ```
 src
-├─ assets
+├─ resources
   └─ il8n
       en.json
       pt-br.json

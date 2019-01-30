@@ -6,8 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';
 import Collection from './helpers/Collection';
-import decks from './data/decks.json';
-import config from './data/config.json';
+import decks from './resources/decks.json';
+import config from './resources/config.json';
 import I18n from './helpers/I18n';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {

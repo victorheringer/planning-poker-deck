@@ -1,5 +1,5 @@
-import ptJson from '../data/il8n/pt-br.json';
-import enJson from '../data/il8n/en.json';
+import ptJson from './../resources/il8n/pt-br.json';
+import enJson from './../resources/il8n/en.json';
 
 /**
  * @author Victor Heringer

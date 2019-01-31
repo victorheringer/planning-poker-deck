@@ -382,6 +382,8 @@ class App extends Component {
       onCancel={this.cancelModal}
       onConfirm={this.state.confirmModal}
       text={this.state.text}
+      textCancel={this.state.text.confirmBox.btn.cancel}
+      textConfirm={this.state.text.confirmBox.btn.confirm}
     />;
 
     const toastr = <Toastr 

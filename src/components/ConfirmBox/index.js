@@ -7,7 +7,8 @@ const ConfirmBox = ({
   onCancel, 
   title, 
   message,
-  text
+  textCancel,
+  textConfirm,
 }) => {
 
   const visibility = show ? 'visible' : 'hidden';
@@ -22,12 +23,12 @@ const ConfirmBox = ({
         <div className="actions">
           <div>
             <button className="cancel" onClick={onCancel}>
-              { text.confirmBox.btn.cancel }
+              {textCancel}
             </button>
           </div>
           <div>
             <button className="confirm" onClick={onConfirm}>
-              { text.confirmBox.btn.confirm }
+              {textConfirm}
             </button>
           </div>
         </div>

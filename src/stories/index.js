@@ -56,3 +56,14 @@ storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo(
         textConfirm='Confirm'
       />
     )
+    .add('message and title as component',
+      () => <ConfirmBox
+        show
+        onConfirm={action('Confirmed clicked!')}
+        onCancel={action('Cancel clicked!')}
+        title={<span> 🎧 Music playing </span>}
+        message={<span> <b>Stop</b> your music?</span>}
+        textCancel='Cancel'
+        textConfirm='Pause'
+      />
+    )

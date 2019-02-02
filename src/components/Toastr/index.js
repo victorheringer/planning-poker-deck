@@ -35,7 +35,10 @@ Toastr.propTypes = {
   show: PropTypes.bool.isRequired, 
   handleClose: PropTypes.func.isRequired, 
   actionText: PropTypes.string.isRequired, 
-  messageText: PropTypes.string.isRequired
+  messageText: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.object.isRequired
+  ])
 };
 
 export default Toastr;

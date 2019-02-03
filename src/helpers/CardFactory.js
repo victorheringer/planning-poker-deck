@@ -12,13 +12,15 @@ class CardFactory {
    * 
    * Creates a new card Object
    * 
+   * @param {Number} id
+   * @param {String} color
    * @param {Mix} value 
    * @param {Bool} icon 
    * 
    * @return {Object}
    */
-  static create(value, icon) { 
-    return { value: value, icon: icon } 
+  static create(id, color, value, icon) { 
+    return { id: id, color: color ,value: value, icon: icon } 
   };
 }
 

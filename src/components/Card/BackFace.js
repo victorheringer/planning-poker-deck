@@ -8,9 +8,12 @@ import './patterns.css';
  * 
  * Renders the cards's back face
  */
-const BackFace = ({ value, icon, pattern }) => {
+const BackFace = ({ value, icon, pattern, color }) => {
+
+  const styles = { backgroundColor: color ? color : '' };
+
   return (
-    <div className={"back " + pattern} >
+    <div className={"back " + pattern} style={styles}>
       <h3 className="cardTitle cardNumber">
         {icon ? <FontAwesomeIcon icon={value} /> : value}
       </h3>

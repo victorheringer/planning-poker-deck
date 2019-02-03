@@ -6,8 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';
 import Collection from './helpers/Collection';
-import decks from './resources/decks.json';
-import config from './resources/config.json';
+import seed from './resources/seed.json';
+import settings from './resources/settings.json';
 import I18n from './helpers/I18n';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -45,7 +45,7 @@ library.add(faFolderOpen);
 library.add(faTimes);
 library.add(faGithub);
 
-const VERSION ='0.0.2';
+const VERSION = '0.0.3';
 
 if( Collection.find('version') !== VERSION ) {
   Collection.delete('version');
@@ -54,22 +54,24 @@ if( Collection.find('version') !== VERSION ) {
   Collection.put('version',VERSION);
 }
 
-if (!DeckCollection.all() ) {
-  DeckCollection.put(decks);
+if (!DeckCollection.all()) {
+  DeckCollection.put(seed.decks);
 }
 
 if (!ConfigCollection.all()) {
-  ConfigCollection.put(config);
+  ConfigCollection.put(seed.settings);
 }
+
+const userSettings = ConfigCollection.all();
 
 ReactDOM.render(
   <App 
-    text={I18n.get(ConfigCollection.all().lang)} 
-    lang={ConfigCollection.all().lang}
-    grids={[3,4]}
-    grid={ConfigCollection.all().grid}
-    themes={['tech', 'dark']}
-    theme={ConfigCollection.all().theme}
+    text={I18n.get(userSettings.lang)} 
+    lang={userSettings.lang}
+    grids={settings.grids}
+    grid={userSettings.grid}
+    themes={settings.themes}
+    theme={userSettings.theme}
   />, 
   document.getElementById('root')
 );

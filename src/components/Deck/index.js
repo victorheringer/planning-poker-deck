@@ -98,8 +98,10 @@ class Deck extends Component {
               return(
                 <Card
                   value={card.value}
-                  key={card.value}
+                  key={card.id}
+                  id={card.id}
                   up={true}
+                  color={card.color}
                   icon={card.icon}
                   fixed={true}
                   editing={editing}
@@ -116,6 +118,8 @@ class Deck extends Component {
               value={'+'}
               pattern={'none'}
               up={true}
+              color={''}
+              id={0}
               icon={false}
               fixed={true}
               editing={false}
@@ -128,8 +132,10 @@ class Deck extends Component {
           {this.state.isSelected &&
             <Card
               value={this.state.cardSelected.value}
-              key={this.state.cardSelected.value}
+              key={this.state.cardSelected.id}
               up={false}
+              id={this.state.cardSelected.id}
+              color={this.state.cardSelected.color}
               icon={this.state.cardSelected.icon}
               fixed={false}
               editing={editing}

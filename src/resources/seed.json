@@ -1,0 +1,322 @@
+{
+  "settings": {
+    "lang": "en",
+    "grid": 3,
+    "theme": "tech",
+    "version": "0.0.3"
+  },
+  "decks": [
+    {
+      "id": 1547171926660,
+      "name": "fibonacci",
+      "description": "Fibonacci",
+      "favorite": true,
+      "usesThemeColor": false,
+      "cards": [
+        {
+          "id": 1549212575,
+          "value": "0",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212576,
+          "value": "1",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212577,
+          "value": "2",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212578,
+          "value": "3",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212579,
+          "value": "5",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212580,
+          "value": "8",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212581,
+          "value": "13",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212582,
+          "value": "21",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212583,
+          "value": "34",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212584,
+          "value": "55",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212585,
+          "value": "89",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212586,
+          "value": "144",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212587,
+          "value": "infinity",
+          "icon": true,
+          "color": false
+        },
+        {
+          "id": 1549212588,
+          "value": "?",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212589,
+          "value": "mug-hot",
+          "icon": true,
+          "color": false
+        }
+      ]
+    },
+    {
+      "id": 1547171926661,
+      "name": "standard",
+      "description": "Standard",
+      "favorite": false,
+      "usesThemeColor": false,
+      "cards": [
+        {
+          "id": 1549212590,
+          "value": "0",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212591,
+          "value": "1/2",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212592,
+          "value": "1",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212593,
+          "value": "2",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212594,
+          "value": "3",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212595,
+          "value": "5",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212596,
+          "value": "8",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212597,
+          "value": "13",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212598,
+          "value": "20",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212599,
+          "value": "40",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212600,
+          "value": "100",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212601,
+          "value": "infinity",
+          "icon": true,
+          "color": false
+        },
+        {
+          "id": 1549212602,
+          "value": "?",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212603,
+          "value": "mug-hot",
+          "icon": true,
+          "color": false
+        }
+      ]
+    },
+    {
+      "id": 1547171926662,
+      "name": "t-shirt",
+      "description": "T-Shirt",
+      "favorite": false,
+      "usesThemeColor": false,
+      "cards": [
+        {
+          "id": 1549212604,
+          "value": "XS",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212605,
+          "value": "S",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212606,
+          "value": "M",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 154921267,
+          "value": "L",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212608,
+          "value": "XL",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212609,
+          "value": "XXL",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212610,
+          "value": "infinity",
+          "icon": true,
+          "color": false
+        },
+        {
+          "id": 1549212611,
+          "value": "?",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212612,
+          "value": "mug-hot",
+          "icon": true,
+          "color": false
+        }
+      ]
+    },
+    {
+      "id": 1547171926663,
+      "name": "risk",
+      "description": "Risk Planning",
+      "favorite": false,
+      "usesThemeColor": false,
+      "cards": [
+        {
+          "id": 1549212613,
+          "value": "",
+          "icon": false,
+          "color": "#32B921"
+        },
+        {
+          "id": 1549212614,
+          "value": "",
+          "icon": false,
+          "color": "#FCCC04"
+        },
+        {
+          "id": 1549212615,
+          "value": "",
+          "icon": false,
+          "color": "#F56807"
+        },
+        {
+          "id": 1549212616,
+          "value": "",
+          "icon": false,
+          "color": "#7C0C84"
+        },
+        {
+          "id": 1549212617,
+          "value": "",
+          "icon": false,
+          "color": "#D41C0C"
+        },
+        {
+          "id": 1549212618,
+          "value": "infinity",
+          "icon": true,
+          "color": false
+        },
+        {
+          "id": 1549212619,
+          "value": "?",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212620,
+          "value": "mug-hot",
+          "icon": true,
+          "color": false
+        }
+      ]
+    }
+  ]
+}

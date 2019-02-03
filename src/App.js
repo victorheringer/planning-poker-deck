@@ -18,7 +18,7 @@ import { ThemeContext } from './Contexts';
 
 /** Helpers */
 import I18n from './helpers/I18n';
-import decks from './resources/decks.json';
+import seed from './resources/seed.json';
 import DeckFactory from './helpers/DeckFactory';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';
@@ -264,9 +264,9 @@ class App extends Component {
    * @return {void}
    */
   resetDecks = () => {
-    DeckCollection.put(decks);
+    DeckCollection.put(seed.decks);
     this.setState( state => update(state, { 
-      decks: { $set: decks },
+      decks: { $set: seed.decks },
       showModal: { $set: !this.state.showModal }
     }));
   }

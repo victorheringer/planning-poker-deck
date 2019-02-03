@@ -56,7 +56,7 @@ storiesOf('Welcome', module).add(
 );
 
   storiesOf('ButtonLink', module)
-    .add('with danger theme', 
+    .add('with danger tech theme', 
       () => <ButtonLink 
         onClick={action('clicked!')}
         theme='danger'
@@ -64,7 +64,39 @@ storiesOf('Welcome', module).add(
         Danger Button Link
       </ButtonLink>
     )
-    .add('with default theme',
+    .add('with default tech theme',
+      () => <ButtonLink
+        onClick={action('clicked!')}
+        theme='default'
+      >
+        Default Button Link
+      </ButtonLink>
+    )
+    .add('with danger dark theme',
+      () => <ButtonLink
+        onClick={action('clicked!')}
+        theme='default'
+      >
+        Default Button Link
+      </ButtonLink>
+    )
+    .add('with default dark theme',
+      () => <ButtonLink
+        onClick={action('clicked!')}
+        theme='default'
+      >
+        Default Button Link
+      </ButtonLink>
+    )
+    .add('with danger eletric theme',
+      () => <ButtonLink
+        onClick={action('clicked!')}
+        theme='default'
+      >
+        Default Button Link
+      </ButtonLink>
+    )
+    .add('with default eletric theme',
       () => <ButtonLink
         onClick={action('clicked!')}
         theme='default'
@@ -122,6 +154,33 @@ storiesOf('Welcome', module).add(
     )
   
   storiesOf('Card', module)
+    .add('tech theme card',
+      () => <Card
+        value='1'
+        up
+        className={'big'}
+        onClick={action('Clicked!')}
+        size='lg'
+      />
+    )
+    .add('dark theme card',
+      () => <Card
+        value='1'
+        up
+        className={'big'}
+        onClick={action('Clicked!')}
+        size='lg'
+      />
+    )
+    .add('eletric theme card',
+      () => <Card
+        value='1'
+        up
+        className={'big'}
+        onClick={action('Clicked!')}
+        size='lg'
+      />
+    )
     .add('small card', 
       () => <Card 
         value='1'
@@ -167,18 +226,21 @@ storiesOf('Welcome', module).add(
         size='md'
       />
     )
-    .add('back card',
-      () => <Card
-        value='1'
-        up={false}
-        onClick={action('Clicked!')}
-        size='md'
-      />
-    )
+
 
   storiesOf('Navbar', module)
-    .add('default navbar',
-      () => <MemoryRouter initialEntries={['/']}>
+    .add('tech theme navbar', () =>
+     <MemoryRouter initialEntries={['/']}>
+        <Navbar route='/' />
+      </MemoryRouter>
+    )
+    .add('dark theme navbar', () =>
+      <MemoryRouter initialEntries={['/']}>
+        <Navbar route='/' />
+      </MemoryRouter>
+    )
+    .add('eletric theme navbar', () =>
+      <MemoryRouter initialEntries={['/']}>
         <Navbar route='/' />
       </MemoryRouter>
     )

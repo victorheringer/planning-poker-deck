@@ -1,0 +1,10 @@
+{
+  "themes": [
+    "tech",
+    "dark",
+    "eletric"
+  ],
+  "grids": [
+    3, 4
+  ]
+}

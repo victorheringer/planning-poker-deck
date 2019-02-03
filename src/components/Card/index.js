@@ -26,9 +26,11 @@ import './index.css';
  */
 const Card = ({ 
   value, 
-  up, 
+  up,
+  id, 
   editing, 
-  icon, 
+  icon,
+  color,
   className, 
   fixed,
   onClick,
@@ -48,7 +50,7 @@ const Card = ({
   const handleClick = event => {
     event.preventDefault();
     if (fixed) {
-      const card = CardFactory.create(value, icon);
+      const card = CardFactory.create(id, color, value, icon);
       onClick(event, card);
     }
     else {
@@ -101,7 +103,7 @@ const Card = ({
           />
           <div className={classes} onClick={handleClick}>
             <FrontFace />
-            <BackFace icon={icon} value={value} pattern={theme} />
+              <BackFace icon={icon} color={color} value={value} pattern={theme} />
           </div>
         </div>
       </div>

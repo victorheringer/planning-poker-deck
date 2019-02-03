@@ -114,14 +114,6 @@
   transition: all ease-out;
 }
 
-.wrapperSm {
-  min-width: calc( 100% - 15px );
-}
-
-.wrapperMd {
-  min-width: calc( 100% - 15px );
-}
-
 .cardSm {
   height: 90px;
 }

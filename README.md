@@ -33,6 +33,11 @@ cd planning-poker-deck
 npm install
 ```
 
+This app has a story book, if you wanna check it, just run
+
+```
+npm run storybook
+```
 ## Contributing Translations (Soon)
 
 You can help translate all text in this app, and it is dead simple.

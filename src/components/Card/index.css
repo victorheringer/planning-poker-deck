@@ -115,11 +115,11 @@
 }
 
 .wrapperSm {
-  max-width: 80px;
+  width: 80px;
 }
 
 .wrapperMd {
-  max-width: 100px;
+  width: 100px;
 }
 
 .cardSm {
@@ -144,13 +144,10 @@
 .wrapperLg {
   padding: 30px 40px;
   max-width: 315px;
+  margin: 0 auto;
 }
 
 .wrapperLg .card {
-  height: 400px;
-}
-
-.cardLg {
   height: 400px;
 }
 

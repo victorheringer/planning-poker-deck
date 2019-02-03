@@ -86,7 +86,7 @@ class Deck extends Component {
 
     const { editing } = this.state;
     const gridDeckContainer = this.props.gridSize === '4' ? 'gridDeckContainerFour' : 'gridDeckContainerThree';
-    const cardSize = this.props.gridSize === 4 ? 'sm' : 'md';
+    const cardSize = this.props.gridSize === '4' ? 'sm' : 'md';
     let time = 0.05;
 
     return (

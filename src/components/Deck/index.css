@@ -1,11 +1,13 @@
 .gridDeckContainerThree {
   display: grid;
   grid-template-columns: auto auto auto;
+  justify-items: center;
 }
 
 .gridDeckContainerFour {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  justify-items: center;
 }
 
 .deckActions {

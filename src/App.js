@@ -4,7 +4,7 @@ import update from 'immutability-helper';
 import './App.css';
 
 /** Components */
-import Navbar from './components/Navbar';
+import NavRouter from './components/NavRouter';
 import ConfirmBox from './components/ConfirmBox';
 import Toastr from './components/Toastr';
 
@@ -399,7 +399,7 @@ class App extends Component {
       <ThemeContext.Provider value={theme}>
         <Router>
           <div>
-            <Navbar route={this.props.location.pathname} {...this.state} />
+            <NavRouter />
             <div className='app'>
               <Route path="/" exact render={this.renderPlay} />
               <Route path="/decks" exact render={this.renderDecks} />
@@ -414,4 +414,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;

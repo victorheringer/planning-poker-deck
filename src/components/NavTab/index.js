@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './index.css';
 
 /**
@@ -30,8 +31,13 @@ NavTab.defaultProps = {
  * @prop {Object} children
  * @prop {String} className
  */
-const NavTabItem = ({ children, className }) => {
-  return <div className={"tabItem " + className}>{children}</div>;
+const NavTabItem = ({ children, className, active }) => {
+  const classes = classNames(
+    'tabItem',
+    className,
+    { 'active': active ? 'active' : '' }
+  );
+  return <div className={classes}>{children}</div>;
 }
 
 NavTabItem.propTypes = {

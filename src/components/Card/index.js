@@ -67,11 +67,24 @@ const Card = ({
     onClickRemove(event, value);
   }
 
-  const wrapperClasses = classNames('cardWrapper', className);
+  const wrapperClasses = classNames(
+    'cardWrapper', 
+    className,
+    { 
+      'wrapperSm': size === 'sm', 
+      'wrapperMd': size === 'md',
+      'wrapperLg': size === 'lg' 
+    }
+  );
 
   const classes = classNames(
     'card',
-    { 'flipped': up, 'cardSm': size === 'sm', 'cardMd': size === 'md' }
+    { 
+      'flipped': up, 
+      'cardSm': size === 'sm', 
+      'cardMd': size === 'md',
+      'cardLg': size === 'lg' 
+    }
   );
 
   const closeBtnClass = editing ? 'visible' : 'hidden'; 
@@ -112,6 +125,7 @@ Card.propTypes = {
 Card.defaultProps = {
   value: "", 
   fliped: false,
+  time: 0,
   fixed: false,
   pattern: "dark-pattern",
   editing: false,

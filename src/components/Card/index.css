@@ -21,24 +21,6 @@
   perspective: 800px;
 }
 
-.cardSm {
-  height: 90px;
-}
-
-.cardSm .cardNumber {
-  font-size: 30px;
-  line-height: 85px;
-}
-
-.cardMd {
-  height: 110px;
-}
-
-.cardMd .cardNumber {
-  font-size: 40px;
-  line-height: 100px;
-}
-
 .card {
   width: 100%;
   cursor: pointer;
@@ -132,20 +114,52 @@
   transition: all ease-out;
 }
 
-.big {
-  padding: 30px 40px;
+.wrapperSm {
+  max-width: 80px;
 }
 
-.big .card {
+.wrapperMd {
+  max-width: 100px;
+}
+
+.cardSm {
+  height: 90px;
+}
+
+.cardSm .cardNumber {
+  font-size: 30px;
+  line-height: 85px;
+}
+
+.cardMd {
+  height: 110px;
+}
+
+.cardMd .cardNumber {
+  font-size: 40px;
+  line-height: 100px;
+}
+
+
+.wrapperLg {
+  padding: 30px 40px;
+  max-width: 315px;
+}
+
+.wrapperLg .card {
   height: 400px;
 }
 
-.big .cardNumber {
+.cardLg {
+  height: 400px;
+}
+
+.wrapperLg .cardNumber {
   font-size: 125px;
   line-height: 375px;
 }
 
-.big .card .front, .big .card .back {
+.wrapperLg .card .front, .wrapperLg .card .back {
   height: calc(100% - 30px);
   width: calc(100% - 30px);
   border: 15px solid #FFF

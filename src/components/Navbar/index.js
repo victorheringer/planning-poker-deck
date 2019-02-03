@@ -12,9 +12,9 @@ import './index.css';
  * 
  * Component for navbar
  */
-const Navbar = ({ location }) => {
+const Navbar = ({ route }) => {
 
-  const route = location.pathname;
+  //const route = location.pathname;
   const githubURL = "https://github.com/VictorHeringer/planning-poker-deck";
 
   return (
@@ -45,4 +45,4 @@ const Navbar = ({ location }) => {
   );
 }
 
-export default withRouter(Navbar);
+export default Navbar;

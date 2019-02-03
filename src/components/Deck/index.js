@@ -135,7 +135,7 @@ class Deck extends Component {
               editing={editing}
               onClickRemove={this.handleClickRemoveCard}
               onClick={this.handleClickShowCard}
-              className={'big'}
+              size='lg'
             />
           }
         </div>

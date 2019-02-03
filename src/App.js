@@ -399,7 +399,7 @@ class App extends Component {
       <ThemeContext.Provider value={theme}>
         <Router>
           <div>
-            <Navbar {...this.state} />
+            <Navbar route={this.props.location.pathname} {...this.state} />
             <div className='app'>
               <Route path="/" exact render={this.renderPlay} />
               <Route path="/decks" exact render={this.renderDecks} />
@@ -414,4 +414,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

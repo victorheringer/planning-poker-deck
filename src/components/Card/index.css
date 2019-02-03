@@ -115,12 +115,10 @@
 }
 
 .wrapperSm {
-  max-width: 65px;
   min-width: calc( 100% - 15px );
 }
 
 .wrapperMd {
-  max-width: 100px;
   min-width: calc( 100% - 15px );
 }
 

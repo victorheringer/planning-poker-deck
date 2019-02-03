@@ -115,11 +115,13 @@
 }
 
 .wrapperSm {
-  width: 80px;
+  max-width: 65px;
+  min-width: calc( 100% - 15px );
 }
 
 .wrapperMd {
-  width: 100px;
+  max-width: 100px;
+  min-width: calc( 100% - 15px );
 }
 
 .cardSm {

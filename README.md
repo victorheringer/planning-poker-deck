@@ -33,7 +33,7 @@ cd planning-poker-deck
 npm install
 ```
 
-This app has a story book, if you wanna check it, just run
+This app has a story book, if you wanna check it out, just run:
 
 ```
 npm run storybook

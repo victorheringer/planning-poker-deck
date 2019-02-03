@@ -42,8 +42,8 @@ class Deck extends Component {
    * @param {Object} event
    * @param {Object} card
    */
-  handleClickRemoveCard = (event, card) => {
-    const cards = this.props.cards.filter(cards => cards.value !== card);
+  handleClickRemoveCard = (event, id) => {
+    const cards = this.props.cards.filter(cards => cards.id !== id);
     let deck = { ...this.props.initialDeck};
     deck.cards = cards;
     DeckCollection.update(deck);

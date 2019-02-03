@@ -51,6 +51,7 @@ const Card = ({
     event.preventDefault();
     if (fixed) {
       const card = CardFactory.create(id, color, value, icon);
+      console.log(card);
       onClick(event, card);
     }
     else {
@@ -66,7 +67,7 @@ const Card = ({
    * @param {Object} event
    */
   const handleClickRemove = event => {
-    onClickRemove(event, value);
+    onClickRemove(event, id);
   }
 
   const wrapperClasses = classNames(

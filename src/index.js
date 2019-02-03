@@ -45,6 +45,7 @@ library.add(faFolderOpen);
 library.add(faTimes);
 library.add(faGithub);
 
+
 const VERSION = '0.0.3';
 
 if( Collection.find('version') !== VERSION ) {

@@ -24,11 +24,11 @@ class DeckItem extends React.Component {
           {title}
         </span>
         {children.filter(
-          val => !val.type || val.type.displayName !== 'DeckListSubItem'
+          val => val && (!val.type || val.type.displayName !== 'DeckListSubItem' )
         )}
         <ul className={this.state.show ? 'show' : 'hidden'}>
           {children.filter(
-            val => val.type && val.type.displayName === 'DeckListSubItem'
+            val => val && ( val.type && val.type.displayName === 'DeckListSubItem' )
           )}
         </ul>
       </li>

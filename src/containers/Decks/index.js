@@ -32,12 +32,14 @@ class Decks extends Component {
           { this.props.decks.map(deck => 
             <DeckItem key={deck.id} title={deck.description}>
               <Radio active={deck.favorite} id={deck.id} onClick={this.props.favorite} />
-              <DeckListSubItem>
-                <h4 onClick={this.props.shareDeck}>
-                  <FontAwesomeIcon icon={"share-alt"} /> 
-                  &nbsp; {this.props.text.deckList.share}
-                </h4>
-              </DeckListSubItem>
+              {this.props.caShare && 
+                <DeckListSubItem>
+                  <h4 onClick={() => this.props.share(deck.id)}>
+                    <FontAwesomeIcon icon={"share-alt"} /> 
+                    &nbsp; {this.props.text.deckList.share}
+                  </h4>
+                </DeckListSubItem>
+              }
               <DeckListSubItem>
                 <h4 onClick={ () => this.props.deleteDeck( deck.id ) }>
                   <FontAwesomeIcon icon={"trash"} /> 

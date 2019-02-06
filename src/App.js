@@ -190,7 +190,7 @@ class App extends Component {
   /**
    * @author Victor Heringer
    * 
-   * Handles language selection
+   * Handles grid size selection
    * 
    * @param {Object} event 
    * 

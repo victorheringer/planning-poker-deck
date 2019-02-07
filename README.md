@@ -42,32 +42,67 @@ npm run storybook
 
 You can help translate all text in this app, and it is dead simple.
 
+First you need to create a file. After, copy the content from other translation file.
 ```
 src
-├─ resources
+└─  resources
   └─ il8n
       en.json
       pt-br.json
-      // Add your translation file here
+      // Add here. As an exemple for Spanish (Spain) translation would be added as es-es.json
+```
+
+Then, at I18l.js file just follow the steps:
+
+```
+str
 └─ helpers
     I18l.js
 ```
 
-```js
-import ptJson from '../data/il8n/pt-br.json';
-import enJson from '../data/il8n/en.json';
-```
+Import the file
 
 ```js
+import ptBrJson from '../data/il8n/pt-br.json';
+import enJson from '../data/il8n/en.json';
+import esEsJson from '../data/il8n/en.json'; // Add previusly created es-es.json
+```
+
+Add the key name
+```
+static en() {
+  return 'en';
+}
+static ptBr() {
+  return 'pt_br';
+}
+
+static esEs() {
+  // This will be the array key and the selectable value at configuration
+  return 'es_es';
+}
+```
+
+Relate the translation data to it's respective key
+```js
 static get(lang) {
-  const data = { [I18n.br()]: ptJson, [I18n.en()]: enJson };
+  const data = { [
+    I18n.ptBr()]: ptBrJson, 
+    [I18n.en()]: enJson,
+    [I18n.esEs()]: esEsJson  //[key]: translation file content
+  };
   return data[lang];
 }
 ```
 
+Add to available languages
 ```js
 static available() {
-  return [I18n.en(), I18n.br()];
+  return [
+    I18n.en(), 
+    I18n.ptBr(),
+    I18n.esEs() // Key to be selected
+  ];
 }
 ```
 

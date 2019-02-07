@@ -5,13 +5,6 @@
     "edit": "Editar",
     "back": "Voltar"
   },
-  "nav": {
-    "play": "Jogar",
-    "deck": "Decks",
-    "share": "Compartilhar",
-    "github": "Github",
-    "config": "Configurações"
-  },
   "deckList": {
     "share": "Compartilhar",
     "delete": "Deletar"

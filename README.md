@@ -38,7 +38,7 @@ This app has a story book, if you wanna check it out, just run:
 ```
 npm run storybook
 ```
-## Contributing Translations (Soon)
+## Contributing Translations
 
 You can help translate all text in this app, and it is dead simple.
 

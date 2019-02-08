@@ -69,14 +69,14 @@ import esEsJson from '../data/il8n/en.json'; // Add previusly created es-es.json
 ```
 
 Add the key name
-```
+
+```js
 static en() {
   return 'en';
 }
 static ptBr() {
   return 'pt_br';
 }
-
 static esEs() {
   // This will be the array key and the selectable value at configuration
   return 'es_es';
@@ -84,6 +84,7 @@ static esEs() {
 ```
 
 Relate the translation data to it's respective key
+
 ```js
 static get(lang) {
   const data = { [
@@ -96,6 +97,7 @@ static get(lang) {
 ```
 
 Add to available languages
+
 ```js
 static available() {
   return [

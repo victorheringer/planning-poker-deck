@@ -2,8 +2,8 @@
   "settings": {
     "lang": "en",
     "grid": 3,
-    "theme": "tech",
-    "version": "0.0.3"
+    "theme": "tech-theme",
+    "version": "0.0.4"
   },
   "decks": [
     {

@@ -101,9 +101,9 @@ const Card = ({
             handleClick={handleClickRemove} 
             time={time}
           />
-          <div className={classes} onClick={handleClick}>
+          <div className={classNames(classes, theme)} onClick={handleClick}>
             <FrontFace />
-              <BackFace icon={icon} color={color} value={value} pattern={theme} />
+              <BackFace icon={icon} color={color} value={value} pattern={'tech-pattern'} />
           </div>
         </div>
       </div>

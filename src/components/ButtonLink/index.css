@@ -14,7 +14,7 @@
 }
 
 
-/* Tech */
+/* Tech theme */
 
 .buttonLinkWrapper.tech-theme .danger {
   color: #E57373;
@@ -24,17 +24,17 @@
   color: #616161;
 }
 
-/* Dark */
+/* Dark theme */
 
 .buttonLinkWrapper.dark-theme .danger {
   color: #EF9A9A;
 }
 
 .buttonLinkWrapper.dark-theme .default {
-  color: #F5F5F5;
+  color: #212121;
 }
 
-/* Eletric */
+/* Eletric theme */
 
 .buttonLinkWrapper.eletric-theme .danger {
   color: #F06292;

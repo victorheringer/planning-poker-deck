@@ -57,19 +57,11 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.card .front {
-  background: #1565c0;
-  /*background: #212121;*/
-}
-
 .card .back {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  background-color: #1565c0;
-  /*background-color: #212121;*/
-  color: #FFF;
 }
 
 .cardNumber {
@@ -152,4 +144,22 @@
   height: calc(100% - 30px);
   width: calc(100% - 30px);
   border: 15px solid #FFF
+}
+
+/* Tech theme */
+.card.tech-theme .front, .card.tech-theme .back {
+  background-color: #1565c0;
+  color: #FFF;
+}
+
+/* Dark theme */
+.card.dark-theme .front, .card.dark-theme .back {
+  background-color: #212121;
+  color: #FFF;
+}
+
+/* Eletric theme */
+.card.eletric-theme .front, .card.eletric-theme .back {
+  background-color: #311B92;
+  color: #FFF;
 }

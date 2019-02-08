@@ -46,7 +46,7 @@ library.add(faTimes);
 library.add(faGithub);
 
 
-const VERSION = '0.0.3';
+const VERSION = '0.0.4';
 
 if( Collection.find('version') !== VERSION ) {
   Collection.delete('version');

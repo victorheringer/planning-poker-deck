@@ -393,10 +393,8 @@ class App extends Component {
       messageText={this.state.toastr.message}
     />
 
-    const theme = 'eletric-theme';
-
     return (
-      <ThemeContext.Provider value={theme}>
+      <ThemeContext.Provider value={this.state.theme}>
         <Router>
           <div>
             <NavRouter />

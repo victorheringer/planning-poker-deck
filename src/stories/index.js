@@ -174,31 +174,40 @@ storiesOf('Welcome', module).add(
   
   storiesOf('Card', module)
     .add('tech theme card',
-      () => <Card
-        value='1'
-        up
-        className={'big'}
-        onClick={action('Clicked!')}
-        size='lg'
-      />
+      () => 
+        <ThemeContext.Provider value={'tech-theme'}>
+            <Card
+              value='1'
+              up
+              className={'big'}
+              onClick={action('Clicked!')}
+              size='lg'
+            />
+        </ThemeContext.Provider>
     )
     .add('dark theme card',
-      () => <Card
-        value='1'
-        up
-        className={'big'}
-        onClick={action('Clicked!')}
-        size='lg'
-      />
+      () => 
+        <ThemeContext.Provider value={'dark-theme'}>
+          <Card
+            value='1'
+            up
+            className={'big'}
+            onClick={action('Clicked!')}
+            size='lg'
+          />
+        </ThemeContext.Provider>
     )
     .add('eletric theme card',
-      () => <Card
-        value='1'
-        up
-        className={'big'}
-        onClick={action('Clicked!')}
-        size='lg'
-      />
+      () => 
+        <ThemeContext.Provider value={'eletric-theme'}>
+          <Card
+            value='1'
+            up
+            className={'big'}
+            onClick={action('Clicked!')}
+            size='lg'
+          />
+        </ThemeContext.Provider>
     )
     .add('small card', 
       () => <Card 
@@ -231,7 +240,7 @@ storiesOf('Welcome', module).add(
         up
         fixed
         onClick={action('Clicked!')}
-        size='md'
+        size='lg'
       />
     )
     .add('removable card',
@@ -242,26 +251,32 @@ storiesOf('Welcome', module).add(
         fixed
         onClick={action('Clicked!')}
         onClickRemove={action('Remove clicked!')}
-        size='md'
+        size='lg'
       />
     )
 
 
   storiesOf('Navbar', module)
     .add('tech theme navbar', () =>
-     <MemoryRouter initialEntries={['/']}>
-        <Navbar route='/' />
-      </MemoryRouter>
+    <ThemeContext.Provider value={'tech-theme'}>
+      <MemoryRouter initialEntries={['/']}>
+          <Navbar route='/' />
+        </MemoryRouter>
+    </ThemeContext.Provider>
     )
     .add('dark theme navbar', () =>
-      <MemoryRouter initialEntries={['/']}>
-        <Navbar route='/' />
-      </MemoryRouter>
+      <ThemeContext.Provider value={'dark-theme'}>
+        <MemoryRouter initialEntries={['/']}>
+          <Navbar route='/' />
+        </MemoryRouter>
+      </ThemeContext.Provider>
     )
     .add('eletric theme navbar', () =>
-      <MemoryRouter initialEntries={['/']}>
-        <Navbar route='/' />
-      </MemoryRouter>
+      <ThemeContext.Provider value={'eletric-theme'}>
+        <MemoryRouter initialEntries={['/']}>
+          <Navbar route='/' />
+        </MemoryRouter>
+      </ThemeContext.Provider>
     )
   
   storiesOf('NavTab', module)

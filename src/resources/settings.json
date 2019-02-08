@@ -1,8 +1,8 @@
 {
   "themes": [
-    "tech",
-    "dark",
-    "eletric"
+    "tech-theme",
+    "dark-theme",
+    "eletric-theme"
   ],
   "grids": [
     3, 4

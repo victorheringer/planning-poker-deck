@@ -156,7 +156,7 @@ class Deck extends Component {
             </button>
           }
           {this.state.isSelected &&
-            <ButtonLink theme="default" onClick={this.handleClickDeselectCard}>
+            <ButtonLink type="default" onClick={this.handleClickDeselectCard}>
               <FontAwesomeIcon icon="long-arrow-alt-left" /> 
               &nbsp; {this.props.text.btn.back}
             </ButtonLink>

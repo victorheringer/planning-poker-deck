@@ -13,10 +13,33 @@
   cursor: pointer;
 }
 
-.buttonLinkWrapper .danger {
+
+/* Tech */
+
+.buttonLinkWrapper.tech-theme .danger {
   color: #E57373;
 }
 
-.buttonLinkWrapper .default {
+.buttonLinkWrapper.tech-theme .default {
   color: #616161;
+}
+
+/* Dark */
+
+.buttonLinkWrapper.dark-theme .danger {
+  color: #EF9A9A;
+}
+
+.buttonLinkWrapper.dark-theme .default {
+  color: #F5F5F5;
+}
+
+/* Eletric */
+
+.buttonLinkWrapper.eletric-theme .danger {
+  color: #F06292;
+}
+
+.buttonLinkWrapper.eletric-theme .default {
+  color: #9C27B0;
 }

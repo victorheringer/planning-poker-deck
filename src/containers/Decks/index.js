@@ -49,7 +49,7 @@ class Decks extends Component {
             </DeckItem>
           )}
         </DeckList>
-        <ButtonLink theme="danger" onClick={this.props.handleConfirmBoxResetDeck}>
+        <ButtonLink type="danger" onClick={this.props.handleConfirmBoxResetDeck}>
             <FontAwesomeIcon icon="sync-alt" />
             &nbsp; {this.props.text.btn.refresh}
         </ButtonLink>

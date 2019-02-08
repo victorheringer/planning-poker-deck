@@ -393,7 +393,7 @@ class App extends Component {
       messageText={this.state.toastr.message}
     />
 
-    const theme = 'tech-pattern';
+    const theme = 'eletric-theme';
 
     return (
       <ThemeContext.Provider value={theme}>

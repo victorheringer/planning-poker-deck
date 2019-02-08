@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeContext } from './../../Contexts';
 import PropTypes from 'prop-types';
 import './index.css';
 
@@ -9,22 +10,26 @@ import './index.css';
  * 
  * @prop {Array} children
  * @prop {Function} onClick 
- * @prop {String } theme
+ * @prop {String } type
  */
-const ButtonLink = ({ children, onClick, theme }) => {
+const ButtonLink = ({ children, onClick, type }) => {
   return(
-    <div className="buttonLinkWrapper">
-      <button className={ "resetButton " + theme } onClick={onClick}>
-        {children}
-      </button>
-    </div>
+    <ThemeContext.Consumer>
+      {theme => (
+        <div className={ "buttonLinkWrapper " + theme }>
+          <button className={"resetButton " + type} onClick={onClick}>
+            {children}
+          </button>
+        </div>
+      )}
+    </ThemeContext.Consumer>
   );
 }
 
 ButtonLink.propTypes = {
   children: PropTypes.any.isRequired,
   onClick: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired
 };
 
 export default ButtonLink;

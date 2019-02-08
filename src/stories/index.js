@@ -14,6 +14,7 @@ import Toastr from './../components/Toastr';
 import Card from './../components/Card';
 import Navbar from './../components/Navbar';
 import { NavTab, NavTabItem } from './../components/NavTab';
+import { ThemeContext } from './../Contexts';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -57,52 +58,70 @@ storiesOf('Welcome', module).add(
 
   storiesOf('ButtonLink', module)
     .add('with danger tech theme', 
-      () => <ButtonLink 
-        onClick={action('clicked!')}
-        theme='danger'
-      >
-        Danger Button Link
-      </ButtonLink>
+      () => 
+        <ThemeContext.Provider value={'tech-theme'}>
+          <ButtonLink
+            onClick={action('clicked!')}
+            type='danger'
+          >
+            Danger Button Link
+          </ButtonLink>
+        </ThemeContext.Provider>
     )
     .add('with default tech theme',
-      () => <ButtonLink
-        onClick={action('clicked!')}
-        theme='default'
-      >
-        Default Button Link
-      </ButtonLink>
+      () => 
+        <ThemeContext.Provider value={'tech-theme'}>
+          <ButtonLink
+            onClick={action('clicked!')}
+            type='default'
+          >
+            Default Button Link
+          </ButtonLink>
+        </ThemeContext.Provider>
     )
     .add('with danger dark theme',
-      () => <ButtonLink
-        onClick={action('clicked!')}
-        theme='default'
-      >
-        Default Button Link
-      </ButtonLink>
+      () =>
+        <ThemeContext.Provider value={'dark-theme'}>
+          <ButtonLink
+            onClick={action('clicked!')}
+            type='danger'
+          >
+            Danger Button Link
+          </ButtonLink>
+        </ThemeContext.Provider>
     )
     .add('with default dark theme',
-      () => <ButtonLink
-        onClick={action('clicked!')}
-        theme='default'
-      >
-        Default Button Link
-      </ButtonLink>
+      () =>
+        <ThemeContext.Provider value={'dark-theme'}>
+          <ButtonLink
+            onClick={action('clicked!')}
+            type='default'
+          >
+            Default Button Link
+          </ButtonLink>
+        </ThemeContext.Provider>
     )
     .add('with danger eletric theme',
-      () => <ButtonLink
-        onClick={action('clicked!')}
-        theme='default'
-      >
-        Default Button Link
-      </ButtonLink>
+      () =>
+        <ThemeContext.Provider value={'eletric-theme'}>
+          <ButtonLink
+            onClick={action('clicked!')}
+            type='danger'
+          >
+            Danger Button Link
+          </ButtonLink>
+        </ThemeContext.Provider>
     )
     .add('with default eletric theme',
-      () => <ButtonLink
-        onClick={action('clicked!')}
-        theme='default'
-      >
-        Default Button Link
-      </ButtonLink>
+      () =>
+        <ThemeContext.Provider value={'eletric-theme'}>
+          <ButtonLink
+            onClick={action('clicked!')}
+            type='default'
+          >
+            Default Button Link
+          </ButtonLink>
+        </ThemeContext.Provider>
     )
   
   storiesOf('ButtonInput', module)

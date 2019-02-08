@@ -9,7 +9,7 @@ describe('ButtonLink', () => {
     const component = <ButtonLink
       children={[]}
       onClick={event => { }}
-      theme='theme'
+      type='theme'
     />;
     ReactDOM.render(component, div);
     ReactDOM.unmountComponentAtNode(div);

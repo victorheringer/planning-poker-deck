@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ThemeContext } from './../../Contexts';
 import './index.css';
 
 /**
@@ -13,7 +14,13 @@ import './index.css';
  */
 const Radio = ({ id, active, onClick }) => {
   const activeClass = active ? 'active radio' : 'inactive radio';
-  return <div className={activeClass} onClick={() => onClick(id)}></div>;
+  return (
+    <ThemeContext.Consumer>
+      {theme => (
+        <div className={activeClass + ' ' + theme} onClick={() => onClick(id)}></div>     
+      )}
+    </ThemeContext.Consumer>
+  )
 }
 
 Radio.propTypes = {

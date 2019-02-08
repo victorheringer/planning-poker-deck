@@ -9,13 +9,38 @@
 }
 
 .radio.active {
-  background-color: #66BB6A;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
 
 .radio.inactive {
-  background-color: #E0E0E0;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+/* Tech them */
+.radio.tech-theme.active {
+  background-color: #66BB6A;
+}
+
+.radio.tech-theme.inactive {
+  background-color: #E0E0E0;
+}
+
+/* Dark them */
+.radio.dark-theme.active {
+  background-color: #212121;
+}
+
+.radio.dark-theme.inactive {
+  background-color: #E0E0E0;
+}
+
+/* Eletric them */
+.radio.eletric-theme.active {
+  background-color: #F06292;
+}
+
+.radio.eletric-theme.inactive {
+  background-color: #E0E0E0;
 }

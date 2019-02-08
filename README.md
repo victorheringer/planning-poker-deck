@@ -78,8 +78,7 @@ static ptBr() {
   return 'pt_br';
 }
 static esEs() {
-  // This will be the array key and the selectable value at configuration
-  return 'es_es';
+  return 'es_es'; // This will be the array key and the selectable value at configuration
 }
 ```
 

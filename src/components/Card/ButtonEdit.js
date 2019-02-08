@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ButtonEdit = ({ className, handleClick, time }) => {
   return (
@@ -7,7 +8,9 @@ const ButtonEdit = ({ className, handleClick, time }) => {
         className={className}
         onClick={handleClick}
         style={{ transitionDuration: `${time}s` }}
-      >X</button>
+      >
+        <FontAwesomeIcon className="icon" icon={"times"} />
+      </button>
     </div>
   );
 }

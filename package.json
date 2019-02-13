@@ -10,6 +10,7 @@
     "classnames": "^2.2.6",
     "i": "^0.3.6",
     "immutability-helper": "^2.9.1",
+    "minimoon": "0.0.7",
     "npm": "^6.7.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

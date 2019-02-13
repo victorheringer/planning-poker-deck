@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'minimoon/build/static/css/index.css';
+import './moon-template.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import DeckCollection from './helpers/DeckCollection';

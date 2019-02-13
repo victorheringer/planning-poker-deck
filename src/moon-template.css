@@ -1,0 +1,63 @@
+.ppdAlert {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ppdAlert .box {
+  border-radius: 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.12);
+}
+
+.ppdAlert .text .title {
+  font-weight: bold;
+}
+
+.ppdAlert .actions {
+  text-align: center;
+}
+
+.ppdAlert .actions button {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.ppdAlert .actions .cancel {
+  border-bottom-left-radius: 20px;
+}
+
+.ppdAlert .actions .confirm {
+  border-bottom-right-radius: 20px;
+  color: #2196F3;
+}
+
+.ppdToastr {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.ppdToastr .box {
+  color: #FFF;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ppdToastr .action button {
+  color: #1565c0;
+  background-color: transparent;
+  text-align: right;
+  font-size: 14px;
+}
+
+.ppdInputButton {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ppdInputButton input {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.ppdInputButton button {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

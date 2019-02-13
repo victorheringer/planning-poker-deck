@@ -5,7 +5,7 @@ import DeckList from './../../components/DeckList';
 import DeckItem from './../../components/DeckList/DeckItem';
 import DeckListSubItem from './../../components/DeckList/DeckSubItem';
 import ButtonLink from './../../components/ButtonLink';
-import ButtonInput from './../../components/ButtonInput';
+import { MoonInputButton } from 'minimoon';
 import './index.css';
 
 /**
@@ -18,16 +18,17 @@ class Decks extends Component {
   render() {
     return (
       <div className="decks">
-        <ButtonInput 
+        <MoonInputButton 
           placeholder={this.props.text.input.placeholder.deck}
           value={this.props.deckNameInput}
           onClick={event => this.props.createDeck(event, this.props.deckNameInput)}
           onChange={this.props.handleChange}
           type='text'
           name='deckNameInput'
+          className='ppdInputButton'
         >
           {this.props.text.btn.add}
-        </ButtonInput>
+        </MoonInputButton>
         <DeckList>
           { this.props.decks.map(deck => 
             <DeckItem key={deck.id} title={deck.description}>

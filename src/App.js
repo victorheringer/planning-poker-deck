@@ -5,8 +5,7 @@ import './App.css';
 
 /** Components */
 import NavRouter from './components/NavRouter';
-import ConfirmBox from './components/ConfirmBox';
-import Toastr from './components/Toastr';
+import { MoonAlert, MoonToastr } from 'minimoon';
 
 /** Containers */
 import Play from './containers/Play';
@@ -375,22 +374,25 @@ class App extends Component {
 
   render() {
 
-    const confirmBox = <ConfirmBox
+    const confirmBox = <MoonAlert
       title={this.state.titleModal}
       message={this.state.messageModal}
       show={this.state.showModal}
       onCancel={this.cancelModal}
       onConfirm={this.state.confirmModal}
       text={this.state.text}
+      position='bottom'
+      className='ppdAlert'
       textCancel={this.state.text.confirmBox.btn.cancel}
       textConfirm={this.state.text.confirmBox.btn.confirm}
     />;
 
-    const toastr = <Toastr 
+    const toastr = <MoonToastr 
       show={this.state.toastr.show}
-      handleClose={this.handleCloseToastr}
+      handleAction={this.handleCloseToastr}
       actionText={this.state.toastr.action}
       messageText={this.state.toastr.message}
+      className='ppdToastr'
     />
 
     return (

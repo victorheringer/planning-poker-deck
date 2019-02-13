@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NavTab, NavTabItem } from './../NavTab';
+import { MoonTabs, MoonTabsItem } from 'minimoon';
 import { ThemeContext } from './../../Contexts';
 
 import deckIcon from './../../assets/img/icon.png';
@@ -21,31 +21,31 @@ const Navbar = ({ route }) => {
     <ThemeContext.Consumer>
       {theme => (
         <div className={"navbar " + theme}>
-          <NavTab className={"wrapper"}>
-            <NavTabItem className={route === "/" ? "active" : ""}>
+          <MoonTabs className={"wrapper"}>
+            <MoonTabsItem className={route === "/" ? "active" : ""}>
               <Link to="/">
                 <img className="icon" src={deckIcon} alt="icon" />
               </Link>
-            </NavTabItem>
-            <NavTabItem className={route === "/decks" ? "active" : ""}>
+            </MoonTabsItem>
+            <MoonTabsItem className={route === "/decks" ? "active" : ""}>
               <Link to="/decks" aria-label="Deck List">
                 <FontAwesomeIcon className="icon" icon={"folder-open"} />
               </Link>
-            </NavTabItem>
-            <NavTabItem className={route === "/config" ? "active" : ""}>
+            </MoonTabsItem>
+            <MoonTabsItem className={route === "/config" ? "active" : ""}>
               <Link to="/config" aria-label="Configurations">
                 <FontAwesomeIcon className="icon" icon={"cog"} />
               </Link>
-            </NavTabItem>
-            <NavTabItem>
+            </MoonTabsItem>
+            <MoonTabsItem>
               <a aria-label="Github" href={githubURL} target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon className="icon" icon={['fab', 'github']} />
               </a>
-            </NavTabItem>
-          </NavTab>
+            </MoonTabsItem>
+          </MoonTabs>
         </div>
-    )}
-  </ThemeContext.Consumer>
+      )}
+    </ThemeContext.Consumer>
   );
 }
 

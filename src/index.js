@@ -26,12 +26,14 @@ import {
   faCog,
   faInfinity,
   faFolderOpen,
+  faBoxOpen,
   faTimes
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 library.add(faEdit);
+library.add(faBoxOpen);
 library.add(faMugHot);
 library.add(faLongArrowAltLeft);
 library.add(faInfoCircle);

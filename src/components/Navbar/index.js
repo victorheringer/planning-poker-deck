@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MoonTabs, MoonTabsItem } from 'minimoon';
 import { ThemeContext } from './../../Contexts';
 
-import deckIcon from './../../assets/img/icon.png';
+import logoTech from './../../assets/img/icon.png';
+import logoDark from './../../assets/img/icon-dark.png';
 import './index.css';
 
 /**
@@ -24,12 +25,18 @@ const Navbar = ({ route }) => {
           <MoonTabs className={"wrapper"}>
             <MoonTabsItem className={route === "/" ? "active" : ""}>
               <Link to="/">
-                <img className="icon" src={deckIcon} alt="icon" />
+                <img 
+                  className="icon" 
+                  src={
+                    theme == 'tech-theme' ? logoTech : logoDark
+                  } 
+                  alt="icon" 
+                />
               </Link>
             </MoonTabsItem>
             <MoonTabsItem className={route === "/decks" ? "active" : ""}>
               <Link to="/decks" aria-label="Deck List">
-                <FontAwesomeIcon className="icon" icon={"folder-open"} />
+                <FontAwesomeIcon className="icon" icon={"box-open"} />
               </Link>
             </MoonTabsItem>
             <MoonTabsItem className={route === "/config" ? "active" : ""}>

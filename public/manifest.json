@@ -3,8 +3,23 @@
   "name": "Planning Poker Deck",
   "icons": [
     {
-      "src": "icon.png",
-      "sizes": "192x192 64x64 32x32 24x24 16x16",
+      "src": "icon-others.png",
+      "sizes": "64x64 24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
       "type": "image/png"
     },
     {

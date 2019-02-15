@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MoonTabs, MoonTabsItem } from 'minimoon';
 import { ThemeContext } from './../../Contexts';
 
-import logoTech from './../../assets/img/icon.png';
-import logoDark from './../../assets/img/icon-dark.png';
+import logoTech from './../../assets/img/icon-tech.svg';
+import logoDark from './../../assets/img/icon-dark.svg';
+import logoEletric from './../../assets/img/icon-eletric.svg';
 import './index.css';
 
 /**
@@ -28,7 +29,10 @@ const Navbar = ({ route }) => {
                 <img 
                   className="icon" 
                   src={
-                    theme == 'tech-theme' ? logoTech : logoDark
+                    theme == 'tech-theme' ? 
+                      logoTech 
+                      : ( theme == 'dark-theme' ?
+                        logoDark : logoEletric )
                   } 
                   alt="icon" 
                 />

@@ -1,5 +1,4 @@
 import ptBrJson from './../resources/il8n/pt-br.json';
-import esEsJson from './../resources/il8n/es-es.json';
 import enJson from './../resources/il8n/en.json';
 
 /**
@@ -34,17 +33,6 @@ class I18n {
   /**
    * @author Victor Heringer
    * 
-   * Gets the key tha represent spanish spain language
-   * 
-   * @return {String}
-   */
-  static esEs() {
-    return 'es_es';
-  }
-
-  /**
-   * @author Victor Heringer
-   * 
    * Gets text based on given language
    * 
    * @return {Object}
@@ -52,8 +40,7 @@ class I18n {
   static get(lang) {
     const data = { 
       [I18n.ptBr()]: ptBrJson, 
-      [I18n.en()]: enJson,
-      [I18n.esEs()]: esEsJson 
+      [I18n.en()]: enJson
     };
     return data[lang];
   }
@@ -68,8 +55,7 @@ class I18n {
   static available() {
     return [
       I18n.en(), 
-      I18n.ptBr(),
-      I18n.esEs()
+      I18n.ptBr()
     ];
   }
 }

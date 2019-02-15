@@ -13,7 +13,7 @@
 
 - 📴 Offline first. You don't need to rely on your mobile connection to estimate things!
 
-- 💾 Small footprint. Only 150kb gzipped and 300kb unpacked!
+- 💾 Small footprint. Less than 100kb gzipped and around 300kb unpacked!
 
 - 📝 Create your own custom deck. Or use any of the given default decks that covers most common decks.
 

@@ -16,8 +16,12 @@ import './index.css';
  */
 const Navbar = ({ route }) => {
 
-  //const route = location.pathname;
   const githubURL = "https://github.com/VictorHeringer/planning-poker-deck";
+  const logos = {
+    'tech-theme': logoTech, 
+    'dark-theme': logoDark, 
+    'eletric-theme': logoEletric 
+  };
 
   return (
     <ThemeContext.Consumer>
@@ -26,16 +30,7 @@ const Navbar = ({ route }) => {
           <MoonTabs className={"wrapper"}>
             <MoonTabsItem className={route === "/" ? "active" : ""}>
               <Link to="/">
-                <img 
-                  className="icon" 
-                  src={
-                    theme == 'tech-theme' ? 
-                      logoTech 
-                      : ( theme == 'dark-theme' ?
-                        logoDark : logoEletric )
-                  } 
-                  alt="icon" 
-                />
+                <img className="icon" src={logos[theme]} alt="icon" />
               </Link>
             </MoonTabsItem>
             <MoonTabsItem className={route === "/decks" ? "active" : ""}>

@@ -33,6 +33,7 @@
 
 .ppdToastr {
   background-color: rgba(0, 0, 0, 0.95);
+  border: 0px;
 }
 
 .ppdToastr .box {

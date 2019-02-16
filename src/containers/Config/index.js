@@ -24,9 +24,9 @@ const Config = ({
         </li>
         <li>
           {text.config.list.language}
-          <select name="lang" value={lang} onChange={handleSelectLang}>
+          <select name="lang" value={lang.key} onChange={handleSelectLang}>
             {I18n.available().map( lang =>
-              <option key={lang} value={lang}>{lang}</option> )
+              <option key={lang.key} value={lang.key}>{lang.text}</option> )
             }
           </select>
         </li>
@@ -40,9 +40,9 @@ const Config = ({
         </li>
         <li>
           {text.config.list.theme}
-          <select name="theme" value={theme} onChange={handleSelectTheme}>
+          <select name="theme" value={theme.key} onChange={handleSelectTheme}>
             {themes.map(theme =>
-              <option key={theme} value={theme}>{theme}</option>)
+              <option key={theme.key} value={theme.key}>{theme.name}</option>)
             }
           </select>
         </li>

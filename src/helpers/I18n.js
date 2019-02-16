@@ -16,7 +16,7 @@ class I18n {
    * @return {String}
    */
   static en() {
-    return 'en';
+    return { key: 'en', text: 'English' };
   }
 
   /**
@@ -27,7 +27,7 @@ class I18n {
    * @return {String}
    */
   static ptBr() {
-    return 'pt_br';
+    return { key: 'pt_br', text: 'Portugês (Brasil)' };
   }
 
   /**
@@ -39,8 +39,8 @@ class I18n {
    */
   static get(lang) {
     const data = { 
-      [I18n.ptBr()]: ptBrJson, 
-      [I18n.en()]: enJson
+      [I18n.ptBr()['key']]: ptBrJson, 
+      [I18n.en()['key']]: enJson
     };
     return data[lang];
   }

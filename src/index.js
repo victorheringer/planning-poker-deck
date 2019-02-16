@@ -7,7 +7,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import DeckCollection from './helpers/DeckCollection';
 import ConfigCollection from './helpers/ConfigCollection';
-import Collection from './helpers/Collection';
 import seed from './resources/seed.json';
 import settings from './resources/settings.json';
 import I18n from './helpers/I18n';
@@ -16,16 +15,12 @@ import {
   faEdit,
   faMugHot,
   faLongArrowAltLeft,
-  faInfoCircle,
-  faEllipsisV,
-  faListUl,
   faTrash,
   faSyncAlt,
   faShareAlt,
   faAngleRight,
   faCog,
   faInfinity,
-  faFolderOpen,
   faBoxOpen,
   faTimes
 } from '@fortawesome/free-solid-svg-icons';
@@ -36,27 +31,24 @@ library.add(faEdit);
 library.add(faBoxOpen);
 library.add(faMugHot);
 library.add(faLongArrowAltLeft);
-library.add(faInfoCircle);
-library.add(faEllipsisV);
-library.add(faListUl);
 library.add(faTrash);
 library.add(faSyncAlt);
 library.add(faShareAlt);
 library.add(faAngleRight);
 library.add(faCog);
 library.add(faInfinity);
-library.add(faFolderOpen);
 library.add(faTimes);
 library.add(faGithub);
 
+const VERSION = '0.0.5';
 
-const VERSION = '0.0.4';
+let userSettings = ConfigCollection.all();
 
-if( Collection.find('version') !== VERSION ) {
-  Collection.delete('version');
+if ( userSettings && ( userSettings.version !== VERSION ) ) {
   ConfigCollection.delete();
   DeckCollection.delete();
-  Collection.put('version',VERSION);
+  DeckCollection.put(seed.decks);
+  ConfigCollection.put(seed.settings);
 }
 
 if (!DeckCollection.all()) {
@@ -67,7 +59,7 @@ if (!ConfigCollection.all()) {
   ConfigCollection.put(seed.settings);
 }
 
-const userSettings = ConfigCollection.all();
+userSettings = ConfigCollection.all();
 
 ReactDOM.render(
   <App 
@@ -77,6 +69,7 @@ ReactDOM.render(
     grid={userSettings.grid}
     themes={settings.themes}
     theme={userSettings.theme}
+    version={userSettings.version}
   />, 
   document.getElementById('root')
 );

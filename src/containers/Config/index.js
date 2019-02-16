@@ -11,7 +11,8 @@ const Config = ({
   themes,
   theme,
   handleSelectTheme,
-  text 
+  text,
+  version
 }) => {
 
   return (
@@ -19,7 +20,7 @@ const Config = ({
       <ul>
         <li>
           {text.config.list.version}
-          <span style={{float: 'right'}}>0.0.2</span>
+          <span style={{float: 'right'}}>{ version }</span>
         </li>
         <li>
           {text.config.list.language}

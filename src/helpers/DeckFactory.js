@@ -20,14 +20,33 @@ class DeckFactory {
    * @return {Object}
    */
   static create(name) {
-    return { 
+    return {
       "id": Collection.generateId(),
       "name": name,
       "description": name,
       "favorite": false,
-      "pattern": "tech-pattern",
-      "cards": []
-    };
+      "usesThemeColor": true,
+      "cards": [
+        {
+          "id": 1549212587,
+          "value": "infinity",
+          "icon": true,
+          "color": false
+        },
+        {
+          "id": 1549212588,
+          "value": "?",
+          "icon": false,
+          "color": false
+        },
+        {
+          "id": 1549212589,
+          "value": "mug-hot",
+          "icon": true,
+          "color": false
+        }
+      ]
+    }
   };
 }
 

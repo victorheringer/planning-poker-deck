@@ -36,7 +36,8 @@
     "action": "Fechar",
     "messages": {
       "deckDelete": "Deck deletado",
-      "deckCantDelete": "Não é possível remover"
+      "deckCantDelete": "Não é possível remover",
+      "deckAdd" : "Deck adicionado"
     }
   }
 }

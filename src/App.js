@@ -43,6 +43,7 @@ class App extends Component {
     confirmModal: undefined, 
     titleModal: '',
     deckNameInput: '',
+    version: this.props.version,
     lang: this.props.lang,
     grid: this.props.grid,
     grids: this.props.grids,
@@ -108,11 +109,25 @@ class App extends Component {
   createDeck = (event, name) => {
     event.preventDefault();
 
-    if( name ) {
-      const deck = DeckFactory.create(name);
-      DeckCollection.push(deck, true);
-      this.loadDecks(() => this.setState({ deckNameInput: '' }));
+    if( !name ) return;
+
+    const deck = DeckFactory.create(name);
+    DeckCollection.push(deck, true);
+
+    const toUpdate = {
+      deckNameInput: { $set: '' },
+      toastr: { 
+        show: { $set: true }, 
+        message: { $set: this.state.text.toastr.messages.deckAdd },
+        action: { $set: this.state.text.toastr.action }
+      }
     }
+
+    const updateCallback = () => {
+      this.setState(state => update(state, toUpdate), this.closeToastrCallback);
+    } 
+
+    this.loadDecks(updateCallback);
   }
 
   /**
@@ -303,10 +318,19 @@ class App extends Component {
    */
   handleCloseToastr = () => {
     this.setState(state => update(state, {
-      toastr: {
-        show: { $set: false }
-      }
+      toastr: { show: { $set: false } }
     }));
+  }
+
+  /**
+    * @author Victor Heringer
+    * 
+    * Closes the toastr after a time
+    * 
+    * @return {void}
+    */
+  closeToastrCallback = () => {
+    setTimeout(() => { this.handleCloseToastr() }, 2000);
   }
 
   /**
@@ -319,18 +343,11 @@ class App extends Component {
    * @return {void}
    */
   showToastr = message => {
-    const closeAfter = () => {
-      setTimeout( () => {
-        this.setState(state => update(state, {
-          toastr: { show: { $set: false } }
-        }));
-      }, 2000);
-    }
     this.setState( state => update(state, { toastr: { 
       show: { $set: true },
       message: { $set: message },
       action: { $set: this.state.text.toastr.action }
-    } }), closeAfter );
+    } }), this.closeToastrCallback );
   }
 
   /**

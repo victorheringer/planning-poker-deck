@@ -17,29 +17,29 @@
 /* Tech theme */
 
 .buttonLinkWrapper.tech-theme .danger {
-  color: #E57373;
+  color: var(--danger-tech-theme-color); 
 }
 
 .buttonLinkWrapper.tech-theme .default {
-  color: #616161;
+  color: var(--dark-text);
 }
 
 /* Dark theme */
 
 .buttonLinkWrapper.dark-theme .danger {
-  color: #EF9A9A;
+  color: var(--danger-dark-theme-color); 
 }
 
 .buttonLinkWrapper.dark-theme .default {
-  color: #212121;
+  color: var(--light-text);
 }
 
 /* Eletric theme */
 
 .buttonLinkWrapper.eletric-theme .danger {
-  color: #F06292;
+  color: var(--danger-eletric-theme-color); 
 }
 
 .buttonLinkWrapper.eletric-theme .default {
-  color: #9C27B0;
+  color: var(--dark-text);
 }

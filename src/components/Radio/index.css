@@ -20,7 +20,7 @@
 
 /* Tech them */
 .radio.tech-theme.active {
-  background-color: #66BB6A;
+  background-color: var(--success-tech-theme-color); 
 }
 
 .radio.tech-theme.inactive {
@@ -29,7 +29,7 @@
 
 /* Dark them */
 .radio.dark-theme.active {
-  background-color: #212121;
+  background-color: var(--success-dark-theme-color); ;
 }
 
 .radio.dark-theme.inactive {
@@ -38,7 +38,7 @@
 
 /* Eletric them */
 .radio.eletric-theme.active {
-  background-color: #311B92;
+  background-color: var(--success-eletric-theme-color); ;
 }
 
 .radio.eletric-theme.inactive {

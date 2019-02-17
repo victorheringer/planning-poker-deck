@@ -1,31 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
+.appWrapper {
+  min-height: 100vh;
 }
 
-* {
-  -webkit-tap-highlight-color: rgba(255,255,255,0);
-  outline: none;
+.appWrapper.tech-theme {
+  background-color: var(--light-background);
 }
 
-div {
-  
+.appWrapper.dark-theme {
+  background-color: var(--dark-background);
 }
+
+.appWrapper.eletric-theme {
+  background-color: var(--light-background);
+}
+
 .app {
   padding: 70px 10px 10px 10px;
   max-width: 575.98px;
   margin: 0 auto;
-}
-
-.ripple {
-  background-position: center;
-  transition: background 0.6s;
-}
-.ripple:hover {
-  background: #e3e3e3 radial-gradient(circle, transparent 1%, #e3e3e3 1%) center/15000%;
-}
-.ripple:active {
-  background-color: #fafafa;
-  background-size: 100%;
-  transition: background 0s;
 }

@@ -413,20 +413,22 @@ class App extends Component {
     />
 
     return (
-      <ThemeContext.Provider value={this.state.theme}>
-        <Router>
-          <div>
-            <NavRouter />
-            <div className='app'>
-              <Route path="/" exact render={this.renderPlay} />
-              <Route path="/decks" exact render={this.renderDecks} />
-              <Route path="/config" exact render={this.renderConfig} />
-              {confirmBox}
-              {toastr}
+      <div className={ 'appWrapper ' + this.state.theme }>
+        <ThemeContext.Provider value={this.state.theme}>
+          <Router>
+            <div>
+              <NavRouter />
+              <div className='app'>
+                <Route path="/" exact render={this.renderPlay} />
+                <Route path="/decks" exact render={this.renderDecks} />
+                <Route path="/config" exact render={this.renderConfig} />
+                {confirmBox}
+                {toastr}
+              </div>
             </div>
-          </div>
-        </Router>
-      </ThemeContext.Provider>
+          </Router>
+        </ThemeContext.Provider>
+      </div>
     );
   }
 }

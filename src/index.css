@@ -1,8 +1,30 @@
-body {
-  background-color: #FFF;
-  /*background-color: #333333;*/
+:root {
+  --main-tech-theme-color: #1565C0; 
+  --main-dark-theme-color: #212121; 
+  --main-eletric-theme-color: #EC407A; 
+
+  --success-tech-theme-color: #66BB6A; 
+  --success-dark-theme-color: #50fA7B;
+  --success-eletric-theme-color: #311B92;  
+
+  --danger-tech-theme-color: #E57373; 
+  --danger-dark-theme-color: #FF5555;
+  --danger-eletric-theme-color: #AB47BC;
+  
+  --light-text: #F8F8F2;
+  --dark-text: #282A36;
+
+  --light-background: #FFFFFF;
+  --dark-background: #282A36;
 }
 
-.center {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  outline: none;
+}
+
+select {
+  background-color: transparent;
 }

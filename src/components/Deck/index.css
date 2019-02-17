@@ -12,14 +12,3 @@
   padding: 20px;
   text-align: center;
 }
-
-.deckActions button {
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #616161;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-}

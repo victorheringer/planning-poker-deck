@@ -33,18 +33,18 @@ const Navbar = ({ route }) => {
                 <img className="icon" src={logos[theme]} alt="icon" />
               </Link>
             </MoonTabsItem>
-            <MoonTabsItem className={route === "/decks" ? "active" : ""}>
+            <MoonTabsItem className={route === "/decks" ? "active faIconWrapper" : "faIconWrapper"}>
               <Link to="/decks" aria-label="Deck List">
                 <FontAwesomeIcon className="icon" icon={"box-open"} />
               </Link>
             </MoonTabsItem>
-            <MoonTabsItem className={route === "/config" ? "active" : ""}>
+            <MoonTabsItem className={route === "/config" ? "active faIconWrapper" : "faIconWrapper"}>
               <Link to="/config" aria-label="Configurations">
                 <FontAwesomeIcon className="icon" icon={"cog"} />
               </Link>
             </MoonTabsItem>
             <MoonTabsItem>
-              <a aria-label="Github" href={githubURL} target="_blank" rel="noopener noreferrer">
+              <a aria-label="Github" href={githubURL} target="_blank" rel="noopener noreferrer" className="faIconWrapper">
                 <FontAwesomeIcon className="icon" icon={['fab', 'github']} />
               </a>
             </MoonTabsItem>

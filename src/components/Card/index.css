@@ -148,18 +148,18 @@
 
 /* Tech theme */
 .card.tech-theme .front, .card.tech-theme .back {
-  background-color: #1565c0;
+  background-color: var(--main-tech-theme-color);
   color: #FFF;
 }
 
 /* Dark theme */
 .card.dark-theme .front, .card.dark-theme .back {
-  background-color: #212121;
+  background-color: var(--main-dark-theme-color);
   color: #FFF;
 }
 
 /* Eletric theme */
 .card.eletric-theme .front, .card.eletric-theme .back {
-  background-color: #F06292;
+  background-color: var(--main-eletric-theme-color);
   color: #FFF;
 }

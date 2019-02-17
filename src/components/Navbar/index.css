@@ -2,9 +2,8 @@
   position: fixed;
   z-index: 999;
   width: 100%;
-  /*background-color: #333333;*/
   border-bottom: 1px solid #E0E0E0;
-  /*border-bottom: 1px solid #212121;*/
+  height: 50px;
 }
 
 .navbar .wrapper {
@@ -14,42 +13,46 @@
 
 .navbar .icon {
   font-size: 23px;
-  margin-top: 7px;
+  margin-top: 5px;
 }
 
 .navbar img.icon {
-  height: 30px;
+  height: 29px;
+}
+
+.navbar .faIconWrapper {
+  margin-bottom: -2px;
 }
 
 /* Tech theme */
 .navbar.tech-theme .icon {
-  color: #212121;
+  color: var(--dark-text);
 }
 .navbar.tech-theme {
-  background-color: #FFF;
+  background-color: var(--light-background);
 }
 .navbar.tech-theme .active {
-  border-bottom: 2px solid #1565c0;
+  border-bottom: 2px solid var(--main-tech-theme-color);
 }
 
 /* Dark theme */
 .navbar.dark-theme .icon {
-  color: #E0E0E0;
+  color: var(--light-text);
 }
 .navbar.dark-theme {
-  background-color: #212121;
+  background-color: var(--dark-background);
 }
 .navbar.dark-theme .active {
-  border-bottom: 2px solid #E0E0E0;
+  border-bottom: 2px solid var(--light-text);
 }
 
 /* Eletric theme */
 .navbar.eletric-theme .icon {
-  color: #212121;
+  color: var(--dark-text);
 }
 .navbar.eletric-theme {
-  background-color: #FFF;
+  background-color: var(--light-background);
 }
 .navbar.eletric-theme .active {
-  border-bottom: 2px solid #311B92;
+  border-bottom: 2px solid var(--main-eletric-theme-color);
 }

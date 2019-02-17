@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DeckCollection from './../../helpers/DeckCollection';
 import ButtonLink from './../../components/ButtonLink';
+import { ThemeContext } from './../../Contexts';
 import Card from './../Card';
 import './index.css';
 
@@ -90,79 +91,83 @@ class Deck extends Component {
     let time = 0.05;
 
     return (
-      <React.Fragment>
-        <div className={ gridDeckContainer }>
-          {!this.state.isSelected &&
-            this.props.cards.map(card => {
-              time = time * 1.15;
-              return(
+      <ThemeContext.Consumer>
+        {theme => (
+          <React.Fragment>
+          <div className={gridDeckContainer}>
+            {!this.state.isSelected &&
+              this.props.cards.map(card => {
+                time = time * 1.15;
+                return (
+                  <Card
+                    value={card.value}
+                    key={card.id}
+                    id={card.id}
+                    up={true}
+                    color={card.color}
+                    icon={card.icon}
+                    fixed={true}
+                    editing={editing}
+                    onClickRemove={this.handleClickRemoveCard}
+                    onClick={this.handleClickShowCard}
+                    time={time}
+                    size={cardSize}
+                  />
+                );
+              })
+            }
+            {
+              !this.state.isSelected && editing && <Card
+                value={'+'}
+                pattern={'none'}
+                up={true}
+                color={''}
+                id={0}
+                icon={false}
+                fixed={true}
+                editing={false}
+                onClick={this.props.addCard}
+                size={cardSize}
+              />
+            }
+          </div>
+            <div>
+              {this.state.isSelected &&
                 <Card
-                  value={card.value}
-                  key={card.id}
-                  id={card.id}
-                  up={true}
-                  color={card.color}
-                  icon={card.icon}
-                  fixed={true}
+                  value={this.state.cardSelected.value}
+                  key={this.state.cardSelected.id}
+                  up={false}
+                  id={this.state.cardSelected.id}
+                  color={this.state.cardSelected.color}
+                  icon={this.state.cardSelected.icon}
+                  fixed={false}
                   editing={editing}
                   onClickRemove={this.handleClickRemoveCard}
                   onClick={this.handleClickShowCard}
-                  time={time}
-                  size={cardSize}
+                  size='lg'
                 />
-              );
-            } )
-          }
-          {
-            !this.state.isSelected && editing && <Card
-              value={'+'}
-              pattern={'none'}
-              up={true}
-              color={''}
-              id={0}
-              icon={false}
-              fixed={true}
-              editing={false}
-              onClick={this.props.addCard}
-              size={cardSize}
-            />
-          }
-        </div>
-        <div>
-          {this.state.isSelected &&
-            <Card
-              value={this.state.cardSelected.value}
-              key={this.state.cardSelected.id}
-              up={false}
-              id={this.state.cardSelected.id}
-              color={this.state.cardSelected.color}
-              icon={this.state.cardSelected.icon}
-              fixed={false}
-              editing={editing}
-              onClickRemove={this.handleClickRemoveCard}
-              onClick={this.handleClickShowCard}
-              size='lg'
-            />
-          }
-        </div>
-        <div className="deckActions">
-          {!this.state.isSelected &&
-            <button onClick={this.handleClickEdit}>
-            {editing ? 
-              <FontAwesomeIcon icon="times" /> : 
-              <FontAwesomeIcon icon="edit" /> 
-            } 
-              &nbsp; {this.props.text.btn.edit}
-            </button>
-          }
-          {this.state.isSelected &&
-            <ButtonLink type="default" onClick={this.handleClickDeselectCard}>
-              <FontAwesomeIcon icon="long-arrow-alt-left" /> 
-              &nbsp; {this.props.text.btn.back}
-            </ButtonLink>
-          }
-        </div>
-      </React.Fragment>
+              }
+            </div>
+            <div className="deckActions">
+              {!this.state.isSelected &&
+                <ButtonLink onClick={this.handleClickEdit} type="default">
+                  {editing ?
+                    <FontAwesomeIcon icon="times" /> :
+                    <FontAwesomeIcon icon="edit" />
+                  }
+                  &nbsp; {this.props.text.btn.edit}
+                </ButtonLink>
+              }
+              {this.state.isSelected &&
+                <ButtonLink type="default" onClick={this.handleClickDeselectCard}>
+                  <FontAwesomeIcon icon="long-arrow-alt-left" />
+                  &nbsp; {this.props.text.btn.back}
+                </ButtonLink>
+              }
+            </div>
+          </React.Fragment>
+        )}
+      </ThemeContext.Consumer>
     );
   }
 }

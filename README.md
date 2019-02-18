@@ -112,4 +112,6 @@ static available() {
   * Work in progress
 
 ---
+The dark mode is inspired by the awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.
+
 Planning poker deck is develop with :hearts: by [@victorheringer_](https://twitter.com/VictorHeringer_)

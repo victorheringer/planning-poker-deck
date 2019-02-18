@@ -23,10 +23,11 @@ const Navbar = ({ route }) => {
     'eletric-theme': logoEletric 
   };
 
+
   return (
     <ThemeContext.Consumer>
       {theme => (
-        <div className={"navbar " + theme}>
+        <div className={`navbar ${theme}`}>
           <MoonTabs className={"wrapper"}>
             <MoonTabsItem className={route === "/" ? "active" : ""}>
               <Link to="/">
@@ -44,7 +45,13 @@ const Navbar = ({ route }) => {
               </Link>
             </MoonTabsItem>
             <MoonTabsItem>
-              <a aria-label="Github" href={githubURL} target="_blank" rel="noopener noreferrer" className="faIconWrapper">
+              <a 
+                aria-label="Github" 
+                href={githubURL} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="faIconWrapper"
+              >
                 <FontAwesomeIcon className="icon" icon={['fab', 'github']} />
               </a>
             </MoonTabsItem>

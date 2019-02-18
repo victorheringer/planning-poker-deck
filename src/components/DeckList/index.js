@@ -2,9 +2,9 @@ import React from 'react';
 import './index.css';
 
 
-const DeckList = ({children}) => {
+const DeckList = ({children, className}) => {
   return (
-    <ul className="deckList">{children}</ul>
+    <ul className={`deckList ${className}`}>{children}</ul>
   );
 }
 

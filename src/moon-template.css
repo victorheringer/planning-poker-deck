@@ -62,3 +62,34 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+/** Dark theme for button input component */
+
+.ppdInputButton.dark-theme button,
+.ppdInputButton.dark-theme input {
+  color: var(--light-text);
+  background-color: var(--main-dark-theme-color);
+  border-color: #414141;
+}
+
+.ppdInputButton.dark-theme ::placeholder {
+  color: var(--light-text);
+}
+
+/** Dark theme for deck list */
+
+.deckList.dark-theme > li {
+  color: var(--light-text);
+  border-color: var(--main-dark-theme-color);
+}
+
+/** Dark theme for config list */
+
+.configList.dark-theme > li {
+  color: var(--light-text);
+  border-color: var(--main-dark-theme-color);
+}
+
+.configList.dark-theme select {
+  color: var(--light-text);
+}

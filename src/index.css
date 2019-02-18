@@ -1,7 +1,9 @@
 :root {
   --main-tech-theme-color: #1565C0; 
-  --main-dark-theme-color: #212121; 
+  --main-dark-theme-color: #44475a; 
   --main-eletric-theme-color: #EC407A; 
+
+  --secondary-dark-theme-color: #6272A4;
 
   --success-tech-theme-color: #66BB6A; 
   --success-dark-theme-color: #50fA7B;

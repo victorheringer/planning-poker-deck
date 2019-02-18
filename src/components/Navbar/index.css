@@ -2,8 +2,8 @@
   position: fixed;
   z-index: 999;
   width: 100%;
-  border-bottom: 1px solid #E0E0E0;
   height: 50px;
+  border-bottom: 1px solid;
 }
 
 .navbar .wrapper {
@@ -35,6 +35,10 @@
   border-bottom: 2px solid var(--main-tech-theme-color);
 }
 
+.navbar.tech-theme {
+  border-color: #E0E0E0;
+}
+
 /* Dark theme */
 .navbar.dark-theme .icon {
   color: var(--light-text);
@@ -43,7 +47,10 @@
   background-color: var(--dark-background);
 }
 .navbar.dark-theme .active {
-  border-bottom: 2px solid var(--light-text);
+  border-bottom: 2px solid var(--main-dark-theme-color);
+}
+.navbar.dark-theme {
+  border-color: var(--main-dark-theme-color);
 }
 
 /* Eletric theme */
@@ -55,4 +62,7 @@
 }
 .navbar.eletric-theme .active {
   border-bottom: 2px solid var(--main-eletric-theme-color);
+}
+.navbar.eletric-theme {
+  border-color: #E0E0E0;
 }

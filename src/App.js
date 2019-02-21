@@ -9,6 +9,7 @@ import { MoonAlert, MoonToastr } from 'minimoon';
 
 /** Containers */
 import Play from './containers/Play';
+import Played from './containers/Played';
 import Decks from './containers/Decks';
 import Config from './containers/Config';
 
@@ -350,7 +351,12 @@ class App extends Component {
     } }), this.closeToastrCallback );
   }
 
-  renderPlayed = () => <h1>Hello</h1>
+  /**
+   * @author Victor Heringer
+   * 
+   * Renders the played card container
+   */
+  renderPlayed = () => <Played />;
 
   /**
    * @author Victor Heringer

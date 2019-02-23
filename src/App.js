@@ -427,8 +427,8 @@ class App extends Component {
             <div>
               <NavRouter />
               <div className='app'>
-                <Route exact path="/" exact render={this.renderPlay} />
-                <Route exact path="/:card" exact render={this.renderPlayed} />
+                <Route path="/" exact render={this.renderPlay} />
+                <Route path="/:card" render={this.renderPlayed} />
                 <Route path="/decks" exact render={this.renderDecks} />
                 <Route path="/config" exact render={this.renderConfig} />
                 {confirmBox}

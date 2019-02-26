@@ -2,18 +2,11 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 import { MemoryRouter } from 'react-router'
 
-import { Button, Welcome } from '@storybook/react/demo';
-
 import ButtonLink from './../components/ButtonLink';
-import ButtonInput from './../components/ButtonInput';
-import ConfirmBox from './../components/ConfirmBox';
-import Toastr from './../components/Toastr';
 import Card from './../components/Card';
 import Navbar from './../components/Navbar';
-import { NavTab, NavTabItem } from './../components/NavTab';
 import { ThemeContext } from './../Contexts';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -123,55 +116,7 @@ storiesOf('Welcome', module).add(
           </ButtonLink>
         </ThemeContext.Provider>
     )
-  
-  storiesOf('ButtonInput', module)
-    .add('default usage', 
-      () => <ButtonInput 
-        placeholder='Action'
-        value=''
-        onClick={action('clicked!')}
-        onChange={action('clicked!')}
-        type='string'
-        name='storyBtn'
-      >
-        😀 Click Me!
-      </ButtonInput>
-    )
-  
-  storiesOf('ConfirmBox', module)
-    .add('visible box bottom', 
-      () => <ConfirmBox 
-        show
-        onConfirm={action('Confirmed clicked!')}
-        onCancel={action('Cancel clicked!')}
-        title='One fine Confirm Box'
-        message='One fine message'
-        textCancel='Cancel'
-        textConfirm='Confirm'
-      />
-    )
-    .add('message and title as component',
-      () => <ConfirmBox
-        show
-        onConfirm={action('Confirmed clicked!')}
-        onCancel={action('Cancel clicked!')}
-        title={<span> 🎧 Music player </span>}
-        message={<span> <b>Pause</b> your music?</span>}
-        textCancel='Cancel'
-        textConfirm='Pause'
-      />
-    )
-  
-  storiesOf('Toastr', module)
-    .add('message as component', 
-      () => <Toastr 
-        show
-        handleClose={action('Cancel clicked!')}
-        actionText='Close' 
-        messageText={<span> 📞 <b>Lost call</b></span>}
-      />
-    )
-  
+
   storiesOf('Card', module)
     .add('tech theme card',
       () => 
@@ -277,19 +222,4 @@ storiesOf('Welcome', module).add(
           <Navbar route='/' />
         </MemoryRouter>
       </ThemeContext.Provider>
-    )
-  
-  storiesOf('NavTab', module)
-    .add('default navtab unstyled',
-      () => <NavTab>
-        <NavTabItem active>
-          <p>Tab 1</p>
-        </NavTabItem>
-        <NavTabItem>
-          <p>Tab 2</p>
-        </NavTabItem>
-        <NavTabItem>
-          <p>Tab 3</p>
-        </NavTabItem>
-      </NavTab>
     )

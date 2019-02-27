@@ -61,10 +61,11 @@ class Deck extends Component {
    * @param {Object} card
    */
   handleClickShowCard = (event, card) => {
-    this.props.handleSelectCard( 
-      card, 
-      () => this.props.history.push('/played') 
-    );
+    if (!this.state.editing) {
+      this.props.handleSelectCard(
+        card, () => this.props.history.push('/played')
+      );
+    }
   }
 
   render() {

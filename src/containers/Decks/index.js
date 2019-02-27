@@ -59,10 +59,6 @@ class Decks extends Component {
                 </DeckItem>
               )}
             </DeckList>
-            <ButtonLink type="danger" onClick={this.props.handleConfirmBoxResetDeck}>
-                <FontAwesomeIcon icon="sync-alt" />
-                &nbsp; {this.props.text.btn.refresh}
-            </ButtonLink>
           </div>
       )}
     </ThemeContext.Consumer>

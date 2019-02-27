@@ -29,7 +29,7 @@ const Navbar = ({ route }) => {
       {theme => (
         <div className={`navbar ${theme}`}>
           <MoonTabs className={"wrapper"}>
-            <MoonTabsItem className={route === "/" ? "active" : ""}>
+            <MoonTabsItem className={route === "/" || route === "/played" ? "active" : ""}>
               <Link to="/">
                 <img className="icon" src={logos[theme]} alt="icon" />
               </Link>

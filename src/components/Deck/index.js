@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DeckCollection from './../../helpers/DeckCollection';
 import ButtonLink from './../../components/ButtonLink';
 import { ThemeContext } from './../../Contexts';
+import { withRouter } from 'react-router-dom';
 import Card from './../Card';
 import './index.css';
 
@@ -60,27 +61,10 @@ class Deck extends Component {
    * @param {Object} card
    */
   handleClickShowCard = (event, card) => {
-    if(!this.state.editing){
-      this.setState({ 
-        isSelected: !this.isSelected,
-        cardSelected: card
-      });
-    }
-  }
-
-  /**
-   * @author Victor Heringer
-   * 
-   * Goes back to the cards list after deselect current selected card
-   * 
-   * @param {Object} event
-   * @param {Object} card
-   */
-  handleClickDeselectCard = event => {
-    this.setState({
-      isSelected: false,
-      cardSelected: null
-    });
+    this.props.handleSelectCard( 
+      card, 
+      () => this.props.history.push('/played') 
+    );
   }
 
   render() {
@@ -131,23 +115,6 @@ class Deck extends Component {
               />
             }
           </div>
-            <div>
-              {this.state.isSelected &&
-                <Card
-                  value={this.state.cardSelected.value}
-                  key={this.state.cardSelected.id}
-                  up={false}
-                  id={this.state.cardSelected.id}
-                  color={this.state.cardSelected.color}
-                  icon={this.state.cardSelected.icon}
-                  fixed={false}
-                  editing={editing}
-                  onClickRemove={this.handleClickRemoveCard}
-                  onClick={this.handleClickShowCard}
-                  size='lg'
-                />
-              }
-            </div>
             <div className="deckActions">
               {!this.state.isSelected &&
                 <ButtonLink onClick={this.handleClickEdit} type="default">
@@ -158,12 +125,6 @@ class Deck extends Component {
                   &nbsp; {this.props.text.btn.edit}
                 </ButtonLink>
               }
-              {this.state.isSelected &&
-                <ButtonLink type="default" onClick={this.handleClickDeselectCard}>
-                  <FontAwesomeIcon icon="long-arrow-alt-left" />
-                  &nbsp; {this.props.text.btn.back}
-                </ButtonLink>
-              }
             </div>
           </React.Fragment>
         )}
@@ -172,4 +133,4 @@ class Deck extends Component {
   }
 }
 
-export default Deck;
+export default withRouter( Deck );

@@ -6,7 +6,7 @@ import Deck from './../../components/Deck';
  * 
  * Container for play
  */
-const Play = ({ current, text, addCard, loadDecks, gridSize }) => {
+const Play = ({ current, text, addCard, loadDecks, gridSize, handleSelectCard }) => {
   return (
     <div>
       <Deck 
@@ -16,6 +16,7 @@ const Play = ({ current, text, addCard, loadDecks, gridSize }) => {
         cards={current.cards} 
         loadDecks={loadDecks} 
         gridSize={gridSize}
+        handleSelectCard={handleSelectCard}
       />
     </div>
   );

@@ -38,24 +38,25 @@ class App extends Component {
    */
   state = { 
     decks: [],
-    current: {}, 
-    showModal: false, 
-    messageModal: '',
-    confirmModal: undefined, 
-    titleModal: '',
+    current: {},
+    selectedCard: null,
     deckNameInput: '',
-    version: this.props.version,
-    lang: this.props.lang,
-    grid: this.props.grid,
-    grids: this.props.grids,
-    theme: this.props.theme,
-    themes: this.props.themes,
-    canShare: navigator.share ? true : false,
     text: this.props.text,
+    configurations: {
+      lang: this.props.lang,
+      grid: this.props.grid,
+      theme: this.props.theme
+    },
     toastr: {
       show: false,
       message: '',
       action: ''
+    },
+    confirmBox: {
+      show: false,
+      message: '',
+      title: '',
+      onConfirm: undefined
     }
   };
 
@@ -70,6 +71,17 @@ class App extends Component {
     this.loadDecks();
   }
 
+  canShare = () => {
+    return navigator.share ? true : false;
+  }
+
+  selectCard = (card, callback) => {
+    this.setState( 
+      state => update(state, { selectedCard: { $set: card } } ),
+      callback
+    );
+  }
+
   /**
    * @author Victor Heringer
    * 
@@ -80,7 +92,7 @@ class App extends Component {
    * @return {void}
    */
   loadText = (lang) => {
-    this.setState( state => update(state, { $set: { text: I18n.get(lang) } } ));
+    this.setState(state => update(state, { $set: { text: I18n.get(lang) } } ) );
   }
 
   /**
@@ -261,12 +273,12 @@ class App extends Component {
 
     const { text } = this.state;
 
-    const toUpdate = {
-      showModal: { $set: !this.state.showModal },
-      titleModal: { $set: text.confirmBox.refresh.title },
-      messageModal: { $set: text.confirmBox.refresh.message },
-      confirmModal: { $set: this.resetDecks }
-    };
+    const toUpdate = { confirmBox: {
+      show: { $set: !this.state.confirmBox.show },
+      title: { $set: text.confirmBox.refresh.title },
+      message: { $set: text.confirmBox.refresh.message },
+      confirm: { $set: this.resetDecks }
+    }};
 
     this.setState(state => update(state, toUpdate));
   }
@@ -282,7 +294,7 @@ class App extends Component {
     DeckCollection.put(seed.decks);
     this.setState( state => update(state, { 
       decks: { $set: seed.decks },
-      showModal: { $set: !this.state.showModal }
+      confirmBox: { show: { $set: !state.confirmBox.show } }
     }));
   }
 
@@ -296,7 +308,7 @@ class App extends Component {
   shareDeck = (id) => {
     let deck = DeckCollection.find(id);
     deck.favorite = false;
-    this.state.canShare && navigator.share({ text: JSON.stringify(deck) });
+    this.canShare() && navigator.share({ text: JSON.stringify(deck) });
   }
 
   /**
@@ -307,7 +319,9 @@ class App extends Component {
    * @return {void}
    */
   cancelModal = () => {
-    this.setState(state => update(state, { showModal: { $set: false } }));
+    this.setState(state => update(state, 
+      { confirmBox: { show: { $set: false } } }
+    ));
   }
 
   /**
@@ -356,7 +370,10 @@ class App extends Component {
    * 
    * Renders the played card container
    */
-  renderPlayed = () => <Played />;
+  renderPlayed = () => <Played 
+    {...this.state}  
+    card={this.state.selectedCard}
+  />;
 
   /**
    * @author Victor Heringer
@@ -368,6 +385,7 @@ class App extends Component {
     addCard={this.handlePushCardToCurrentDeck}
     loadDecks={this.loadDecks}
     gridSize={this.state.grid}
+    handleSelectCard={this.selectCard}
   />;
 
   /**
@@ -383,6 +401,7 @@ class App extends Component {
     favorite={this.favorite}
     share={this.shareDeck}
     {...this.state}
+    canShare={this.canShare()}
   />;
 
   /**
@@ -391,20 +410,24 @@ class App extends Component {
    * Renders the config container
    */
   renderConfig = () => <Config 
-    {...this.state} 
+    {...this.state.configurations} 
+    text={this.state.text}
     handleSelectLang={this.handleSelectLang}
     handleSelectGrid={this.handleSelectGrid}
     handleSelectTheme={this.handleSelectTheme}
+    themes={this.props.themes}
+    grids={this.props.grids}
+    version={this.props.version}
   />;
 
   render() {
 
     const confirmBox = <MoonAlert
-      title={this.state.titleModal}
-      message={this.state.messageModal}
-      show={this.state.showModal}
+      title={this.state.confirmBox.title}
+      message={this.state.confirmBox.message}
+      show={this.state.confirmBox.show}
       onCancel={this.cancelModal}
-      onConfirm={this.state.confirmModal}
+      onConfirm={this.state.confirmBox.confirm}
       text={this.state.text}
       position='bottom'
       className='ppdAlert'
@@ -421,14 +444,14 @@ class App extends Component {
     />
 
     return (
-      <div className={ 'appWrapper ' + this.state.theme }>
-        <ThemeContext.Provider value={this.state.theme}>
+      <div className={ 'appWrapper ' + this.props.theme }>
+        <ThemeContext.Provider value={this.props.theme}>
           <Router>
             <div>
               <NavRouter />
               <div className='app'>
                 <Route path="/" exact render={this.renderPlay} />
-                <Route path="/:card" render={this.renderPlayed} />
+                <Route path="/played" exact render={this.renderPlayed} />
                 <Route path="/decks" exact render={this.renderDecks} />
                 <Route path="/config" exact render={this.renderConfig} />
                 {confirmBox}

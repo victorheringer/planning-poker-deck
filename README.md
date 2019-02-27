@@ -1,5 +1,5 @@
 # Planning Poker Deck
-> Simple pwa for planning poker thats allow you to create your own deck or use one of defaults including: standard, fibonacci, t-shirt and risky.
+> Simple offline first pwa for planning poker including most common decks: standard, fibonacci, t-shirt and risky.
 
 [![](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=play+now)](https://planning-poker.victorheringer.com.br/)
 [![](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/VictorHeringer/planning-poker-deck/blob/master/LICENSE)
@@ -7,15 +7,12 @@
 [![LastComit](https://img.shields.io/github/last-commit/google/skia.svg)](https://github.com/VictorHeringer/planning-poker-deck)
 
 ![Example](example.gif)
-![Example](example_2.gif)
 
 ## Why Planning Poker Deck
 
 - 📴 Offline first. You don't need to rely on your mobile connection to estimate things!
 
 - 💾 Small footprint. Less than 100kb gzipped and around 300kb unpacked!
-
-- 📝 Create your own custom deck. Or use any of the given default decks that covers most common decks.
 
 - 🆓 No adds. Really, this app will never ever have ads.
 

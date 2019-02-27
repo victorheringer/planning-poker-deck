@@ -10,7 +10,6 @@ const Config = ({
   grid,
   handleSelectGrid,
   themes,
-  theme,
   handleSelectTheme,
   text,
   version

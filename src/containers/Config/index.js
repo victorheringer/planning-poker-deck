@@ -37,16 +37,20 @@ const Config = ({
               {text.config.list.grid}
               <select name="grid" value={grid} onChange={handleSelectGrid}>
                 {grids.map(grid =>
-                  <option key={grid} value={grid}>{grid}</option>)
-                }
+                  <option key={grid} value={grid}>
+                    {grid}
+                  </option>
+                )}
               </select>
             </li>
             <li>
               {text.config.list.theme}
               <select name="theme" value={theme} onChange={handleSelectTheme}>
                 {themes.map(theme =>
-                  <option key={theme.key} value={theme.key}>{theme.name}</option>)
-                }
+                  <option key={theme.key} value={theme.key}>
+                    {theme.name}
+                  </option>
+                )}
               </select>
             </li>
           </ul>

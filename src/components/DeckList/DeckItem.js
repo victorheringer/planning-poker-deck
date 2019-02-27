@@ -10,17 +10,17 @@ class DeckItem extends React.Component {
   }
 
   handleToggleShow = () => {
-    this.setState( state => update(state, { show: { $set: !state.show } } ) );
+    //this.setState( state => update(state, { show: { $set: !state.show } } ) );
   }
 
   render() {
 
     const { children, title } = this.props;
+    const arrow = <FontAwesomeIcon icon={"angle-right"} className={this.state.show ? 'rotate-down' : 'rotate-up'} />;
 
     return (
       <li>
         <span onClick={this.handleToggleShow}>
-          <FontAwesomeIcon icon={"angle-right"} className={this.state.show ? 'rotate-down' : 'rotate-up'} /> &nbsp;
           {title}
         </span>
         {children.filter(

@@ -200,6 +200,24 @@ class App extends Component {
   /**
    * @author Victor Heringer
    * 
+   * Handles form input change
+   * 
+   * @param {Object} event 
+   * 
+   * @return {void}
+   */
+  handleChangeConfiguration = (event) => {
+    console.log(event.target.name);
+    const toUpdate = {
+      configurations: { [event.target.name]: { $set: event.target.value } }
+    };
+    console.log(toUpdate);
+    this.setState(state => update(state, toUpdate));
+  }
+
+  /**
+   * @author Victor Heringer
+   * 
    * Handles language selection
    * 
    * @param {Object} event 
@@ -211,7 +229,7 @@ class App extends Component {
     config.lang = event.target.value;
     ConfigCollection.put(config)
     this.loadText(event.target.value);
-    this.handleChange(event);
+    this.handleChangeConfiguration(event);
   }
 
   /**
@@ -227,7 +245,7 @@ class App extends Component {
     const config = ConfigCollection.all();
     config.grid = event.target.value;
     ConfigCollection.put(config)
-    this.handleChange(event);
+    this.handleChangeConfiguration(event);
   }
 
   /**
@@ -242,8 +260,8 @@ class App extends Component {
   handleSelectTheme = (event) => {
     const config = ConfigCollection.all();
     config.theme = event.target.value;
-    ConfigCollection.put(config)
-    this.handleChange(event);
+    ConfigCollection.put(config);
+    this.handleChangeConfiguration(event);
   }
 
   /**
@@ -384,7 +402,7 @@ class App extends Component {
     {...this.state} 
     addCard={this.handlePushCardToCurrentDeck}
     loadDecks={this.loadDecks}
-    gridSize={this.state.grid}
+    gridSize={this.state.configurations.grid}
     handleSelectCard={this.selectCard}
   />;
 
@@ -410,7 +428,7 @@ class App extends Component {
    * Renders the config container
    */
   renderConfig = () => <Config 
-    {...this.state.configurations} 
+    grid={this.state.configurations.grid}
     text={this.state.text}
     handleSelectLang={this.handleSelectLang}
     handleSelectGrid={this.handleSelectGrid}
@@ -444,8 +462,8 @@ class App extends Component {
     />
 
     return (
-      <div className={ 'appWrapper ' + this.props.theme }>
-        <ThemeContext.Provider value={this.props.theme}>
+      <div className={ 'appWrapper ' + this.state.configurations.theme }>
+        <ThemeContext.Provider value={this.state.configurations.theme}>
           <Router>
             <div>
               <NavRouter />

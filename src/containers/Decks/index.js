@@ -21,21 +21,23 @@ class Decks extends Component {
   }
 
   render() {
+
+    const input = <MoonInputButton
+      placeholder={this.props.text.input.placeholder.deck}
+      value={this.props.deckNameInput}
+      onClick={this.handleCreateDeck}
+      onChange={this.props.handleChange}
+      type='text'
+      name='deckNameInput'
+      className={`ppdInputButton`}
+    >
+      {this.props.text.btn.add}
+    </MoonInputButton>
+
     return (
       <ThemeContext.Consumer>
         {theme => (
           <div className="decks">
-            <MoonInputButton 
-              placeholder={this.props.text.input.placeholder.deck}
-              value={this.props.deckNameInput}
-              onClick={this.handleCreateDeck}
-              onChange={this.props.handleChange}
-              type='text'
-              name='deckNameInput'
-              className={`ppdInputButton ${theme}`}
-            >
-              {this.props.text.btn.add}
-            </MoonInputButton>
             <DeckList className={theme}>
               { this.props.decks.map(deck => 
                 <DeckItem key={deck.id} title={deck.description}>

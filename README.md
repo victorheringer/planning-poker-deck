@@ -46,7 +46,7 @@ This app has a story book, if you wanna check it out, just run:
 
 ```
 npm run storybook
-`
+```
 
 ---
 The dark mode is inspired by the awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.

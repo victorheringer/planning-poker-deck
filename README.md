@@ -8,21 +8,21 @@
 
 ## Why Planning Poker Deck
 
-<img align="right" width="200" height="auto" src="example.gif">
+<img align="right" width="180" height="auto" src="example.gif">
 
-#### 📴 Offline first. 
+### 📴 Offline first. 
 
 You don't need to rely on your mobile connection to estimate things!
 
-#### 💾 Small footprint. 
+### 💾 Small footprint. 
 
 Less than 100kb gzipped and around 300kb unpacked!
 
-#### 🆓 No adds. 
+### 🆓 No adds. 
 
 Really, this app will never ever have ads.
 
-#### :octocat: Open Source. 
+### :octocat: Open Source. 
 
 You know everything that is installed on your phone and always can send a pull resquest to fix or add a feature.
 

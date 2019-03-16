@@ -8,7 +8,7 @@
 
 ## Why Planning Poker Deck
 
-<img align="right" width="150" height="auto" src="example.gif">
+<img align="right" width="200" height="auto" src="example.gif">
 
 #### 📴 Offline first. 
 
@@ -25,8 +25,6 @@ Really, this app will never ever have ads.
 #### :octocat: Open Source. 
 
 You know everything that is installed on your phone and always can send a pull resquest to fix or add a feature.
-
----
 
 ## Setup
 This app uses create-react-app so all commands from it, is available here as well.

@@ -10,17 +10,21 @@
 
 <img align="right" width="180" height="auto" src="example.gif">
 
-### 📴 Offline first. 
+### 📴 Offline first
 
 You don't need to rely on your mobile connection to estimate things!
 
-### 💾 Small footprint. 
+### 💾 Small footprint 
 
 Less than 100kb gzipped and around 300kb unpacked!
 
-### 🆓 No adds. 
+### 🆓 No adds
 
 Really, this app will never ever have ads.
+
+### 😍 Four awesome decks
+
+Standard, fibonacci, t-shirt and risky. Any suggestion on a new deck? [Create a issue](https://github.com/VictorHeringer/planning-poker-deck/issues)!
 
 ### :octocat: Open Source. 
 

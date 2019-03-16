@@ -8,7 +8,7 @@
 
 ## Why Planning Poker Deck
 
-<img align="right" width="200" height="auto" src="example.gif">
+<img align="right" width="220" height="auto" src="example.gif">
 
 ### 📴 Offline first
 

@@ -20,7 +20,7 @@ Less than 100kb gzipped and around 300kb unpacked!
 
 ### 🎨 Differents themes 
 
-Including two lights a one dark theme inspired by awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.
+Including two lights and one dark theme inspired by awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.
 
 ### 🆓 No adds
 

@@ -18,7 +18,7 @@ You don't need to rely on your mobile connection to estimate things!
 
 Less than 100kb gzipped and around 300kb unpacked!
 
-### 🎨 Differents themes 
+### 🎨 Different themes 
 
 Including two lights and one dark theme inspired by awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.
 

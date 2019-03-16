@@ -18,6 +18,12 @@ You don't need to rely on your mobile connection to estimate things!
 
 Less than 100kb gzipped and around 300kb unpacked!
 
+### 🎨 Differents themes 
+
+Including two lights a one dark theme inspired by awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.
+
+Less than 100kb gzipped and around 300kb unpacked!
+
 ### 🆓 No adds
 
 Really, this app will never ever have ads.
@@ -49,6 +55,5 @@ npm run storybook
 ```
 
 ---
-The dark mode is inspired by the awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.
 
 Planning poker deck is develop with :hearts: by [@victorheringer_](https://twitter.com/VictorHeringer_)

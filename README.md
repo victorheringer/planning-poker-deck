@@ -22,8 +22,6 @@ Less than 100kb gzipped and around 300kb unpacked!
 
 Including two lights a one dark theme inspired by awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.
 
-Less than 100kb gzipped and around 300kb unpacked!
-
 ### 🆓 No adds
 
 Really, this app will never ever have ads.

@@ -28,7 +28,7 @@ Really, this app will never ever have ads.
 
 ### 😍 Four awesome decks
 
-Standard, fibonacci, t-shirt and risky. Any suggestion on a new deck? [Create a issue](https://github.com/VictorHeringer/planning-poker-deck/issues)!
+Standard, fibonacci, t-shirt and risky. Any suggestion on a new deck? [Create an issue](https://github.com/VictorHeringer/planning-poker-deck/issues)!
 
 ### :octocat: Open Source. 
 

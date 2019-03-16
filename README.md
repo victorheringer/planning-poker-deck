@@ -10,27 +10,27 @@
 
 <img align="right" width="160" height="auto" src="example.gif">
 
-### 📴 Offline first
+#### 📴 Offline first
 
 You don't need to rely on your mobile connection to estimate things!
 
-### 💾 Small footprint 
+#### 💾 Small footprint 
 
 Less than 100kb gzipped and around 300kb unpacked!
 
-### 🎨 Different themes 
+#### 🎨 Different themes 
 
 Including two lights and one dark theme inspired by awesome [dracula-theme](https://github.com/dracula/dracula-theme) color palette.
 
-### 🆓 No adds
+#### 🆓 No adds
 
 Really, this app will never ever have ads.
 
-### 😍 Four awesome decks
+#### 😍 Four awesome decks
 
 Standard, fibonacci, t-shirt and risky. Any suggestion on a new deck? [Create an issue](https://github.com/VictorHeringer/planning-poker-deck/issues)!
 
-### :octocat: Open Source. 
+#### :octocat: Open Source. 
 
 You know everything that is installed on your phone and always can send a pull resquest to fix or add a feature.
 

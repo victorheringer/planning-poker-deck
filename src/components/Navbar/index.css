@@ -47,7 +47,7 @@
   background-color: var(--dark-background);
 }
 .navbar.dark-theme .active {
-  border-bottom: 2px solid var(--main-dark-theme-color);
+  border-bottom: 2px solid var(--accent-dark-theme-color);
 }
 .navbar.dark-theme {
   border-color: var(--main-dark-theme-color);

@@ -27,7 +27,7 @@ class I18n {
    * @return {String}
    */
   static ptBr() {
-    return { key: 'pt_br', text: 'Portugês (Brasil)' };
+    return { key: 'pt_br', text: 'Português (Brasil)' };
   }
 
   /**

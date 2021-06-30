@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  server:
+    build: ./server
+    ports:
+      - "4001:4001"
+    volumes:
+      - "./server/:/server"
+  app:
+    build: ./app
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./app/:/app"

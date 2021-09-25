@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     setThemeColor(theme.backgroundColor);
-  }, [theme]);
+  }, [theme, setThemeColor]);
 
   return (
     <StorageContext.Provider value={{ storage, setStorage }}>

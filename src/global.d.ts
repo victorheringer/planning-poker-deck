@@ -134,6 +134,7 @@ declare global {
       resetBtn: string;
       statusWaiting: string;
       statusAllPlayed: string;
+      room: string;
     };
 
     export type SharedScreen = {

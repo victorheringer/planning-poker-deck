@@ -73,6 +73,7 @@ export default function Online() {
 
   return (
     <Styled.Container>
+      <Components.ListTitle>Room {game.name}</Components.ListTitle>
       <Styled.Header>
         <ScrollContainer>
           <Components.PlayersList players={gameState.clients} />

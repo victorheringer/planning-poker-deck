@@ -31,6 +31,7 @@ const i18n: I18n.Modules = {
       resetBtn: "Resetar Partida",
       statusWaiting: "Aguardando todos jogarem",
       statusAllPlayed: "Todos jogaram",
+      room: "Sala",
     },
     [Screens.DECKS]: {
       decksListTitle: "Decks",
@@ -69,6 +70,7 @@ const i18n: I18n.Modules = {
       resetBtn: "Reset Game",
       statusWaiting: "Waiting others to play",
       statusAllPlayed: "Everybody played",
+      room: "Room",
     },
     [Screens.DECKS]: {
       decksListTitle: "Decks",

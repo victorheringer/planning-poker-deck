@@ -1,7 +1,0 @@
-Dockerfile
-Dockerfile.prod
-.vscode
-app/node_modules
-app/build
-app/.eslintcache
-server/node_modules

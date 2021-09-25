@@ -27,17 +27,14 @@ function OnlineBoard({ players, playerId, revealBoard }: OnlineBoardProps) {
       {players.map(
         (client: GameClientState) =>
           client.card && (
-            <>
-              <Card
-                key={`${client.socketId}/${client.card.id}`}
-                handleClick={() => {}}
-                size={Sizes.MD}
-                card={client.card}
-                fixed={true}
-                status={client.playerName.substr(0, 7)}
-                isFlipped={!shouldRevealBoard(revealBoard, client.id, playerId)}
-              />
-            </>
+            <Card
+              key={`${client.id}/${client.card.id}`}
+              size={Sizes.MD}
+              card={client.card}
+              fixed={true}
+              status={client.playerName.substr(0, 7)}
+              isFlipped={!shouldRevealBoard(revealBoard, client.id, playerId)}
+            />
           )
       )}
     </Container>

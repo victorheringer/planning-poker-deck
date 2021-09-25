@@ -1,7 +1,7 @@
 import { Languages, Themes, Screens } from "enums";
 
 const preferences: Preferences = {
-  version: "1.0.0",
+  version: "2.0.0",
   language: Languages.EN,
   line: 3,
   theme: Themes.TECH,

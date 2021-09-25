@@ -20,3 +20,4 @@ export { default as OnlineBoard } from "components/online-board";
 export { default as Float } from "components/float";
 export { default as Banner } from "components/banner";
 export { default as DebounceInputText } from "components/debounce-input-text";
+export { default as ConnectionBanner } from "components/connection-banner";

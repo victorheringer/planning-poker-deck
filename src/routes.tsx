@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,39 +5,22 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Preferences, Offline, Lobby, Online, Decks } from "./screens";
-import { Page, Navbar, Container, Banner } from "components";
+import { Page, Navbar, Container, ConnectionBanner } from "components";
 import { Screens } from "enums";
-import { useStorage } from "hooks";
 
-export default function Routes({
-  theme,
-  initial,
-  connected,
-  text,
-}: {
+type RoutesProps = {
   theme: Theme;
   initial: Screens;
-  connected: boolean;
   text: I18n.SharedScreen;
-}) {
-  const [hideBanner, setHideBanner] = useState(connected);
+};
 
-  useEffect(() => {
-    setHideBanner(connected);
-  }, [connected]);
-
-  function handleCloseBanner() {
-    setHideBanner(true);
-  }
-
+export default function Routes({ theme, initial, text }: RoutesProps) {
   return (
     <Container>
       <Router>
         <Navbar theme={theme} />
         <Page>
-          {!hideBanner && (
-            <Banner text={text.offline} onClose={handleCloseBanner} />
-          )}
+          <ConnectionBanner text={text.offline} />
           <Switch>
             <Route exact path="/">
               <Redirect to={`/${initial}`} />

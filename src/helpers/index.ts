@@ -1,4 +1,4 @@
-export { default as copyToClipboard } from "helpers/copy-to-clipboard";
+export { copyToClipboard, copyEnabled } from "helpers/copy-to-clipboard";
 export { decode, encode } from "helpers/base64";
 
 export {

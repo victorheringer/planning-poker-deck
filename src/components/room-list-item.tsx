@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { OutlineButton } from "components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { copyEnabled } from "helpers";
 
 const Title = styled.h2`
   text-transform: uppercase;
@@ -55,11 +56,13 @@ export default function RoomListItem({
           {text.joinRoomBtn}
         </OutlineButton>
       </ButtonWrapper>
-      <ButtonWrapper>
-        <OutlineButton flat={false} block={false} onClick={share}>
-          {text.shareRoomBtn}
-        </OutlineButton>
-      </ButtonWrapper>
+      {copyEnabled() && (
+        <ButtonWrapper>
+          <OutlineButton flat={false} block={false} onClick={share}>
+            {text.shareRoomBtn}
+          </OutlineButton>
+        </ButtonWrapper>
+      )}
       <ButtonWrapper>
         <OutlineButton flat={false} block={false} onClick={remove}>
           {text.deleteRoomBtn}

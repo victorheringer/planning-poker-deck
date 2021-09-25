@@ -54,7 +54,7 @@ declare global {
   export type ThemeOptions = {
     [Themes.DRACULA]: Theme;
     [Themes.TECH]: Theme;
-    [Themes.ELETRIC]: Theme;
+    [Themes.ELECTRIC]: Theme;
     [Themes.DARK_FOREST]: Theme;
   };
 

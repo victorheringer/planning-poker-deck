@@ -37,10 +37,11 @@ export const StatusContainer = styled.div`
 `;
 
 export const Status = styled.div`
-  background-color: ${(props) => props.theme.secondaryColor};
+  background-color: ${(props) => props.theme.primaryColor};
   text-transform: uppercase;
   padding: 4px 6px;
   font-size: 11px;
   font-weight: bold;
   border-radius: 4px;
+  color: ${(props) => props.theme.secondaryFontColor};
 `;

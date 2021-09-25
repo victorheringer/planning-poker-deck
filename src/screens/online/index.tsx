@@ -75,7 +75,7 @@ export default function Online() {
     <Styled.Container>
       <Components.ListTitle>Room {game.name}</Components.ListTitle>
       <Styled.Header>
-        <ScrollContainer>
+        <ScrollContainer style={{ width: "100%" }}>
           <Components.PlayersList players={gameState.clients} />
         </ScrollContainer>
         {game.owner && (

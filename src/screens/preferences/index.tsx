@@ -22,7 +22,7 @@ export default function Preferences() {
       { value: Themes.DRACULA, label: "Dracula" },
       { value: Themes.TECH, label: "Tech" },
       { value: Themes.DARK_FOREST, label: "Dark Forest" },
-      { value: Themes.ELETRIC, label: "Eletric" },
+      { value: Themes.ELECTRIC, label: "Electric" },
     ],
     screens: [
       { value: Screens.HOME, label: "Home" },

@@ -46,23 +46,32 @@ const themes: ThemeOptions = {
     fontFamily: "Arial, sans-serif",
     borderInputColor: "#757575",
   },
-  [Themes.ELETRIC]: {
-    backgroundColor: "#fff",
-    lineColor: "",
-    mainFontColor: "",
+  [Themes.ELECTRIC]: {
+    // Background
+    backgroundColor: "#ffffff",
+    cardBackgroundColor: "#6f3cac",
+
+    // Text Color
+    mainFontColor: "#616161",
     secondaryFontColor: "#ffffff",
-    primaryColor: "#ec407a",
-    secondaryColor: "#8be9fd",
-    lightFontColor: "#cccccc",
+    lightFontColor: "#9E9E9E",
     darkFontColor: "#414141",
-    successColor: "#50fa7b",
-    errorColor: "#FF1744",
-    cardBackgroundColor: "#6272a4",
-    cardFontColor: "",
-    disableColor: "#e0e0e0",
-    menuIconsColor: "",
+    cardFontColor: "#ffffff",
+    menuIconsColor: "#212121",
+
+    // Inputs
+    lineColor: "#e3e3e3",
+
+    // Misc colors
+    primaryColor: "#6f3cac",
+    secondaryColor: "#7a6dad",
+    successColor: "#5a6423",
+    errorColor: "#ef9f41",
+    disableColor: "#eeeeee",
+
+    // Others
     fontFamily: "Arial, sans-serif",
-    borderInputColor: "#212121",
+    borderInputColor: "#757575",
   },
   [Themes.DARK_FOREST]: {
     backgroundColor: "#0f1c14",

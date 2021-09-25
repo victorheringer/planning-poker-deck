@@ -43,7 +43,7 @@ export enum Screens {
 export enum Themes {
   TECH = "tech",
   DRACULA = "dracula",
-  ELETRIC = "eletric",
+  ELECTRIC = "electric",
   DARK_FOREST = "dark_forest",
 }
 

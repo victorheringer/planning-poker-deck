@@ -66,9 +66,9 @@ export default function Navbar({ theme }: { theme: Theme }) {
     <Nav>
       <List>
         <ListItem>
-          <StyledLink to={Screens.HOME}>
+          <StyledLink aria-label="Home" to={Screens.HOME}>
             <LogoWrapper>
-              <Logo aria-label="Home" color={logo} width="29px" height="29px" />
+              <Logo color={logo} width="29px" height="29px" />
             </LogoWrapper>
           </StyledLink>
         </ListItem>

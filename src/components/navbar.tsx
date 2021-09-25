@@ -68,23 +68,35 @@ export default function Navbar({ theme }: { theme: Theme }) {
         <ListItem>
           <StyledLink to={Screens.HOME}>
             <LogoWrapper>
-              <Logo color={logo} width="29px" height="29px" />
+              <Logo aria-label="Home" color={logo} width="29px" height="29px" />
             </LogoWrapper>
           </StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink activeStyle={active} to={Screens.DECKS}>
+          <StyledLink
+            aria-label="Decks"
+            activeStyle={active}
+            to={Screens.DECKS}
+          >
             <FontAwesomeIcon icon="th" />
           </StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink activeStyle={active} to={Screens.LOBBY}>
+          <StyledLink
+            aria-label="Online"
+            activeStyle={active}
+            to={Screens.LOBBY}
+          >
             <FontAwesomeIcon icon="globe-americas" />
             {matchOnline && matchOnline.isExact && <Dot />}
           </StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink activeStyle={active} to={Screens.SETTINGS}>
+          <StyledLink
+            aria-label="Settings"
+            activeStyle={active}
+            to={Screens.SETTINGS}
+          >
             <FontAwesomeIcon icon="cog" />
           </StyledLink>
         </ListItem>

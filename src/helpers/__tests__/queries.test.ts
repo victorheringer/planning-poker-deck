@@ -5,12 +5,89 @@ import {
   generateId,
 } from "helpers/queries";
 
-import {
-  deckListWithSameIds,
-  deckListWithNoFavorite,
-  deckListWithExpectedValues,
-  deckListWithMultipleFavorites,
-} from "./dummy";
+const deckListWithMultipleFavorites = [
+  {
+    id: "deck01",
+    name: "fibonacci",
+    description: "Fibonacci",
+    favorite: true,
+    custom: false,
+    cards: [],
+  },
+  {
+    id: "deck02",
+    name: "standard",
+    description: "Standard",
+    favorite: true,
+    custom: false,
+    cards: [],
+  },
+];
+
+const deckListWithExpectedValues = [
+  {
+    id: "deck01",
+    name: "fibonacci",
+    description: "Fibonacci",
+    favorite: true,
+    custom: false,
+    cards: [],
+  },
+  {
+    id: "deck02",
+    name: "standard",
+    description: "Standard",
+    favorite: false,
+    custom: false,
+    cards: [],
+  },
+];
+
+const deckListWithNoFavorite = [
+  {
+    id: "deck01",
+    name: "fibonacci",
+    description: "Fibonacci",
+    favorite: false,
+    custom: false,
+    cards: [],
+  },
+  {
+    id: "deck02",
+    name: "standard",
+    description: "Standard",
+    favorite: false,
+    custom: false,
+    cards: [],
+  },
+];
+
+const deckListWithSameIds = [
+  {
+    id: "deck01",
+    name: "fibonacci",
+    description: "Fibonacci",
+    favorite: true,
+    custom: false,
+    cards: [],
+  },
+  {
+    id: "deck02",
+    name: "standard",
+    description: "Standard",
+    favorite: false,
+    custom: false,
+    cards: [],
+  },
+  {
+    id: "deck02",
+    name: "standard2",
+    description: "Standard2",
+    favorite: true,
+    custom: false,
+    cards: [],
+  },
+];
 
 jest.mock("uuid", () => ({
   v1: () => "mock-uuid",

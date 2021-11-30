@@ -74,10 +74,5 @@
   },
   "resolutions": {
     "styled-components": "^5"
-  },
-  "jest": {
-    "watchPathIgnorePatterns": [
-      "dummy.ts"
-    ]
   }
 }

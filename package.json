@@ -17,8 +17,8 @@
     "react-router-dom": "^5.2.0",
     "socket.io-client": "^3.0.5",
     "styled-components": "^5.2.1",
-    "uuid": "^8.3.2",
     "typescript": "^4.0.3",
+    "uuid": "^8.3.2",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.3",
     "workbox-broadcast-update": "^5.1.3",
@@ -59,7 +59,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
-    "@testing-library/react-hooks": "^3.7.0",
+    "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
     "@types/lodash": "^4.14.170",
@@ -81,4 +81,3 @@
     ]
   }
 }
-

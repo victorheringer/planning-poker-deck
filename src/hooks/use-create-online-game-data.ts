@@ -1,21 +1,18 @@
 import { useLocation } from "react-router-dom";
 import qs from "query-string";
+import { flow } from "lodash";
 
 import { decode } from "helpers";
-
-function createGameData(search: string) {
-  const query = qs.parse(search);
-  const data = qs.parse(decode(String(query.q)));
-
-  return {
-    id: String(data.room),
-    owner: data.owner === "true",
-    deckId: String(data.deckId),
-    name: String(data.roomName),
-  };
-}
+import { queryStringRoomFactory } from "factories";
 
 export default function useCreateOnlineGameData() {
   const { search } = useLocation();
-  return createGameData(search);
+
+  return flow(
+    qs.parse,
+    ({ q }) => String(q),
+    decode,
+    qs.parse,
+    queryStringRoomFactory
+  )(search);
 }

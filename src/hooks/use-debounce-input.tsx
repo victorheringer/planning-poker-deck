@@ -8,7 +8,6 @@ export default function useDebounceInput(
   setter: (value: string) => void
 ): UseDebounceInputReturn {
   const [field, setField] = useState<string>(value);
-
   const executeDebounce = useCallback(debounce(setter, 400), []);
 
   useEffect(() => {

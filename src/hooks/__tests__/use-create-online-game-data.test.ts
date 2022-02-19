@@ -1,4 +1,4 @@
-import { renderHook, act } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react-hooks";
 import useCreateOnlineGameData from "hooks/use-create-online-game-data";
 
 jest.mock("react-router-dom", () => ({

@@ -16,8 +16,14 @@ export default function Decks() {
     <>
       <ListTitle>{text.decksListTitle}</ListTitle>
       <List>
-        {storage.decks.map((deck) => (
-          <div onClick={handleUpdateFavorite(deck)} key={deck.id}>
+        {storage?.decks.map((deck) => (
+          <div
+            role="radio"
+            aria-label={`Radio for ${deck.description}`}
+            aria-checked={deck.favorite}
+            onClick={handleUpdateFavorite(deck)}
+            key={deck.id}
+          >
             <Radio active={deck.favorite} />
             <ListItem key={deck.id}>{deck.description}</ListItem>
           </div>

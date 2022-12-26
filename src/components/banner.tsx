@@ -34,7 +34,9 @@ export default function Banner({ text, onClose }: BannerProps) {
     <Wrapper onClick={onClose}>
       <Container>
         {text}
-        <IconWrapper>{onClose && <FontAwesomeIcon icon="times" />}</IconWrapper>
+        <IconWrapper>
+          {onClose && <FontAwesomeIcon aria-label="close" icon="times" />}
+        </IconWrapper>
       </Container>
     </Wrapper>
   );

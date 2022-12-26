@@ -1,5 +1,4 @@
 import { render, act, fireEvent } from "@testing-library/react";
-import { isYieldExpression } from "typescript";
 
 import DecksScreen from "../index";
 

@@ -22,7 +22,7 @@ const Text = styled.div`
   color: white;
 `;
 
-const IconConainer = styled.div`
+const IconContainer = styled.div`
   color: white;
   margin-bottom: 15px;
 `;
@@ -35,9 +35,9 @@ type WaitScreenProps = {
 export default function WaitScreen({ show, text }: WaitScreenProps) {
   return show ? (
     <Wrapper>
-      <IconConainer>
+      <IconContainer>
         <FontAwesomeIcon icon="spinner" size="2x" spin />
-      </IconConainer>
+      </IconContainer>
       <Text>{text}</Text>
     </Wrapper>
   ) : (

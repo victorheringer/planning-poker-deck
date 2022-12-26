@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should render correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="sc-bdvvtL Czwlg"
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio should render correctly active radio 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdvvtL cUlkLJ"
+  />
+</DocumentFragment>
+`;
+
+exports[`Radio should render correctly not active radio 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdvvtL cUlkLJ"
+  />
+</DocumentFragment>
+`;

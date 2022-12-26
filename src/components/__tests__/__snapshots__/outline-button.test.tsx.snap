@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OutlineButton should render correctly with all props false 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-bdvvtL CIlWp"
+  />
+</DocumentFragment>
+`;
+
+exports[`OutlineButton should render correctly with all props true 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-bdvvtL hLnLZu"
+  />
+</DocumentFragment>
+`;

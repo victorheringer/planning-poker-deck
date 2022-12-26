@@ -49,7 +49,6 @@ const Indicator = styled.div<{ played: boolean }>`
 type PlayersListProps = { players: GameClientState[] };
 
 function PlayersList({ players }: PlayersListProps) {
-  console.log("PLAYERS", players);
   return (
     <Wrapper>
       <Container>

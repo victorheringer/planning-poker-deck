@@ -35,11 +35,11 @@ const AvatarLetter = styled.p`
   color: ${(props) => props.theme.mainFontColor};
 `;
 
-const Indicator = styled.div<{ online: boolean }>`
+const Indicator = styled.div<{ played: boolean }>`
   width: 8px;
   height: 8px;
   background-color: ${(props) =>
-    props.online ? props.theme.successColor : "red"};
+    props.played ? props.theme.successColor : "orange"};
   border-radius: 50%;
   position: absolute;
   bottom: 0;
@@ -49,6 +49,7 @@ const Indicator = styled.div<{ online: boolean }>`
 type PlayersListProps = { players: GameClientState[] };
 
 function PlayersList({ players }: PlayersListProps) {
+  console.log("PLAYERS", players);
   return (
     <Wrapper>
       <Container>
@@ -58,7 +59,7 @@ function PlayersList({ players }: PlayersListProps) {
               <AvatarLetter>
                 {player.playerName && player.playerName.substr(0, 3)}
               </AvatarLetter>
-              <Indicator online={player.online} />
+              <Indicator played={!!player.card} />
             </Avatar>
           </AvatarContainer>
         ))}

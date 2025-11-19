@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -9,10 +9,10 @@ import { Offline } from "./screens";
 import { Page, Navbar, Container, ConnectionBanner } from "components";
 import { Screens } from "enums";
 
-const Preferences = lazy(() => import("./screens/preferences"));
-const Lobby = lazy(() => import("./screens/lobby"));
-const Online = lazy(() => import("./screens/online"));
-const Decks = lazy(() => import("./screens/decks"));
+import Preferences from "./screens/preferences";
+import Lobby from "./screens/lobby";
+import Online from "./screens/online";
+import Decks from "./screens/decks";
 
 type RoutesProps = {
   theme: Theme;
@@ -20,17 +20,19 @@ type RoutesProps = {
   text: I18n.SharedScreen;
 };
 
+const FALLBACK_DEFAULT_ROUTE = "home";
+
 export default function Routes({ theme, initial, text }: RoutesProps) {
   return (
     <Container>
-      <Router>
+      <Router basename="/planning-poker-deck">
         <Navbar theme={theme} />
         <Page>
           <ConnectionBanner text={text.offline} />
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
               <Route exact path="/">
-                <Redirect to={`/${initial}`} />
+                <Redirect to={`/${initial || FALLBACK_DEFAULT_ROUTE}`} />
               </Route>
               <Route exact path={`/${Screens.HOME}`} component={Offline} />
               <Route exact path={`/${Screens.DECKS}`} component={Decks} />

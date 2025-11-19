@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/planning-poker-deck/static/js/main.6b5a26ea.js",
+    "static/js/377.7dfcaa20.chunk.js": "/planning-poker-deck/static/js/377.7dfcaa20.chunk.js",
+    "service-worker.js": "/planning-poker-deck/service-worker.js",
+    "index.html": "/planning-poker-deck/index.html",
+    "main.6b5a26ea.js.map": "/planning-poker-deck/static/js/main.6b5a26ea.js.map",
+    "377.7dfcaa20.chunk.js.map": "/planning-poker-deck/static/js/377.7dfcaa20.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.6b5a26ea.js"
+  ]
+}
